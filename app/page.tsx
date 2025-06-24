@@ -2,44 +2,228 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: '交通事故治療・むちうち治療｜自己負担0円｜桜並木駅前の整骨院｜福岡市博多区',
-  description: '交通事故による怪我・むちうちの治療費は自己負担0円！福岡市博多区の桜並木駅前の整骨院では、交通事故専門治療を行っています。夜21時まで営業、土日祝も対応。まずはお電話ください。',
-  keywords: '交通事故治療,むちうち治療,自己負担0円,整骨院,福岡市博多区,桜並木駅前,夜間対応,土日祝営業',
+  title: '【自己負担0円】交通事故治療・むちうち治療｜桜並木駅前の整骨院｜福岡市博多区',
+  description: '交通事故によるむちうち・打撲・捻挫の治療費は自己負担0円！福岡市博多区の桜並木駅前の整骨院。10年の臨床経験、夜20時まで営業、土曜も対応。保険手続きもお任せください。070-5530-6656',
+  keywords: '交通事故治療,むちうち治療,自己負担0円,整骨院,福岡市博多区,桜並木駅前,後遺症,保険手続き,夜間営業,土曜診療,今坂院長',
+  authors: [{ name: '桜並木駅前の整骨院' }],
+  creator: '桜並木駅前の整骨院',
+  publisher: '桜並木駅前の整骨院',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL('https://sakuranamiki1.com'),
+  alternates: {
+    canonical: 'https://sakuranamiki1.com',
+  },
   openGraph: {
-    title: '交通事故治療・むちうち治療｜自己負担0円｜桜並木駅前の整骨院',
-    description: '交通事故による怪我・むちうちの治療費は自己負担0円！福岡市博多区の桜並木駅前の整骨院では、交通事故専門治療を行っています。',
+    title: '【自己負担0円】交通事故治療・むちうち治療｜桜並木駅前の整骨院',
+    description: '交通事故によるむちうち・打撲・捻挫の治療費は自己負担0円！福岡市博多区の桜並木駅前の整骨院。10年の臨床経験で安心の治療をご提供します。',
     type: 'website',
+    url: 'https://sakuranamiki1.com',
+    siteName: '桜並木駅前の整骨院',
+    locale: 'ja_JP',
+    images: [
+      {
+        url: '/images/hero-background.jpg',
+        width: 1200,
+        height: 630,
+        alt: '桜並木駅前の整骨院 - 交通事故治療専門',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '【自己負担0円】交通事故治療・むちうち治療｜桜並木駅前の整骨院',
+    description: '交通事故によるむちうち・打撲・捻挫の治療費は自己負担0円！福岡市博多区の桜並木駅前の整骨院。',
+    images: ['/images/hero-background.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'your-google-site-verification-code',
   },
 }
 
 export default function Home() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "MedicalBusiness",
+        "@id": "https://sakuranamiki1.com/#organization",
+        "name": "桜並木駅前の整骨院",
+        "alternateName": "さくらなみき駅前の整骨院",
+        "url": "https://sakuranamiki1.com",
+        "telephone": "070-5530-6656",
+        "email": "info@sakuranamiki1.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "竹丘町2-4-18",
+          "addressLocality": "博多区",
+          "addressRegion": "福岡市",
+          "postalCode": "812-0895",
+          "addressCountry": "JP"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 33.6046,
+          "longitude": 130.4183
+        },
+        "openingHours": [
+          "Mo-Fr 09:00-20:00",
+          "Sa 09:00-14:00"
+        ],
+        "dayOfWeek": [
+          "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
+        ],
+        "medicalSpecialty": [
+          "交通事故治療",
+          "むちうち治療",
+          "整骨院",
+          "柔道整復"
+        ],
+        "serviceArea": {
+          "@type": "Place",
+          "name": "福岡市博多区"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "治療サービス",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "MedicalProcedure",
+                "name": "交通事故治療",
+                "description": "自己負担0円での交通事故による怪我の治療"
+              }
+            },
+            {
+              "@type": "Offer", 
+              "itemOffered": {
+                "@type": "MedicalProcedure",
+                "name": "むちうち治療",
+                "description": "交通事故によるむちうち症状の専門治療"
+              }
+            }
+          ]
+        },
+        "founder": {
+          "@type": "Person",
+          "name": "今坂院長",
+          "jobTitle": "院長"
+        },
+        "sameAs": [
+          "https://lin.ee/Y6Hzw7E"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://sakuranamiki1.com/#website",
+        "url": "https://sakuranamiki1.com",
+        "name": "桜並木駅前の整骨院",
+        "description": "福岡市博多区の交通事故治療専門整骨院",
+        "inLanguage": "ja",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://sakuranamiki1.com/?s={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://sakuranamiki1.com/#localbusiness",
+        "name": "桜並木駅前の整骨院",
+        "image": "https://sakuranamiki1.com/images/gallery-exterior.jpg",
+        "telephone": "070-5530-6656",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "竹丘町2-4-18",
+          "addressLocality": "博多区", 
+          "addressRegion": "福岡市",
+          "postalCode": "812-0895",
+          "addressCountry": "JP"
+        },
+        "priceRange": "自己負担0円",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "20:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification", 
+            "dayOfWeek": "Saturday",
+            "opens": "09:00",
+            "closes": "14:00"
+          }
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5.0",
+          "reviewCount": "50",
+          "bestRating": "5",
+          "worstRating": "1"
+        }
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-white">
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Animated Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-red-600 via-red-700 to-red-800"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
-        
-        {/* Floating Particles */}
+      <section id="hero" className="relative min-h-screen flex items-center justify-center" aria-label="メインヒーローセクション">
+        {/* Background Image */}
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-4 h-4 bg-yellow-400 rounded-full opacity-60 float"></div>
-          <div className="absolute top-32 right-20 w-3 h-3 bg-white rounded-full opacity-40 float" style={{animationDelay: '1s'}}></div>
-          <div className="absolute bottom-40 left-20 w-2 h-2 bg-yellow-300 rounded-full opacity-50 float" style={{animationDelay: '2s'}}></div>
-          <div className="absolute bottom-20 right-10 w-5 h-5 bg-white rounded-full opacity-30 float" style={{animationDelay: '0.5s'}}></div>
+          <Image
+            src="/images/hero-background.jpg"
+            alt="福岡市博多区の桜並木駅前の整骨院での交通事故治療イメージ"
+            fill
+            className="object-cover"
+            priority
+            sizes="100vw"
+            quality={85}
+          />
         </div>
+        {/* Background Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-red-600/80 via-red-700/80 to-red-800/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
           {/* Emergency Badge */}
-          <div className="mb-8 slide-in-up">
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-6 py-3 rounded-full font-bold text-sm sm:text-base shadow-lg animate-pulse">
-              <span className="w-3 h-3 bg-red-500 rounded-full animate-ping"></span>
+          <div className="mb-8">
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-6 py-3 rounded-full font-bold text-sm sm:text-base shadow-lg">
+              <span className="w-3 h-3 bg-red-500 rounded-full"></span>
               緊急対応可能・24時間受付
             </div>
           </div>
           
+          {/* Clinic Name */}
+          <div className="mb-6">
+            <div className="inline-block px-6 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
+              <p className="text-white/90 font-medium text-sm sm:text-base">福岡市博多区・桜並木駅徒歩1分</p>
+            </div>
+          </div>
+          
           {/* Main Title */}
-          <div className="mb-8 slide-in-up" style={{animationDelay: '0.2s'}}>
+          <div className="mb-8">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 leading-tight">
               <span className="block">交通事故治療</span>
               <span className="block bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 bg-clip-text text-transparent text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black">
@@ -49,7 +233,7 @@ export default function Home() {
           </div>
           
           {/* Subtitle */}
-          <div className="mb-10 slide-in-up" style={{animationDelay: '0.4s'}}>
+          <div className="mb-10">
             <p className="text-xl sm:text-2xl md:text-3xl font-medium text-gray-100 leading-relaxed">
               むちうち・打撲・捻挫など<br className="block sm:hidden" />
               <span className="text-yellow-300 font-bold">すべて治療費無料</span>
@@ -57,34 +241,33 @@ export default function Home() {
           </div>
           
           {/* Phone Card */}
-          <div className="mb-10 slide-in-up" style={{animationDelay: '0.6s'}}>
-            <div className="glass max-w-2xl mx-auto p-6 sm:p-8 rounded-2xl shadow-2xl border border-white/20 hover-lift">
-              <div className="text-center mb-4">
-                <p className="text-xl sm:text-2xl font-bold text-white">まずはお電話ください</p>
+          <div className="mb-10">
+            <div className="premium-border max-w-2xl mx-auto">
+              <div className="p-6 sm:p-8 rounded-2xl bg-black/60 backdrop-blur-sm luxury-shadow cursor-glow">
+                <div className="text-center mb-4">
+                  <p className="text-lg sm:text-xl font-medium text-white/90 mb-2">桜並木駅前の整骨院</p>
+                  <p className="text-xl sm:text-2xl font-bold text-white">まずはお電話ください</p>
+                </div>
+                <a href="tel:070-5530-6656" className="block text-3xl sm:text-4xl md:text-5xl font-black text-yellow-400 hover:text-yellow-300 transition-all duration-500 hover:scale-110 hover:drop-shadow-2xl">
+                  070-5530-6656
+                </a>
+                {/* Decorative elements */}
+                <div className="absolute top-4 right-4 w-8 h-8 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full opacity-20"></div>
+                <div className="absolute bottom-4 left-4 w-6 h-6 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full opacity-20"></div>
               </div>
-              <a href="tel:070-5530-6656" className="block text-3xl sm:text-4xl md:text-5xl font-black text-yellow-400 hover:text-yellow-300 transition-all duration-300 transform hover:scale-105">
-                070-5530-6656
-              </a>
             </div>
           </div>
           
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center px-4 slide-in-up" style={{animationDelay: '0.8s'}}>
-            <a href="tel:070-5530-6656" className="group relative overflow-hidden bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-5 py-3 rounded-full font-bold shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 text-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
+            <a href="tel:070-5530-6656" className="relative overflow-hidden bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-500 text-black px-8 py-5 rounded-full font-black text-lg luxury-shadow transition-all duration-500 hover:scale-110 hover:shadow-2xl text-center group">
               <span className="relative z-10">電話で相談</span>
-              <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
             </a>
-            <a href="https://lin.ee/your-line-id" className="group relative overflow-hidden bg-gradient-to-r from-green-500 to-green-600 text-white px-5 py-3 rounded-full font-bold shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 text-center cursor-pointer">
+            <a href="https://lin.ee/Y6Hzw7E" className="relative overflow-hidden bg-gradient-to-r from-green-500 via-green-600 to-emerald-600 text-white px-8 py-5 rounded-full font-black text-lg luxury-shadow transition-all duration-500 hover:scale-110 hover:shadow-2xl text-center group">
               <span className="relative z-10">LINE予約</span>
-              <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
             </a>
-          </div>
-          
-          {/* Scroll Indicator */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
-              <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
-            </div>
           </div>
         </div>
       </section>
@@ -154,9 +337,9 @@ export default function Home() {
                 <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 mx-auto">
                   <span className="text-white text-2xl">🌙</span>
                 </div>
-                <h3 className="text-xl font-black mb-4 text-gray-900 text-center">夜21時まで営業</h3>
+                <h3 className="text-xl font-black mb-4 text-gray-900 text-center">夜20時まで営業</h3>
                 <p className="text-gray-600 text-center leading-relaxed">
-                  お仕事帰りでも通院可能。平日21時、土曜14時まで営業で、あなたの都合に合わせて通院できます。
+                  お仕事帰りでも通院可能。平日20時、土曜14時まで営業で、あなたの都合に合わせて通院できます。
                 </p>
               </div>
             </div>
@@ -166,7 +349,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-green-600 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg"></div>
               <div className="relative bg-white p-8 rounded-2xl shadow-xl hover-lift border border-gray-100 h-full">
                 <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-6 mx-auto">
-                  <span className="text-white text-2xl">⚕️</span>
+                  <span className="text-white text-2xl">🩺</span>
                 </div>
                 <h3 className="text-xl font-black mb-4 text-gray-900 text-center">専門治療</h3>
                 <p className="text-gray-600 text-center leading-relaxed">
@@ -221,56 +404,116 @@ export default function Home() {
       </section>
 
       {/* Worries */}
-      <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-5xl mx-auto">
+      <section className="relative py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+        {/* Background Decoration */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-r from-red-500 to-orange-500 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-20 w-40 h-40 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="relative z-10 max-w-5xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-12">
-            <div className="inline-block mb-4">
-              <span className="bg-gradient-to-r from-red-500 to-orange-500 text-white px-4 py-2 rounded-full text-sm font-bold">よくあるお悩み</span>
+            <div className="inline-block mb-4 premium-border">
+              <span className="bg-gradient-to-r from-red-500 to-orange-500 text-white px-6 py-3 rounded-full text-sm font-bold luxury-shadow">よくあるお悩み</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-gray-900 mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-gray-900 mb-4 luxury-text">
               こんなお悩みありませんか？
             </h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-red-500 to-orange-500 mx-auto rounded-full"></div>
+            <div className="w-32 h-2 bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 mx-auto rounded-full luxury-shadow"></div>
           </div>
           
           {/* Worries Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            {/* Insurance Worries */}
+            {/* Insurance Worries with Real Image */}
             <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-red-600 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg"></div>
-              <div className="relative bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-2xl border border-red-200 shadow-lg hover-lift h-full">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-8 h-8 bg-red-500 rounded-lg flex items-center justify-center">
-                    <span className="text-white text-sm font-bold">📜</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-red-600 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg transform scale-110"></div>
+              <div className="relative bg-white p-8 rounded-2xl luxury-shadow hover-lift border border-gray-100 h-full card-3d cursor-glow">
+                {/* Image Section */}
+                <div className="relative h-48 mb-6 rounded-xl overflow-hidden">
+                  <Image
+                    src="/images/保険手続き.jpg"
+                    alt="交通事故の保険手続きで悩む人 - 福岡市博多区の整骨院がサポート"
+                    fill
+                    className="object-cover"
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    quality={80}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                  <div className="absolute bottom-4 left-4">
+                    <h3 className="text-2xl font-black text-white mb-1">保険・手続きの悩み</h3>
+                    <p className="text-white/90 text-sm">複雑な手続きも全てサポート</p>
                   </div>
-                  <h3 className="text-xl font-black text-red-700">保険・手続き</h3>
                 </div>
-                <ul className="space-y-2 text-gray-700">
-                  <li className="flex items-start"><span className="text-red-500 mr-2 mt-1 font-bold">✓</span>保険会社とのやりとり</li>
-                  <li className="flex items-start"><span className="text-red-500 mr-2 mt-1 font-bold">✓</span>治療費は本当に0円？</li>
-                  <li className="flex items-start"><span className="text-red-500 mr-2 mt-1 font-bold">✓</span>診断書や書類作成</li>
-                  <li className="flex items-start"><span className="text-red-500 mr-2 mt-1 font-bold">✓</span>示談交渉の不安</li>
-                </ul>
+                
+                {/* Content Section */}
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3 p-3 bg-red-50 rounded-lg border-l-4 border-red-500">
+                    <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-white text-xs font-bold">!</span>
+                    </div>
+                    <p className="text-red-700 font-medium">保険会社とのやりとりが不安</p>
+                  </div>
+                  <div className="flex items-center gap-3 p-3 bg-red-50 rounded-lg border-l-4 border-red-500">
+                    <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-white text-xs font-bold">?</span>
+                    </div>
+                    <p className="text-red-700 font-medium">治療費は本当に0円？</p>
+                  </div>
+                  <div className="flex items-center gap-3 p-3 bg-red-50 rounded-lg border-l-4 border-red-500">
+                    <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-white text-xs font-bold">📋</span>
+                    </div>
+                    <p className="text-red-700 font-medium">診断書や書類作成が面倒</p>
+                  </div>
+                </div>
               </div>
             </div>
             
-            {/* Treatment Worries */}
+            {/* Treatment Worries with Real Image */}
             <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg"></div>
-              <div className="relative bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-2xl border border-blue-200 shadow-lg hover-lift h-full">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
-                    <span className="text-white text-sm font-bold">⚕️</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg transform scale-110"></div>
+              <div className="relative bg-white p-8 rounded-2xl luxury-shadow hover-lift border border-gray-100 h-full card-3d cursor-glow">
+                {/* Image Section */}
+                <div className="relative h-48 mb-6 rounded-xl overflow-hidden">
+                  <Image
+                    src="/images/後遺症.jpg"
+                    alt="交通事故による首の痛みと後遺症の不安 - 桃並木駅前の整骨院で専門治療"
+                    fill
+                    className="object-cover"
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    quality={80}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                  <div className="absolute bottom-4 left-4">
+                    <h3 className="text-2xl font-black text-white mb-1">治療・後遺症の不安</h3>
+                    <p className="text-white/90 text-sm">専門的な治療で完全回復へ</p>
                   </div>
-                  <h3 className="text-xl font-black text-blue-700">治療・回復</h3>
                 </div>
-                <ul className="space-y-2 text-gray-700">
-                  <li className="flex items-start"><span className="text-blue-500 mr-2 mt-1 font-bold">✓</span>痛みがなくても治療すべき？</li>
-                  <li className="flex items-start"><span className="text-blue-500 mr-2 mt-1 font-bold">✓</span>どこの病院に行けばいい？</li>
-                  <li className="flex items-start"><span className="text-blue-500 mr-2 mt-1 font-bold">✓</span>仕事しながら通院できる？</li>
-                  <li className="flex items-start"><span className="text-blue-500 mr-2 mt-1 font-bold">✓</span>後遺症が残らないか心配</li>
-                </ul>
+                
+                {/* Content Section */}
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3 p-3 bg-blue-50 rounded-lg border-l-4 border-blue-500">
+                    <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-white text-xs font-bold">⚠</span>
+                    </div>
+                    <p className="text-blue-700 font-medium">痛みがなくても治療すべき？</p>
+                  </div>
+                  <div className="flex items-center gap-3 p-3 bg-blue-50 rounded-lg border-l-4 border-blue-500">
+                    <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-white text-xs font-bold">🏥</span>
+                    </div>
+                    <p className="text-blue-700 font-medium">どこの病院に行けばいい？</p>
+                  </div>
+                  <div className="flex items-center gap-3 p-3 bg-blue-50 rounded-lg border-l-4 border-blue-500">
+                    <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-white text-xs font-bold">💔</span>
+                    </div>
+                    <p className="text-blue-700 font-medium">後遺症が残らないか心配</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -289,7 +532,7 @@ export default function Home() {
               <a href="tel:070-5530-6656" className="bg-gradient-to-r from-red-500 to-red-600 text-white px-5 py-3 rounded-full font-bold shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 text-center">
                 電話で相談
               </a>
-              <a href="https://lin.ee/your-line-id" className="bg-gradient-to-r from-green-500 to-green-600 text-white px-5 py-3 rounded-full font-bold shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 text-center">
+              <a href="https://lin.ee/Y6Hzw7E" className="bg-gradient-to-r from-green-500 to-green-600 text-white px-5 py-3 rounded-full font-bold shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 text-center">
                 LINE予約
               </a>
             </div>
@@ -327,8 +570,14 @@ export default function Home() {
                   <p className="text-gray-600 leading-relaxed">まずはお電話ください。事故の状況をお聞きし、今後の流れをご説明します。</p>
                 </div>
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center">
-                    <div className="w-6 h-6 bg-red-500 rounded-full"></div>
+                  <div className="w-20 h-20 rounded-xl overflow-hidden shadow-lg">
+                    <Image
+                      src="/images/step1-phone.jpg"
+                      alt="電話で相談"
+                      width={80}
+                      height={80}
+                      className="object-cover w-full h-full"
+                    />
                   </div>
                 </div>
               </div>
@@ -352,8 +601,14 @@ export default function Home() {
                   <p className="text-gray-600 leading-relaxed">詳しい症状の確認と検査を行い、最適な治療計画を立てます。</p>
                 </div>
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center">
-                    <div className="w-6 h-6 bg-orange-500 rounded-full"></div>
+                  <div className="w-20 h-20 rounded-xl overflow-hidden shadow-lg">
+                    <Image
+                      src="/images/step2-visit.jpg"
+                      alt="来院・検査"
+                      width={80}
+                      height={80}
+                      className="object-cover w-full h-full"
+                    />
                   </div>
                 </div>
               </div>
@@ -377,8 +632,14 @@ export default function Home() {
                   <p className="text-gray-600 leading-relaxed">患者様の症状に合わせたオーダーメイド治療を開始します。</p>
                 </div>
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                    <div className="w-6 h-6 bg-blue-500 rounded-full"></div>
+                  <div className="w-20 h-20 rounded-xl overflow-hidden shadow-lg">
+                    <Image
+                      src="/images/step3-treatment.jpg"
+                      alt="治療開始"
+                      width={80}
+                      height={80}
+                      className="object-cover w-full h-full"
+                    />
                   </div>
                 </div>
               </div>
@@ -402,8 +663,14 @@ export default function Home() {
                   <p className="text-gray-600 leading-relaxed">症状の改善を確認しながら、完全回復まで責任を持ってサポートします。</p>
                 </div>
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
-                    <div className="w-6 h-6 bg-green-500 rounded-full"></div>
+                  <div className="w-20 h-20 rounded-xl overflow-hidden shadow-lg">
+                    <Image
+                      src="/images/step4-recovery.jpg"
+                      alt="完全回復"
+                      width={80}
+                      height={80}
+                      className="object-cover w-full h-full"
+                    />
                   </div>
                 </div>
               </div>
@@ -415,7 +682,7 @@ export default function Home() {
             <a href="tel:070-5530-6656" className="bg-gradient-to-r from-red-500 to-red-600 text-white px-5 py-3 rounded-full font-bold shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 text-center">
               電話で相談
             </a>
-            <a href="https://lin.ee/your-line-id" className="bg-gradient-to-r from-green-500 to-green-600 text-white px-5 py-3 rounded-full font-bold shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 text-center">
+            <a href="https://lin.ee/Y6Hzw7E" className="bg-gradient-to-r from-green-500 to-green-600 text-white px-5 py-3 rounded-full font-bold shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 text-center">
               LINE予約
             </a>
           </div>
@@ -436,52 +703,64 @@ export default function Home() {
             <div className="w-24 h-1 bg-gradient-to-r from-green-500 to-blue-600 mx-auto rounded-full"></div>
           </div>
           
-          {/* Gallery Grid - Modern Design */}
+          {/* Gallery Grid - Real Photos */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Gallery Item 1 */}
+            {/* Gallery Item 1 - Exterior */}
             <div className="group relative">
-              <div className="bg-gradient-to-br from-blue-500 to-blue-600 p-8 rounded-2xl shadow-xl hover-lift text-white relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16"></div>
-                <div className="relative z-10">
-                  <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-6">
-                    <div className="w-8 h-8 bg-white rounded-lg"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg transform scale-110"></div>
+              <div className="relative bg-white rounded-2xl shadow-xl overflow-hidden hover-lift border border-gray-100">
+                <div className="relative h-64 overflow-hidden">
+                  <Image
+                    src="/images/gallery-exterior.jpg"
+                    alt="整骨院外観"
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <h3 className="text-xl font-black text-white mb-2">整骨院外観</h3>
+                    <p className="text-white/90 text-sm">桜並木駅徒歩1分のアクセス良好な立地</p>
                   </div>
-                  <h3 className="text-xl font-black mb-3">整骨院外観</h3>
-                  <p className="text-blue-100 leading-relaxed">
-                    桜並木駅徒歩3分のアクセス良好な立地。駐車場も完備しています。
-                  </p>
                 </div>
               </div>
             </div>
             
-            {/* Gallery Item 2 */}
+            {/* Gallery Item 2 - Interior */}
             <div className="group relative">
-              <div className="bg-gradient-to-br from-green-500 to-green-600 p-8 rounded-2xl shadow-xl hover-lift text-white relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16"></div>
-                <div className="relative z-10">
-                  <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-6">
-                    <div className="w-8 h-8 bg-white rounded-lg"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-green-600 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg transform scale-110"></div>
+              <div className="relative bg-white rounded-2xl shadow-xl overflow-hidden hover-lift border border-gray-100">
+                <div className="relative h-64 overflow-hidden">
+                  <Image
+                    src="/images/gallery-interior.jpg"
+                    alt="院内の様子"
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <h3 className="text-xl font-black text-white mb-2">清潔な施術室</h3>
+                    <p className="text-white/90 text-sm">清潔で落ち着いた環境でリラックスして治療</p>
                   </div>
-                  <h3 className="text-xl font-black mb-3">清潔な施術室</h3>
-                  <p className="text-green-100 leading-relaxed">
-                    清潔で落ち着いた環境で、リラックスして治療を受けていただけます。
-                  </p>
                 </div>
               </div>
             </div>
             
-            {/* Gallery Item 3 */}
+            {/* Gallery Item 3 - Treatment */}
             <div className="group relative">
-              <div className="bg-gradient-to-br from-purple-500 to-purple-600 p-8 rounded-2xl shadow-xl hover-lift text-white relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16"></div>
-                <div className="relative z-10">
-                  <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-6">
-                    <div className="w-8 h-8 bg-white rounded-lg"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-purple-600 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg transform scale-110"></div>
+              <div className="relative bg-white rounded-2xl shadow-xl overflow-hidden hover-lift border border-gray-100">
+                <div className="relative h-64 overflow-hidden">
+                  <Image
+                    src="/images/gallery-treatment.jpg"
+                    alt="施術風景"
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <h3 className="text-xl font-black text-white mb-2">プロの施術</h3>
+                    <p className="text-white/90 text-sm">今坂院長による熟練した手技での治療</p>
                   </div>
-                  <h3 className="text-xl font-black mb-3">プロの施術</h3>
-                  <p className="text-purple-100 leading-relaxed">
-                    今坂院長をはじめ、経験豊富なスタッフが一人一人に合わせた治療を提供します。
-                  </p>
                 </div>
               </div>
             </div>
@@ -507,23 +786,24 @@ export default function Home() {
                   <span key={i} className="text-yellow-400 text-2xl">★</span>
                 ))}
               </div>
-              <span className="text-lg font-bold text-gray-700">4.9 / 5.0</span>
+              <span className="text-lg font-bold text-gray-700">5.0 / 5.0</span>
             </div>
             <div className="w-24 h-1 bg-gradient-to-r from-yellow-500 to-orange-500 mx-auto rounded-full"></div>
           </div>
           
           {/* Reviews Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Review 1 */}
+            {/* Review 1 - Hideki K. */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg transform scale-110"></div>
               <div className="relative bg-white p-6 rounded-2xl shadow-lg hover-lift border border-yellow-200 h-full">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold">A</span>
+                    <span className="text-white font-bold">H</span>
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-900">佐藤さん</h4>
+                    <h4 className="font-bold text-gray-900">Hideki K.</h4>
+                    <p className="text-xs text-gray-500">ローカルガイド • 29件のクチコミ</p>
                     <div className="flex">
                       {[...Array(5)].map((_, i) => (
                         <span key={i} className="text-yellow-400 text-sm">★</span>
@@ -532,29 +812,33 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="text-gray-700 leading-relaxed text-sm">
-                  交通事故でむちうちになり、今坂院長にお世話になりました。以前から腰痛でも治療していただいていたので、安心して通院できました。保険手続きも全部やってくださり、本当に助かりました！
+                  これまで、3つの整体院を廻り施術していただきましたが、桜並木駅前整骨院は頸椎から右腕、右手の縺れを施術していただき、少しずつ良い方向へ変化して行ってるようです！こんな凄腕をお持ちの先生は見たことがありません。是非、お薦めの整骨院です。
                 </p>
                 <div className="mt-4 pt-4 border-t border-gray-100">
-                  <div className="flex items-center gap-2 text-xs text-gray-500">
-                    <span className="w-4 h-4 bg-red-500 rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs">G</span>
-                    </span>
-                    Googleレビュー
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2 text-xs text-gray-500">
+                      <span className="w-4 h-4 bg-red-500 rounded-full flex items-center justify-center">
+                        <span className="text-white text-xs">G</span>
+                      </span>
+                      Googleレビュー
+                    </div>
+                    <span className="text-xs text-gray-400">1週間前</span>
                   </div>
                 </div>
               </div>
             </div>
             
-            {/* Review 2 */}
+            {/* Review 2 - なべゆか */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-blue-400 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg transform scale-110"></div>
               <div className="relative bg-white p-6 rounded-2xl shadow-lg hover-lift border border-green-200 h-full">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-teal-500 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold">M</span>
+                    <span className="text-white font-bold">N</span>
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-900">田中さん</h4>
+                    <h4 className="font-bold text-gray-900">なべゆか</h4>
+                    <p className="text-xs text-gray-500">6件のクチコミ</p>
                     <div className="flex">
                       {[...Array(5)].map((_, i) => (
                         <span key={i} className="text-yellow-400 text-sm">★</span>
@@ -563,29 +847,33 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="text-gray-700 leading-relaxed text-sm">
-                  事故当日に飛び込みで伺いましたが、今坂院長が親身に診てくださいました。治療費が0円で本当に助かりました。夜遅くまでやっているので仕事帰りでも通えて、おすすめです！
+                  今まで整骨院には行ったことはありましたがひとつのところに通ったことはありませんでした。オープン記念で無料体験ができるとSNSで拝見して施術していただきました。あまりのうまさに即通うことを決めました(笑)人柄も良く、丁寧に施術してくださるので寝てしまうくらい気持ちいいです。
                 </p>
                 <div className="mt-4 pt-4 border-t border-gray-100">
-                  <div className="flex items-center gap-2 text-xs text-gray-500">
-                    <span className="w-4 h-4 bg-red-500 rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs">G</span>
-                    </span>
-                    Googleレビュー
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2 text-xs text-gray-500">
+                      <span className="w-4 h-4 bg-red-500 rounded-full flex items-center justify-center">
+                        <span className="text-white text-xs">G</span>
+                      </span>
+                      Googleレビュー
+                    </div>
+                    <span className="text-xs text-gray-400">1週間前</span>
                   </div>
                 </div>
               </div>
             </div>
             
-            {/* Review 3 */}
+            {/* Review 3 - ami */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-400 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg transform scale-110"></div>
               <div className="relative bg-white p-6 rounded-2xl shadow-lg hover-lift border border-purple-200 h-full">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold">Y</span>
+                    <span className="text-white font-bold">A</span>
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-900">山田さん</h4>
+                    <h4 className="font-bold text-gray-900">ami</h4>
+                    <p className="text-xs text-gray-500">10件のクチコミ • 11枚の写真</p>
                     <div className="flex">
                       {[...Array(5)].map((_, i) => (
                         <span key={i} className="text-yellow-400 text-sm">★</span>
@@ -594,14 +882,17 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="text-gray-700 leading-relaxed text-sm">
-                  今坂院長には以前から肩こりの治療でお世話になっていたので、交通事故の際も安心してお願いできました。手続きがわからなくて不安でしたが、全てサポートしてくださって、本当に感謝しています。
+                  デスクワークの為、肩凝り・首の痛みに悩んでおり、伺いました。丁寧なカウンセリングと施術をして頂き、施術後は肩・首の痛みはもちろん、巻き肩でも悩んでいたのに、すっと姿勢が正されて自分でも驚きました！立地も桜並木駅前で駐車場もあり、仕事終わりでも通いやすいと思ったのも決め手でした。
                 </p>
                 <div className="mt-4 pt-4 border-t border-gray-100">
-                  <div className="flex items-center gap-2 text-xs text-gray-500">
-                    <span className="w-4 h-4 bg-red-500 rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs">G</span>
-                    </span>
-                    Googleレビュー
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2 text-xs text-gray-500">
+                      <span className="w-4 h-4 bg-red-500 rounded-full flex items-center justify-center">
+                        <span className="text-white text-xs">G</span>
+                      </span>
+                      Googleレビュー
+                    </div>
+                    <span className="text-xs text-gray-400">3週間前</span>
                   </div>
                 </div>
               </div>
@@ -643,27 +934,27 @@ export default function Home() {
             {/* Stat 1 */}
             <div className="text-center">
               <div className="bg-white p-8 rounded-2xl shadow-lg hover-lift border border-gray-100">
-                <div className="text-4xl font-black text-red-600 mb-2">500+</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">年間治療実績</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">多くの交通事故患者様に信頼いただいています</p>
+                <div className="text-4xl font-black text-red-600 mb-2">10年</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">臨床経験</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">豊富な経験と専門知識で安心の治療を提供</p>
               </div>
             </div>
             
             {/* Stat 2 */}
             <div className="text-center">
               <div className="bg-white p-8 rounded-2xl shadow-lg hover-lift border border-gray-100">
-                <div className="text-4xl font-black text-blue-600 mb-2">100%</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">保険対応</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">保険手続きから書類作成まで全てサポート</p>
+                <div className="text-4xl font-black text-blue-600 mb-2">90%+</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">リピート率</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">患者様の90%以上が継続して通院いただいています</p>
               </div>
             </div>
             
             {/* Stat 3 */}
             <div className="text-center">
               <div className="bg-white p-8 rounded-2xl shadow-lg hover-lift border border-gray-100">
-                <div className="text-4xl font-black text-green-600 mb-2">95%</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">完全回復率</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">早期治療で後遺症を防ぎ完全回復を実現</p>
+                <div className="text-4xl font-black text-green-600 mb-2">100%</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">保険対応</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">保険手続きから書類作成まで全てサポート</p>
               </div>
             </div>
           </div>
@@ -674,7 +965,7 @@ export default function Home() {
             <div className="bg-gradient-to-br from-red-500 to-red-600 p-8 rounded-2xl shadow-xl text-white relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16"></div>
               <div className="relative z-10">
-                <h3 className="text-2xl font-black mb-4">专門的な治療</h3>
+                <h3 className="text-2xl font-black mb-4">専門的な治療</h3>
                 <p className="text-red-100 leading-relaxed mb-4">
                   交通事故治療の豊富な経験を持つ今坂院長が、一人一人の症状に合わせた最適な治療を提供します。
                 </p>
@@ -699,7 +990,7 @@ export default function Home() {
               <a href="tel:070-5530-6656" className="bg-gradient-to-r from-red-500 to-red-600 text-white px-5 py-3 rounded-full font-bold shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 text-center">
                 電話で相談
               </a>
-              <a href="https://lin.ee/your-line-id" className="bg-gradient-to-r from-green-500 to-green-600 text-white px-5 py-3 rounded-full font-bold shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 text-center">
+              <a href="https://lin.ee/Y6Hzw7E" className="bg-gradient-to-r from-green-500 to-green-600 text-white px-5 py-3 rounded-full font-bold shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 text-center">
                 LINE予約
               </a>
             </div>
@@ -775,7 +1066,7 @@ export default function Home() {
                     <div>
                       <p className="font-bold text-gray-900 mb-1">営業時間</p>
                       <div className="text-gray-700 leading-relaxed">
-                        <p>平日：9:00〜21:00</p>
+                        <p>平日：9:00〜20:00</p>
                         <p>土曜：9:00〜14:00</p>
                         <p className="text-red-600 font-bold">日祝：休診</p>
                       </div>
@@ -790,7 +1081,7 @@ export default function Home() {
                     <div>
                       <p className="font-bold text-gray-900 mb-1">アクセス</p>
                       <div className="text-gray-700 leading-relaxed">
-                        <p>桜並木駅徒歩3分</p>
+                        <p>桜並木駅徒歩1分</p>
                         <p>駐車場完備</p>
                       </div>
                     </div>
@@ -825,7 +1116,7 @@ export default function Home() {
                     <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
                     <span className="relative z-10">電話する</span>
                   </a>
-                  <a href="https://lin.ee/your-line-id" className="group relative bg-gradient-to-r from-green-500 to-green-600 text-white px-5 py-3 rounded-full font-black shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 overflow-hidden text-center">
+                  <a href="https://lin.ee/Y6Hzw7E" className="group relative bg-gradient-to-r from-green-500 to-green-600 text-white px-5 py-3 rounded-full font-black shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 overflow-hidden text-center">
                     <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
                     <span className="relative z-10">LINE予約</span>
                   </a>
@@ -853,21 +1144,34 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="relative bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white py-12 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        {/* Background Pattern */}
+      <footer className="relative bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 text-white py-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Luxury Background Pattern */}
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-20 h-20 border border-white rounded-full"></div>
-          <div className="absolute top-20 right-20 w-16 h-16 border border-white rounded-full"></div>
-          <div className="absolute bottom-10 left-1/4 w-12 h-12 border border-white rounded-full"></div>
-          <div className="absolute bottom-20 right-1/3 w-24 h-24 border border-white rounded-full"></div>
+          <div className="absolute top-10 left-10 w-24 h-24 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full blur-2xl"></div>
+          <div className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 left-1/4 w-20 h-20 bg-gradient-to-r from-green-400 to-teal-500 rounded-full blur-2xl"></div>
+          <div className="absolute bottom-20 right-1/3 w-28 h-28 bg-gradient-to-r from-pink-400 to-red-500 rounded-full blur-3xl"></div>
+        </div>
+        
+        {/* Animated Grid */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="grid grid-cols-12 grid-rows-8 h-full">
+            {Array.from({length: 96}).map((_, i) => (
+              <div key={i} className="border border-white/10"></div>
+            ))}
+          </div>
         </div>
         
         <div className="relative z-10 max-w-6xl mx-auto">
           <div className="text-center">
             {/* Logo/Title */}
-            <h3 className="text-2xl sm:text-3xl font-black mb-4 bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
-              桜並木駅前の整骨院
-            </h3>
+            <div className="mb-6 premium-border inline-block">
+              <a href="https://sakuranamiki1.com/" className="block hover:scale-105 transition-transform duration-300">
+                <h3 className="text-3xl sm:text-4xl font-black py-4 px-6 bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 bg-clip-text text-transparent luxury-shadow">
+                  桜並木駅前の整骨院
+                </h3>
+              </a>
+            </div>
             
             {/* Quick Contact */}
             <div className="mb-6">
@@ -878,17 +1182,25 @@ export default function Home() {
             </div>
             
             {/* Address */}
-            <p className="text-gray-300 mb-6 leading-relaxed">
+            <p className="text-gray-300 mb-4 leading-relaxed">
               福岡県福岡市博多区竹丘町2-4-18<br />
-              桜並木駅徒歩3分 | 駐車場完備
+              桜並木駅徒歩1分 | 駐車場完備
             </p>
             
+            {/* Website Link */}
+            <div className="mb-6">
+              <a href="https://sakuranamiki1.com/" className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 transition-colors font-medium">
+                <span>🌐</span>
+                公式ホームページ
+              </a>
+            </div>
+            
             {/* Services */}
-            <div className="flex flex-wrap gap-2 justify-center mb-8">
-              <span className="bg-red-600 text-white px-3 py-1 rounded-full text-sm font-medium">交通事故治療</span>
-              <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">むちうち治療</span>
-              <span className="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium">自己負担0円</span>
-              <span className="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-medium">夜21時まで</span>
+            <div className="flex flex-wrap gap-3 justify-center mb-8">
+              <span className="bg-gradient-to-r from-red-600 to-red-700 text-white px-4 py-2 rounded-full text-sm font-bold luxury-shadow hover:scale-105 transition-transform duration-300">交通事故治療</span>
+              <span className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-4 py-2 rounded-full text-sm font-bold luxury-shadow hover:scale-105 transition-transform duration-300">むちうち治療</span>
+              <span className="bg-gradient-to-r from-green-600 to-green-700 text-white px-4 py-2 rounded-full text-sm font-bold luxury-shadow hover:scale-105 transition-transform duration-300">自己負担0円</span>
+              <span className="bg-gradient-to-r from-purple-600 to-purple-700 text-white px-4 py-2 rounded-full text-sm font-bold luxury-shadow hover:scale-105 transition-transform duration-300">夜20時まで</span>
             </div>
             
             {/* Divider */}
