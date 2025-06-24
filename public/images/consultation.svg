@@ -1,0 +1,7 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+    <rect width="800" height="600" fill="#ede9fe"/>
+    <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" 
+          fill="#7c3aed" font-family="Arial, sans-serif" font-size="24" font-weight="bold">
+      診察室
+    </text>
+  </svg>

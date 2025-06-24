@@ -1,0 +1,7 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+    <rect width="800" height="600" fill="#f0fdf4"/>
+    <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" 
+          fill="#15803d" font-family="Arial, sans-serif" font-size="24" font-weight="bold">
+      施術室
+    </text>
+  </svg>
