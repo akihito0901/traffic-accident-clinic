@@ -508,21 +508,168 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-r from-red-500/20 to-yellow-500/20 rounded-3xl blur-xl"></div>
               <div className="relative bg-black/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 max-w-4xl mx-auto">
                 <div className="flex flex-col md:flex-row items-center justify-center gap-6">
-                  <div className="w-24 h-24 bg-gradient-to-br from-red-500 to-yellow-500 rounded-2xl flex items-center justify-center shadow-lg">
-                    <div className="flex items-center gap-1">
-                      <div className="w-3 h-3 bg-yellow-400 rounded-full animate-pulse"></div>
-                      <div className="w-3 h-3 bg-orange-400 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
-                      <div className="w-3 h-3 bg-red-400 rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
-                    </div>
+                  <div className="w-24 h-24 rounded-2xl overflow-hidden shadow-lg">
+                    <Image
+                      src="/images/地域で選ばれる.png"
+                      alt="地域で選ばれる信頼の治療院"
+                      width={96}
+                      height={96}
+                      className="object-cover w-full h-full"
+                    />
                   </div>
                   <div className="text-center md:text-left">
-                    <h3 className="text-2xl md:text-3xl font-black text-white mb-2">
-                      地域で選ばれる
-                      <span className="bg-gradient-to-r from-red-400 via-yellow-400 to-orange-400 bg-clip-text text-transparent">信頼の治療院</span>
+                    <h3 className="text-xl md:text-2xl font-black text-white mb-2">
+                      <span className="bg-gradient-to-r from-red-400 via-yellow-400 to-orange-400 bg-clip-text text-transparent">地域で選ばれる治療院</span>
                     </h3>
-                    <p className="text-gray-300">多くの交通事故患者様から信頼をいただいています</p>
+                    <p className="text-gray-300">患者様から信頼をいただいています</p>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Google Reviews */}
+      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-yellow-50 via-orange-50 to-red-50"></div>
+        <div className="relative z-10 max-w-6xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <div className="inline-block mb-4">
+              <span className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-4 py-2 rounded-full text-sm font-bold">実際のお客様の声</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 mb-4">
+              Googleでの口コミが好評！
+            </h2>
+            <div className="flex items-center justify-center gap-2 mb-4">
+              <div className="flex">
+                {[...Array(5)].map((_, i) => (
+                  <span key={i} className="text-yellow-400 text-2xl">★</span>
+                ))}
+              </div>
+              <span className="text-lg font-bold text-gray-700">5.0 / 5.0</span>
+            </div>
+            <div className="w-24 h-1 bg-gradient-to-r from-yellow-500 to-orange-500 mx-auto rounded-full"></div>
+          </div>
+          
+          {/* Reviews Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Review 1 - Hideki K. */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg transform scale-110"></div>
+              <div className="relative bg-white p-6 rounded-2xl shadow-lg hover-lift border border-yellow-200 h-full">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
+                    <span className="text-white font-bold">H</span>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-gray-900">Hideki K.</h4>
+                    <p className="text-xs text-gray-500">ローカルガイド • 29件のクチコミ</p>
+                    <div className="flex">
+                      {[...Array(5)].map((_, i) => (
+                        <span key={i} className="text-yellow-400 text-sm">★</span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <p className="text-gray-700 leading-relaxed text-sm">
+                  これまで、3つの整体院を廻り施術していただきましたが、桜並木駅前整骨院は頸椎から右腕、右手の縺れを施術していただき、少しずつ良い方向へ変化して行ってるようです！こんな凄腕をお持ちの先生は見たことがありません。是非、お薦めの整骨院です。
+                </p>
+                <div className="mt-4 pt-4 border-t border-gray-100">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2 text-xs text-gray-500">
+                      <span className="w-4 h-4 bg-red-500 rounded-full flex items-center justify-center">
+                        <span className="text-white text-xs">G</span>
+                      </span>
+                      Googleレビュー
+                    </div>
+                    <span className="text-xs text-gray-400">1週間前</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Review 2 - なべゆか */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-blue-400 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg transform scale-110"></div>
+              <div className="relative bg-white p-6 rounded-2xl shadow-lg hover-lift border border-green-200 h-full">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-teal-500 rounded-full flex items-center justify-center">
+                    <span className="text-white font-bold">N</span>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-gray-900">なべゆか</h4>
+                    <p className="text-xs text-gray-500">6件のクチコミ</p>
+                    <div className="flex">
+                      {[...Array(5)].map((_, i) => (
+                        <span key={i} className="text-yellow-400 text-sm">★</span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <p className="text-gray-700 leading-relaxed text-sm">
+                  今まで整骨院には行ったことはありましたがひとつのところに通ったことはありませんでした。オープン記念で無料体験ができるとSNSで拝見して施術していただきました。あまりのうまさに即通うことを決めました(笑)人柄も良く、丁寧に施術してくださるので寝てしまうくらい気持ちいいです。
+                </p>
+                <div className="mt-4 pt-4 border-t border-gray-100">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2 text-xs text-gray-500">
+                      <span className="w-4 h-4 bg-red-500 rounded-full flex items-center justify-center">
+                        <span className="text-white text-xs">G</span>
+                      </span>
+                      Googleレビュー
+                    </div>
+                    <span className="text-xs text-gray-400">1週間前</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Review 3 - ami */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-400 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg transform scale-110"></div>
+              <div className="relative bg-white p-6 rounded-2xl shadow-lg hover-lift border border-purple-200 h-full">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                    <span className="text-white font-bold">A</span>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-gray-900">ami</h4>
+                    <p className="text-xs text-gray-500">10件のクチコミ • 11枚の写真</p>
+                    <div className="flex">
+                      {[...Array(5)].map((_, i) => (
+                        <span key={i} className="text-yellow-400 text-sm">★</span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <p className="text-gray-700 leading-relaxed text-sm">
+                  デスクワークの為、肩凝り・首の痛みに悩んでおり、伺いました。丁寧なカウンセリングと施術をして頂き、施術後は肩・首の痛みはもちろん、巻き肩でも悩んでいたのに、すっと姿勢が正されて自分でも驚きました！立地も桜並木駅前で駐車場もあり、仕事終わりでも通いやすいと思ったのも決め手でした。
+                </p>
+                <div className="mt-4 pt-4 border-t border-gray-100">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2 text-xs text-gray-500">
+                      <span className="w-4 h-4 bg-red-500 rounded-full flex items-center justify-center">
+                        <span className="text-white text-xs">G</span>
+                      </span>
+                      Googleレビュー
+                    </div>
+                    <span className="text-xs text-gray-400">3週間前</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Trust Badge */}
+          <div className="text-center mt-12">
+            <div className="inline-flex items-center gap-4 bg-white p-6 rounded-2xl shadow-lg border border-yellow-200">
+              <div className="w-12 h-12 bg-yellow-500 rounded-xl flex items-center justify-center">
+                <div className="w-6 h-6 bg-white rounded-full"></div>
+              </div>
+              <div>
+                <h3 className="text-xl font-black text-gray-900 mb-1">地域ナンバー1の信頼と実績</h3>
+                <p className="text-gray-600">多くの患者様から高評価をいただいています</p>
               </div>
             </div>
           </div>
@@ -865,152 +1012,6 @@ export default function Home() {
                     <p className="text-white/90 text-sm">今坂院長による熟練した手技での治療</p>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Google Reviews */}
-      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-yellow-50 via-orange-50 to-red-50"></div>
-        <div className="relative z-10 max-w-6xl mx-auto">
-          {/* Section Header */}
-          <div className="text-center mb-16">
-            <div className="inline-block mb-4">
-              <span className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-4 py-2 rounded-full text-sm font-bold">実際のお客様の声</span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 mb-4">
-              Googleでの口コミが好評！
-            </h2>
-            <div className="flex items-center justify-center gap-2 mb-4">
-              <div className="flex">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i} className="text-yellow-400 text-2xl">★</span>
-                ))}
-              </div>
-              <span className="text-lg font-bold text-gray-700">5.0 / 5.0</span>
-            </div>
-            <div className="w-24 h-1 bg-gradient-to-r from-yellow-500 to-orange-500 mx-auto rounded-full"></div>
-          </div>
-          
-          {/* Reviews Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Review 1 - Hideki K. */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg transform scale-110"></div>
-              <div className="relative bg-white p-6 rounded-2xl shadow-lg hover-lift border border-yellow-200 h-full">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold">H</span>
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-gray-900">Hideki K.</h4>
-                    <p className="text-xs text-gray-500">ローカルガイド • 29件のクチコミ</p>
-                    <div className="flex">
-                      {[...Array(5)].map((_, i) => (
-                        <span key={i} className="text-yellow-400 text-sm">★</span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-                <p className="text-gray-700 leading-relaxed text-sm">
-                  これまで、3つの整体院を廻り施術していただきましたが、桜並木駅前整骨院は頸椎から右腕、右手の縺れを施術していただき、少しずつ良い方向へ変化して行ってるようです！こんな凄腕をお持ちの先生は見たことがありません。是非、お薦めの整骨院です。
-                </p>
-                <div className="mt-4 pt-4 border-t border-gray-100">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2 text-xs text-gray-500">
-                      <span className="w-4 h-4 bg-red-500 rounded-full flex items-center justify-center">
-                        <span className="text-white text-xs">G</span>
-                      </span>
-                      Googleレビュー
-                    </div>
-                    <span className="text-xs text-gray-400">1週間前</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            {/* Review 2 - なべゆか */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-blue-400 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg transform scale-110"></div>
-              <div className="relative bg-white p-6 rounded-2xl shadow-lg hover-lift border border-green-200 h-full">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-teal-500 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold">N</span>
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-gray-900">なべゆか</h4>
-                    <p className="text-xs text-gray-500">6件のクチコミ</p>
-                    <div className="flex">
-                      {[...Array(5)].map((_, i) => (
-                        <span key={i} className="text-yellow-400 text-sm">★</span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-                <p className="text-gray-700 leading-relaxed text-sm">
-                  今まで整骨院には行ったことはありましたがひとつのところに通ったことはありませんでした。オープン記念で無料体験ができるとSNSで拝見して施術していただきました。あまりのうまさに即通うことを決めました(笑)人柄も良く、丁寧に施術してくださるので寝てしまうくらい気持ちいいです。
-                </p>
-                <div className="mt-4 pt-4 border-t border-gray-100">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2 text-xs text-gray-500">
-                      <span className="w-4 h-4 bg-red-500 rounded-full flex items-center justify-center">
-                        <span className="text-white text-xs">G</span>
-                      </span>
-                      Googleレビュー
-                    </div>
-                    <span className="text-xs text-gray-400">1週間前</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            {/* Review 3 - ami */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-400 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg transform scale-110"></div>
-              <div className="relative bg-white p-6 rounded-2xl shadow-lg hover-lift border border-purple-200 h-full">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold">A</span>
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-gray-900">ami</h4>
-                    <p className="text-xs text-gray-500">10件のクチコミ • 11枚の写真</p>
-                    <div className="flex">
-                      {[...Array(5)].map((_, i) => (
-                        <span key={i} className="text-yellow-400 text-sm">★</span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-                <p className="text-gray-700 leading-relaxed text-sm">
-                  デスクワークの為、肩凝り・首の痛みに悩んでおり、伺いました。丁寧なカウンセリングと施術をして頂き、施術後は肩・首の痛みはもちろん、巻き肩でも悩んでいたのに、すっと姿勢が正されて自分でも驚きました！立地も桜並木駅前で駐車場もあり、仕事終わりでも通いやすいと思ったのも決め手でした。
-                </p>
-                <div className="mt-4 pt-4 border-t border-gray-100">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2 text-xs text-gray-500">
-                      <span className="w-4 h-4 bg-red-500 rounded-full flex items-center justify-center">
-                        <span className="text-white text-xs">G</span>
-                      </span>
-                      Googleレビュー
-                    </div>
-                    <span className="text-xs text-gray-400">3週間前</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          {/* Trust Badge */}
-          <div className="text-center mt-12">
-            <div className="inline-flex items-center gap-4 bg-white p-6 rounded-2xl shadow-lg border border-yellow-200">
-              <div className="w-12 h-12 bg-yellow-500 rounded-xl flex items-center justify-center">
-                <div className="w-6 h-6 bg-white rounded-full"></div>
-              </div>
-              <div>
-                <h3 className="text-xl font-black text-gray-900 mb-1">地域ナンバー1の信頼と実績</h3>
-                <p className="text-gray-600">多くの患者様から高評価をいただいています</p>
               </div>
             </div>
           </div>
