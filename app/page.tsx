@@ -259,16 +259,14 @@ export default function Home() {
             </div>
           </div>
           
-          {/* CTA Buttons */}
+          {/* CTA Buttons - Redesigned */}
           <div className="mb-8">
-            <div className="flex flex-row gap-3 justify-center px-4 max-w-md mx-auto">
-              <a href="tel:070-5530-6656" className="relative overflow-hidden bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-500 text-black px-4 py-3 rounded-full font-black text-sm shadow-lg transition-all duration-500 hover:scale-105 hover:shadow-2xl text-center group flex-1">
-                <span className="relative z-10">電話で相談</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+            <div className="space-y-4 max-w-xs mx-auto">
+              <a href="tel:070-5530-6656" className="block w-full bg-yellow-400 hover:bg-yellow-300 text-black px-8 py-4 rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 text-center">
+                📞 今すぐ電話で相談
               </a>
-              <a href="https://lin.ee/Y6Hzw7E" className="relative overflow-hidden bg-gradient-to-r from-green-500 via-green-600 to-emerald-600 text-white px-4 py-3 rounded-full font-black text-sm shadow-lg transition-all duration-500 hover:scale-105 hover:shadow-2xl text-center group flex-1">
-                <span className="relative z-10">LINE予約</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+              <a href="https://lin.ee/Y6Hzw7E" className="block w-full bg-green-500 hover:bg-green-400 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 text-center">
+                💬 LINE で予約
               </a>
             </div>
           </div>
@@ -346,18 +344,15 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-700 blur-xl transform scale-110"></div>
               <div className="relative bg-black/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 h-full hover:border-green-500/50 transition-all duration-700 group-hover:transform group-hover:scale-105">
                 <div className="flex flex-col items-center text-center">
-                  <div className="relative mb-8">
-                    <div className="w-32 h-32 bg-gradient-to-br from-green-400 to-emerald-500 rounded-3xl flex items-center justify-center mb-4 shadow-2xl group-hover:shadow-green-500/50 transition-all duration-700">
+                  <div className="mb-8">
+                    <div className="w-40 h-40 mx-auto rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-green-500/50 transition-all duration-700">
                       <Image
                         src="/images/お金.png"
                         alt="完全自己負担0円"
-                        width={80}
-                        height={80}
-                        className="object-contain"
+                        width={160}
+                        height={160}
+                        className="object-cover w-full h-full"
                       />
-                    </div>
-                    <div className="absolute -top-3 -right-3 w-12 h-12 bg-green-500 rounded-full flex items-center justify-center shadow-xl">
-                      <span className="text-white text-sm font-bold">0¥</span>
                     </div>
                   </div>
                   <h3 className="text-xl font-black mb-4 text-white">完全自己負担0円</h3>
@@ -376,18 +371,15 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-700 blur-xl transform scale-110"></div>
               <div className="relative bg-black/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 h-full hover:border-blue-500/50 transition-all duration-700 group-hover:transform group-hover:scale-105">
                 <div className="flex flex-col items-center text-center">
-                  <div className="relative mb-8">
-                    <div className="w-32 h-32 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-3xl flex items-center justify-center mb-4 shadow-2xl group-hover:shadow-blue-500/50 transition-all duration-700">
+                  <div className="mb-8">
+                    <div className="w-40 h-40 mx-auto rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-blue-500/50 transition-all duration-700">
                       <Image
                         src="/images/夜20時まで.png"
                         alt="夜20時まで対応"
-                        width={80}
-                        height={80}
-                        className="object-contain"
+                        width={160}
+                        height={160}
+                        className="object-cover w-full h-full"
                       />
-                    </div>
-                    <div className="absolute -top-3 -right-3 w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center shadow-xl">
-                      <span className="text-white text-sm font-bold">20h</span>
                     </div>
                   </div>
                   <h3 className="text-xl font-black mb-4 text-white">夜20時まで対応</h3>
@@ -406,18 +398,15 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-700 blur-xl transform scale-110"></div>
               <div className="relative bg-black/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 h-full hover:border-purple-500/50 transition-all duration-700 group-hover:transform group-hover:scale-105">
                 <div className="flex flex-col items-center text-center">
-                  <div className="relative mb-8">
-                    <div className="w-32 h-32 bg-gradient-to-br from-purple-400 to-pink-500 rounded-3xl flex items-center justify-center mb-4 shadow-2xl group-hover:shadow-purple-500/50 transition-all duration-700">
+                  <div className="mb-8">
+                    <div className="w-40 h-40 mx-auto rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-purple-500/50 transition-all duration-700">
                       <Image
                         src="/images/事故専門.png"
                         alt="交通事故専門治療"
-                        width={80}
-                        height={80}
-                        className="object-contain"
+                        width={160}
+                        height={160}
+                        className="object-cover w-full h-full"
                       />
-                    </div>
-                    <div className="absolute -top-3 -right-3 w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center shadow-xl">
-                      <span className="text-white text-sm font-bold">専</span>
                     </div>
                   </div>
                   <h3 className="text-xl font-black mb-4 text-white">交通事故専門治療</h3>
@@ -436,18 +425,15 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-r from-red-500/20 to-orange-500/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-700 blur-xl transform scale-110"></div>
               <div className="relative bg-black/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 h-full hover:border-red-500/50 transition-all duration-700 group-hover:transform group-hover:scale-105">
                 <div className="flex flex-col items-center text-center">
-                  <div className="relative mb-8">
-                    <div className="w-32 h-32 bg-gradient-to-br from-red-400 to-orange-500 rounded-3xl flex items-center justify-center mb-4 shadow-2xl group-hover:shadow-red-500/50 transition-all duration-700">
+                  <div className="mb-8">
+                    <div className="w-40 h-40 mx-auto rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-red-500/50 transition-all duration-700">
                       <Image
                         src="/images/事故当日.png"
                         alt="事故当日から対応"
-                        width={80}
-                        height={80}
-                        className="object-contain"
+                        width={160}
+                        height={160}
+                        className="object-cover w-full h-full"
                       />
-                    </div>
-                    <div className="absolute -top-3 -right-3 w-12 h-12 bg-red-500 rounded-full flex items-center justify-center shadow-xl">
-                      <span className="text-white text-sm font-bold">即</span>
                     </div>
                   </div>
                   <h3 className="text-xl font-black mb-4 text-white">事故当日から対応</h3>
@@ -466,18 +452,15 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-r from-amber-500/20 to-yellow-500/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-700 blur-xl transform scale-110"></div>
               <div className="relative bg-black/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 h-full hover:border-amber-500/50 transition-all duration-700 group-hover:transform group-hover:scale-105">
                 <div className="flex flex-col items-center text-center">
-                  <div className="relative mb-8">
-                    <div className="w-32 h-32 bg-gradient-to-br from-amber-400 to-yellow-500 rounded-3xl flex items-center justify-center mb-4 shadow-2xl group-hover:shadow-amber-500/50 transition-all duration-700">
+                  <div className="mb-8">
+                    <div className="w-40 h-40 mx-auto rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-amber-500/50 transition-all duration-700">
                       <Image
                         src="/images/書類.png"
                         alt="書類手続き代行"
-                        width={80}
-                        height={80}
-                        className="object-contain"
+                        width={160}
+                        height={160}
+                        className="object-cover w-full h-full"
                       />
-                    </div>
-                    <div className="absolute -top-3 -right-3 w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center shadow-xl">
-                      <span className="text-white text-sm font-bold">書</span>
                     </div>
                   </div>
                   <h3 className="text-xl font-black mb-4 text-white">書類手続き代行</h3>
@@ -496,18 +479,15 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-teal-500/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-700 blur-xl transform scale-110"></div>
               <div className="relative bg-black/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 h-full hover:border-cyan-500/50 transition-all duration-700 group-hover:transform group-hover:scale-105">
                 <div className="flex flex-col items-center text-center">
-                  <div className="relative mb-8">
-                    <div className="w-32 h-32 bg-gradient-to-br from-cyan-400 to-teal-500 rounded-3xl flex items-center justify-center mb-4 shadow-2xl group-hover:shadow-cyan-500/50 transition-all duration-700">
+                  <div className="mb-8">
+                    <div className="w-40 h-40 mx-auto rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-cyan-500/50 transition-all duration-700">
                       <Image
                         src="/images/駅チカ.png"
                         alt="駅前徒歩1分"
-                        width={80}
-                        height={80}
-                        className="object-contain"
+                        width={160}
+                        height={160}
+                        className="object-cover w-full h-full"
                       />
-                    </div>
-                    <div className="absolute -top-3 -right-3 w-12 h-12 bg-cyan-500 rounded-full flex items-center justify-center shadow-xl">
-                      <span className="text-white text-sm font-bold">1m</span>
                     </div>
                   </div>
                   <h3 className="text-xl font-black mb-4 text-white">駅前徒歩1分</h3>
@@ -707,18 +687,18 @@ export default function Home() {
             <div className="group relative">
               <div className="bg-white p-8 rounded-3xl shadow-sm hover:shadow-lg transition-all duration-500 border border-gray-200 h-full">
                 <div className="flex flex-col items-center text-center">
-                  <div className="relative mb-6">
-                    <div className="w-24 h-24 rounded-2xl overflow-hidden shadow-md mb-4">
+                  <div className="mb-8">
+                    <div className="w-32 h-32 mx-auto rounded-2xl overflow-hidden shadow-lg">
                       <Image
                         src="/images/step1-phone.jpg"
                         alt="電話で相談"
-                        width={96}
-                        height={96}
+                        width={128}
+                        height={128}
                         className="object-cover w-full h-full"
                       />
                     </div>
-                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">1</span>
+                    <div className="mt-4 text-center">
+                      <span className="inline-block bg-red-100 text-red-700 px-4 py-1 rounded-full text-sm font-semibold">STEP 1</span>
                     </div>
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">お電話でご相談</h3>
@@ -731,18 +711,18 @@ export default function Home() {
             <div className="group relative">
               <div className="bg-white p-8 rounded-3xl shadow-sm hover:shadow-lg transition-all duration-500 border border-gray-200 h-full">
                 <div className="flex flex-col items-center text-center">
-                  <div className="relative mb-6">
-                    <div className="w-24 h-24 rounded-2xl overflow-hidden shadow-md mb-4">
+                  <div className="mb-8">
+                    <div className="w-32 h-32 mx-auto rounded-2xl overflow-hidden shadow-lg">
                       <Image
                         src="/images/step2-visit.jpg"
                         alt="来院・検査"
-                        width={96}
-                        height={96}
+                        width={128}
+                        height={128}
                         className="object-cover w-full h-full"
                       />
                     </div>
-                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">2</span>
+                    <div className="mt-4 text-center">
+                      <span className="inline-block bg-orange-100 text-orange-700 px-4 py-1 rounded-full text-sm font-semibold">STEP 2</span>
                     </div>
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">来院・検査</h3>
@@ -755,18 +735,18 @@ export default function Home() {
             <div className="group relative">
               <div className="bg-white p-8 rounded-3xl shadow-sm hover:shadow-lg transition-all duration-500 border border-gray-200 h-full">
                 <div className="flex flex-col items-center text-center">
-                  <div className="relative mb-6">
-                    <div className="w-24 h-24 rounded-2xl overflow-hidden shadow-md mb-4">
+                  <div className="mb-8">
+                    <div className="w-32 h-32 mx-auto rounded-2xl overflow-hidden shadow-lg">
                       <Image
                         src="/images/step3-treatment.jpg"
                         alt="治療開始"
-                        width={96}
-                        height={96}
+                        width={128}
+                        height={128}
                         className="object-cover w-full h-full"
                       />
                     </div>
-                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">3</span>
+                    <div className="mt-4 text-center">
+                      <span className="inline-block bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-sm font-semibold">STEP 3</span>
                     </div>
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">治療開始</h3>
@@ -779,18 +759,18 @@ export default function Home() {
             <div className="group relative">
               <div className="bg-white p-8 rounded-3xl shadow-sm hover:shadow-lg transition-all duration-500 border border-gray-200 h-full">
                 <div className="flex flex-col items-center text-center">
-                  <div className="relative mb-6">
-                    <div className="w-24 h-24 rounded-2xl overflow-hidden shadow-md mb-4">
+                  <div className="mb-8">
+                    <div className="w-32 h-32 mx-auto rounded-2xl overflow-hidden shadow-lg">
                       <Image
                         src="/images/step4-recovery.jpg"
                         alt="完全回復"
-                        width={96}
-                        height={96}
+                        width={128}
+                        height={128}
                         className="object-cover w-full h-full"
                       />
                     </div>
-                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs font-bold">4</span>
+                    <div className="mt-4 text-center">
+                      <span className="inline-block bg-green-100 text-green-700 px-4 py-1 rounded-full text-sm font-semibold">STEP 4</span>
                     </div>
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">完全回復</h3>
