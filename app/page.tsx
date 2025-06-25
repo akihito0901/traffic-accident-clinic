@@ -188,86 +188,127 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      {/* Hero Section */}
-      <section id="hero" className="relative min-h-screen flex items-center justify-center" aria-label="メインヒーローセクション">
-        {/* Background Image */}
+      {/* Premium Hero Section */}
+      <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden" aria-label="メインヒーローセクション">
+        {/* Enhanced Background with Multiple Layers */}
         <div className="absolute inset-0">
           <Image
             src="/images/hero-background.jpg"
             alt="福岡市博多区の桜並木駅前の整骨院での交通事故治療イメージ"
             fill
-            className="object-cover"
+            className="object-cover scale-105"
             priority
             sizes="100vw"
-            quality={85}
+            quality={90}
           />
         </div>
-        {/* Background Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-red-600/80 via-red-700/80 to-red-800/80"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+        
+        {/* Sophisticated Overlay System */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/95 via-slate-800/90 to-slate-900/95"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20"></div>
+        
+        {/* Dynamic Geometric Elements */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-500/30 to-purple-500/30 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-emerald-500/30 to-cyan-500/30 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+        </div>
+        
+        {/* Subtle Grid Pattern */}
+        <div className="absolute inset-0 opacity-5" style={{
+          backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 0)`,
+          backgroundSize: '50px 50px'
+        }}></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-          {/* Emergency Badge */}
-          <div className="mb-8">
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-6 py-3 rounded-full font-bold text-sm sm:text-base shadow-lg">
-              <span className="w-3 h-3 bg-red-500 rounded-full"></span>
-              緊急対応可能・24時間受付
+          {/* Premium Status Badge */}
+          <div className="mb-12 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+            <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-8 py-4 rounded-full border border-white/20 shadow-2xl">
+              <div className="w-3 h-3 bg-emerald-400 rounded-full animate-pulse"></div>
+              <span className="text-white/90 font-medium text-sm tracking-wide uppercase">緊急対応可能・24時間受付</span>
             </div>
           </div>
           
-          {/* Clinic Name */}
-          <div className="mb-6">
-            <div className="inline-block px-6 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
-              <p className="text-white/90 font-medium text-sm sm:text-base">福岡市博多区・桜並木駅徒歩1分</p>
+          {/* Elegant Location Badge */}
+          <div className="mb-8 animate-fade-in-up" style={{animationDelay: '0.4s'}}>
+            <div className="inline-flex items-center gap-2">
+              <div className="w-8 h-px bg-gradient-to-r from-transparent to-white/40"></div>
+              <p className="text-white/70 font-light text-sm tracking-wider uppercase">福岡市博多区・桜並木駅徒歩1分</p>
+              <div className="w-8 h-px bg-gradient-to-l from-transparent to-white/40"></div>
             </div>
           </div>
           
-          {/* Main Title */}
-          <div className="mb-8">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-4 leading-tight">
-              <span className="block">交通事故治療</span>
-              <span className="block bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 bg-clip-text text-transparent text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black">
-                自己負担0円
-              </span>
+          {/* Sophisticated Main Title */}
+          <div className="mb-12 animate-fade-in-up" style={{animationDelay: '0.6s'}}>
+            <h1 className="space-y-4">
+              <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-white leading-tight tracking-tight">
+                交通事故治療
+              </div>
+              <div className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black leading-none">
+                <span className="bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent">
+                  自己負担
+                </span>
+                <span className="bg-gradient-to-r from-amber-300 via-yellow-300 to-amber-400 bg-clip-text text-transparent ml-4">
+                  0円
+                </span>
+              </div>
             </h1>
           </div>
           
-          {/* Subtitle */}
-          <div className="mb-10">
-            <p className="text-xl sm:text-2xl md:text-3xl font-medium text-gray-100 leading-relaxed">
-              むちうち・打撲・捻挫など<br className="block sm:hidden" />
-              <span className="text-yellow-300 font-bold">すべて治療費無料</span>
+          {/* Refined Subtitle */}
+          <div className="mb-16 animate-fade-in-up" style={{animationDelay: '0.8s'}}>
+            <p className="text-xl sm:text-2xl font-light text-white/80 leading-relaxed max-w-3xl mx-auto">
+              むちうち・打撲・捻挫など、
+              <span className="text-amber-300 font-medium">すべての治療費が無料</span>
+              <br className="hidden sm:block" />
+              保険手続きから完全回復まで、すべてをサポートします
             </p>
           </div>
           
-          {/* Phone Card */}
-          <div className="mb-10">
-            <div className="premium-border max-w-2xl mx-auto">
-              <div className="p-6 sm:p-8 rounded-2xl bg-black/60 backdrop-blur-sm luxury-shadow cursor-glow">
-                <div className="text-center mb-4">
-                  <p className="text-lg sm:text-xl font-medium text-white/90 mb-2">桜並木駅前の整骨院</p>
-                  <p className="text-xl sm:text-2xl font-bold text-white">まずはお電話ください</p>
+          {/* Premium Contact Card */}
+          <div className="mb-16 animate-fade-in-up" style={{animationDelay: '1.0s'}}>
+            <div className="relative max-w-4xl mx-auto">
+              <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 sm:p-12 shadow-2xl">
+                {/* Elegant Header */}
+                <div className="text-center mb-8">
+                  <div className="inline-flex items-center gap-3 mb-4">
+                    <div className="w-12 h-px bg-gradient-to-r from-transparent to-white/30"></div>
+                    <h3 className="text-lg font-light text-white/70 tracking-wider uppercase">桜並木駅前の整骨院</h3>
+                    <div className="w-12 h-px bg-gradient-to-l from-transparent to-white/30"></div>
+                  </div>
+                  <p className="text-2xl sm:text-3xl font-light text-white mb-6">まずはお気軽にご相談ください</p>
                 </div>
-                <a href="tel:070-5530-6656" className="block text-3xl sm:text-4xl md:text-5xl font-black text-yellow-400 hover:text-yellow-300 transition-all duration-500 hover:scale-110 hover:drop-shadow-2xl">
-                  070-5530-6656
-                </a>
-                {/* Decorative elements */}
-                <div className="absolute top-4 right-4 w-8 h-8 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full opacity-20"></div>
-                <div className="absolute bottom-4 left-4 w-6 h-6 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full opacity-20"></div>
+                
+                {/* Phone Number with Premium Styling */}
+                <div className="text-center mb-8">
+                  <a href="tel:070-5530-6656" className="group inline-block">
+                    <div className="text-4xl sm:text-5xl md:text-6xl font-light text-white group-hover:text-amber-300 transition-all duration-700 tracking-wider">
+                      070-5530-6656
+                    </div>
+                    <div className="w-full h-px bg-gradient-to-r from-transparent via-white/30 to-transparent mt-4 group-hover:via-amber-300/50 transition-all duration-700"></div>
+                  </a>
+                </div>
+                
+                {/* Professional CTA Buttons */}
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <a href="tel:070-5530-6656" className="group relative overflow-hidden bg-white text-slate-900 px-8 py-4 rounded-full font-medium text-lg transition-all duration-700 hover:bg-amber-300 hover:scale-105 text-center">
+                    <span className="relative z-10 flex items-center justify-center gap-2">
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                      </svg>
+                      電話で相談
+                    </span>
+                  </a>
+                  <a href="https://lin.ee/Y6Hzw7E" className="group relative overflow-hidden bg-emerald-600 text-white px-8 py-4 rounded-full font-medium text-lg transition-all duration-700 hover:bg-emerald-700 hover:scale-105 text-center">
+                    <span className="relative z-10 flex items-center justify-center gap-2">
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clipRule="evenodd"/>
+                      </svg>
+                      LINE予約
+                    </span>
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
-          
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
-            <a href="tel:070-5530-6656" className="relative overflow-hidden bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-500 text-black px-8 py-5 rounded-full font-black text-lg luxury-shadow transition-all duration-500 hover:scale-110 hover:shadow-2xl text-center group">
-              <span className="relative z-10">電話で相談</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-            </a>
-            <a href="https://lin.ee/Y6Hzw7E" className="relative overflow-hidden bg-gradient-to-r from-green-500 via-green-600 to-emerald-600 text-white px-8 py-5 rounded-full font-black text-lg luxury-shadow transition-all duration-500 hover:scale-110 hover:shadow-2xl text-center group">
-              <span className="relative z-10">LINE予約</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-            </a>
           </div>
         </div>
       </section>
