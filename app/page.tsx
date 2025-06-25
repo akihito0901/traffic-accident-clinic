@@ -215,10 +215,12 @@ export default function Home() {
             </div>
           </div>
           
-          {/* Clinic Name - LARGE */}
+          {/* Clinic Name - LARGE with Rainbow */}
           <div className="mb-6">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-2">
-              桜並木駅前の整骨院
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-black mb-2">
+              <span className="bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 bg-clip-text text-transparent">
+                桜並木駅前の整骨院
+              </span>
             </h1>
             <div className="inline-block px-4 py-1 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
               <p className="text-white/90 font-medium text-xs sm:text-sm">福岡市博多区・桜並木駅徒歩1分</p>
@@ -244,13 +246,13 @@ export default function Home() {
           </div>
           
           {/* Phone Card */}
-          <div className="mb-10">
+          <div className="mb-8">
             <div className="max-w-2xl mx-auto">
-              <div className="p-6 sm:p-8 rounded-2xl bg-black/60 backdrop-blur-sm shadow-2xl">
-                <div className="text-center mb-4">
-                  <p className="text-lg sm:text-xl font-medium text-white/90 mb-2">まずはお電話ください</p>
+              <div className="p-4 sm:p-6 rounded-2xl bg-black/60 backdrop-blur-sm shadow-2xl">
+                <div className="text-center mb-2">
+                  <p className="text-base sm:text-lg font-medium text-white/90">まずはお電話ください</p>
                 </div>
-                <a href="tel:070-5530-6656" className="block text-2xl sm:text-3xl md:text-4xl font-black text-yellow-400 hover:text-yellow-300 transition-all duration-500 hover:scale-105 mb-6">
+                <a href="tel:070-5530-6656" className="block text-2xl sm:text-3xl md:text-4xl font-black text-yellow-400 hover:text-yellow-300 transition-all duration-500 hover:scale-105">
                   070-5530-6656
                 </a>
               </div>
@@ -258,15 +260,17 @@ export default function Home() {
           </div>
           
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
-            <a href="tel:070-5530-6656" className="relative overflow-hidden bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-500 text-black px-6 py-4 rounded-full font-black text-base shadow-lg transition-all duration-500 hover:scale-105 hover:shadow-2xl text-center group">
-              <span className="relative z-10">電話で相談</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-            </a>
-            <a href="https://lin.ee/Y6Hzw7E" className="relative overflow-hidden bg-gradient-to-r from-green-500 via-green-600 to-emerald-600 text-white px-6 py-4 rounded-full font-black text-base shadow-lg transition-all duration-500 hover:scale-105 hover:shadow-2xl text-center group">
-              <span className="relative z-10">LINE予約</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-            </a>
+          <div className="mb-8">
+            <div className="flex flex-row gap-3 justify-center px-4 max-w-md mx-auto">
+              <a href="tel:070-5530-6656" className="relative overflow-hidden bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-500 text-black px-4 py-3 rounded-full font-black text-sm shadow-lg transition-all duration-500 hover:scale-105 hover:shadow-2xl text-center group flex-1">
+                <span className="relative z-10">電話で相談</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+              </a>
+              <a href="https://lin.ee/Y6Hzw7E" className="relative overflow-hidden bg-gradient-to-r from-green-500 via-green-600 to-emerald-600 text-white px-4 py-3 rounded-full font-black text-sm shadow-lg transition-all duration-500 hover:scale-105 hover:shadow-2xl text-center group flex-1">
+                <span className="relative z-10">LINE予約</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -276,21 +280,21 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-400"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/10 to-transparent"></div>
         
-        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <div className="inline-flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center animate-pulse">
-                <span className="text-white text-2xl font-bold">!</span>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-6">
+              <div className="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center animate-pulse">
+                <span className="text-white text-lg font-bold">!</span>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-black text-red-600">交通事故に遭われた方へ</h2>
-              <div className="w-12 h-12 bg-red-500 rounded-full flex items-center justify-center animate-pulse">
-                <span className="text-white text-2xl font-bold">!</span>
+              <h2 className="text-lg sm:text-xl md:text-2xl font-black text-red-600">交通事故に遭われた方へ</h2>
+              <div className="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center animate-pulse">
+                <span className="text-white text-lg font-bold">!</span>
               </div>
             </div>
             
-            <div className="bg-white/90 backdrop-blur-sm p-6 sm:p-8 rounded-2xl shadow-xl border border-yellow-500/30 max-w-4xl mx-auto">
-              <p className="text-lg sm:text-xl text-gray-800 font-medium">
-                <span className="text-2xl sm:text-3xl font-black text-red-600">痛みがなくても必ず検査を！</span><br />
+            <div className="bg-white/90 backdrop-blur-sm p-4 sm:p-6 rounded-2xl shadow-xl border border-yellow-500/30 max-w-3xl mx-auto">
+              <p className="text-sm sm:text-base md:text-lg text-gray-800 font-medium">
+                <span className="text-base sm:text-lg md:text-xl font-black text-red-600">痛みがなくても必ず検査を！</span><br />
                 <span className="text-yellow-700 font-bold">早期治療で後遺症を防ぎましょう。</span>
               </p>
             </div>
