@@ -188,127 +188,85 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      {/* Premium Hero Section */}
-      <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden" aria-label="メインヒーローセクション">
-        {/* Enhanced Background with Multiple Layers */}
+      {/* Hero Section - Mobile Optimized */}
+      <section id="hero" className="relative min-h-screen flex items-center justify-center pt-8" aria-label="メインヒーローセクション">
+        {/* Background Image */}
         <div className="absolute inset-0">
           <Image
             src="/images/hero-background.jpg"
             alt="福岡市博多区の桜並木駅前の整骨院での交通事故治療イメージ"
             fill
-            className="object-cover scale-105"
+            className="object-cover"
             priority
             sizes="100vw"
-            quality={90}
+            quality={85}
           />
         </div>
-        
-        {/* Sophisticated Overlay System */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/95 via-slate-800/90 to-slate-900/95"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20"></div>
-        
-        {/* Dynamic Geometric Elements */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-500/30 to-purple-500/30 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-emerald-500/30 to-cyan-500/30 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
-        </div>
-        
-        {/* Subtle Grid Pattern */}
-        <div className="absolute inset-0 opacity-5" style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 0)`,
-          backgroundSize: '50px 50px'
-        }}></div>
+        {/* Red Background Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-red-600/85 via-red-700/85 to-red-800/85"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-          {/* Premium Status Badge */}
-          <div className="mb-12 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
-            <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-8 py-4 rounded-full border border-white/20 shadow-2xl">
-              <div className="w-3 h-3 bg-emerald-400 rounded-full animate-pulse"></div>
-              <span className="text-white/90 font-medium text-sm tracking-wide uppercase">緊急対応可能・24時間受付</span>
+          {/* Emergency Badge */}
+          <div className="mb-6">
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-4 py-2 rounded-full font-bold text-xs sm:text-sm shadow-lg">
+              <span className="w-2 h-2 bg-red-500 rounded-full"></span>
+              緊急対応可能・24時間受付
             </div>
           </div>
           
-          {/* Elegant Location Badge */}
-          <div className="mb-8 animate-fade-in-up" style={{animationDelay: '0.4s'}}>
-            <div className="inline-flex items-center gap-2">
-              <div className="w-8 h-px bg-gradient-to-r from-transparent to-white/40"></div>
-              <p className="text-white/70 font-light text-sm tracking-wider uppercase">福岡市博多区・桜並木駅徒歩1分</p>
-              <div className="w-8 h-px bg-gradient-to-l from-transparent to-white/40"></div>
-            </div>
-          </div>
-          
-          {/* Sophisticated Main Title */}
-          <div className="mb-12 animate-fade-in-up" style={{animationDelay: '0.6s'}}>
-            <h1 className="space-y-4">
-              <div className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-white leading-tight tracking-tight">
-                交通事故治療
-              </div>
-              <div className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black leading-none">
-                <span className="bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent">
-                  自己負担
-                </span>
-                <span className="bg-gradient-to-r from-amber-300 via-yellow-300 to-amber-400 bg-clip-text text-transparent ml-4">
-                  0円
-                </span>
-              </div>
+          {/* Clinic Name - LARGE */}
+          <div className="mb-6">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-2">
+              桜並木駅前の整骨院
             </h1>
+            <div className="inline-block px-4 py-1 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
+              <p className="text-white/90 font-medium text-xs sm:text-sm">福岡市博多区・桜並木駅徒歩1分</p>
+            </div>
           </div>
           
-          {/* Refined Subtitle */}
-          <div className="mb-16 animate-fade-in-up" style={{animationDelay: '0.8s'}}>
-            <p className="text-xl sm:text-2xl font-light text-white/80 leading-relaxed max-w-3xl mx-auto">
-              むちうち・打撲・捻挫など、
-              <span className="text-amber-300 font-medium">すべての治療費が無料</span>
-              <br className="hidden sm:block" />
-              保険手続きから完全回復まで、すべてをサポートします
+          {/* Main Title - iPhone Optimized */}
+          <div className="mb-8">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 leading-tight">
+              <span className="block text-white">交通事故治療</span>
+              <span className="block bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 bg-clip-text text-transparent text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black">
+                自己負担0円
+              </span>
+            </h2>
+          </div>
+          
+          {/* Subtitle */}
+          <div className="mb-10">
+            <p className="text-lg sm:text-xl md:text-2xl font-medium text-gray-100 leading-relaxed">
+              むちうち・打撲・捻挫など<br className="block sm:hidden" />
+              <span className="text-yellow-300 font-bold">すべて治療費無料</span>
             </p>
           </div>
           
-          {/* Premium Contact Card */}
-          <div className="mb-16 animate-fade-in-up" style={{animationDelay: '1.0s'}}>
-            <div className="relative max-w-4xl mx-auto">
-              <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 sm:p-12 shadow-2xl">
-                {/* Elegant Header */}
-                <div className="text-center mb-8">
-                  <div className="inline-flex items-center gap-3 mb-4">
-                    <div className="w-12 h-px bg-gradient-to-r from-transparent to-white/30"></div>
-                    <h3 className="text-lg font-light text-white/70 tracking-wider uppercase">桜並木駅前の整骨院</h3>
-                    <div className="w-12 h-px bg-gradient-to-l from-transparent to-white/30"></div>
-                  </div>
-                  <p className="text-2xl sm:text-3xl font-light text-white mb-6">まずはお気軽にご相談ください</p>
+          {/* Phone Card */}
+          <div className="mb-10">
+            <div className="max-w-2xl mx-auto">
+              <div className="p-6 sm:p-8 rounded-2xl bg-black/60 backdrop-blur-sm shadow-2xl">
+                <div className="text-center mb-4">
+                  <p className="text-lg sm:text-xl font-medium text-white/90 mb-2">まずはお電話ください</p>
                 </div>
-                
-                {/* Phone Number with Premium Styling */}
-                <div className="text-center mb-8">
-                  <a href="tel:070-5530-6656" className="group inline-block">
-                    <div className="text-4xl sm:text-5xl md:text-6xl font-light text-white group-hover:text-amber-300 transition-all duration-700 tracking-wider">
-                      070-5530-6656
-                    </div>
-                    <div className="w-full h-px bg-gradient-to-r from-transparent via-white/30 to-transparent mt-4 group-hover:via-amber-300/50 transition-all duration-700"></div>
-                  </a>
-                </div>
-                
-                {/* Professional CTA Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <a href="tel:070-5530-6656" className="group relative overflow-hidden bg-white text-slate-900 px-8 py-4 rounded-full font-medium text-lg transition-all duration-700 hover:bg-amber-300 hover:scale-105 text-center">
-                    <span className="relative z-10 flex items-center justify-center gap-2">
-                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
-                      </svg>
-                      電話で相談
-                    </span>
-                  </a>
-                  <a href="https://lin.ee/Y6Hzw7E" className="group relative overflow-hidden bg-emerald-600 text-white px-8 py-4 rounded-full font-medium text-lg transition-all duration-700 hover:bg-emerald-700 hover:scale-105 text-center">
-                    <span className="relative z-10 flex items-center justify-center gap-2">
-                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clipRule="evenodd"/>
-                      </svg>
-                      LINE予約
-                    </span>
-                  </a>
-                </div>
+                <a href="tel:070-5530-6656" className="block text-2xl sm:text-3xl md:text-4xl font-black text-yellow-400 hover:text-yellow-300 transition-all duration-500 hover:scale-105 mb-6">
+                  070-5530-6656
+                </a>
               </div>
             </div>
+          </div>
+          
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center px-4">
+            <a href="tel:070-5530-6656" className="relative overflow-hidden bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-500 text-black px-6 py-4 rounded-full font-black text-base shadow-lg transition-all duration-500 hover:scale-105 hover:shadow-2xl text-center group">
+              <span className="relative z-10">電話で相談</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+            </a>
+            <a href="https://lin.ee/Y6Hzw7E" className="relative overflow-hidden bg-gradient-to-r from-green-500 via-green-600 to-emerald-600 text-white px-6 py-4 rounded-full font-black text-base shadow-lg transition-all duration-500 hover:scale-105 hover:shadow-2xl text-center group">
+              <span className="relative z-10">LINE予約</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+            </a>
           </div>
         </div>
       </section>
@@ -340,194 +298,104 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Features - Sophisticated Minimal Design */}
-      <section className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-white overflow-hidden">
-        {/* Subtle Background Pattern */}
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-50/50 to-gray-50/30"></div>
-          <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-slate-200 to-transparent"></div>
-          <div className="absolute top-0 right-1/4 w-px h-full bg-gradient-to-b from-transparent via-slate-200 to-transparent"></div>
-          <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
-          <div className="absolute bottom-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
-        </div>
-        
-        <div className="relative z-10 max-w-7xl mx-auto">
-          {/* Elegant Section Header */}
-          <div className="text-center mb-20">
-            <div className="inline-flex items-center gap-3 mb-6">
-              <div className="w-12 h-px bg-gradient-to-r from-transparent to-slate-400"></div>
-              <span className="text-slate-500 text-sm font-medium tracking-wider uppercase">Why Choose Us</span>
-              <div className="w-12 h-px bg-gradient-to-l from-transparent to-slate-400"></div>
+      {/* Features - Clean and Clear */}
+      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
+        <div className="max-w-7xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <div className="inline-block mb-4">
+              <span className="bg-gradient-to-r from-red-500 to-red-600 text-white px-4 py-2 rounded-full text-sm font-bold">選ばれる理由</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-slate-900 mb-6 tracking-tight">
-              選ばれる
-              <span className="font-semibold text-slate-700">理由</span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-gray-900 mb-4">
+              当院の交通事故治療が
+              <span className="block text-red-600">選ばれる理由</span>
             </h2>
-            <div className="flex items-center justify-center gap-3 mb-8">
-              <div className="flex items-center gap-1">
-                {[...Array(5)].map((_, i) => (
-                  <div key={i} className="w-3 h-3 bg-amber-400 rounded-full"></div>
-                ))}
-              </div>
-              <span className="text-slate-600 font-medium">満足度 98%</span>
-            </div>
+            <div className="w-24 h-1 bg-gradient-to-r from-red-500 to-yellow-500 mx-auto rounded-full"></div>
           </div>
           
-          {/* Premium Features Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
-            {/* Feature 1 - 0円治療 */}
+          {/* Features Grid - Mobile Optimized */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Feature 1 */}
             <div className="group relative">
-              <div className="relative bg-white border border-slate-100 hover:border-slate-200 transition-all duration-700 ease-out hover:shadow-xl hover:shadow-slate-200/50 rounded-2xl p-8 h-full">
-                <div className="flex flex-col items-center text-center">
-                  <div className="relative mb-8">
-                    <div className="w-16 h-16 bg-slate-900 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500">
-                      <span className="text-white text-2xl font-light">0</span>
-                      <span className="text-white text-lg font-light">¥</span>
-                    </div>
-                    <div className="absolute -top-1 -right-1 w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs font-medium">✓</span>
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-4 text-slate-900">完全自己負担0円</h3>
-                  <p className="text-slate-600 leading-relaxed mb-6 text-sm">
-                    自賠責保険適用により治療費は完全無料。窓口負担なしで安心して治療に専念できます。
-                  </p>
-                  <div className="mt-auto">
-                    <span className="inline-block bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-xs font-medium">保険適用</span>
-                  </div>
+              <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-red-600 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg"></div>
+              <div className="relative bg-white p-6 rounded-2xl shadow-xl hover-lift border border-gray-100 h-full">
+                <div className="w-14 h-14 bg-gradient-to-r from-red-500 to-red-600 rounded-2xl flex items-center justify-center mb-4 mx-auto">
+                  <span className="text-white text-xl font-bold">0¥</span>
                 </div>
+                <h3 className="text-lg font-black mb-3 text-gray-900 text-center">完全自己負担0円</h3>
+                <p className="text-gray-600 text-center leading-relaxed text-sm">
+                  自賠責保険適用により、窓口での負担金は一切かかりません。安心して治療に専念できます。
+                </p>
               </div>
             </div>
             
-            {/* Feature 2 - 夜間対応 */}
+            {/* Feature 2 */}
             <div className="group relative">
-              <div className="relative bg-white border border-slate-100 hover:border-slate-200 transition-all duration-700 ease-out hover:shadow-xl hover:shadow-slate-200/50 rounded-2xl p-8 h-full">
-                <div className="flex flex-col items-center text-center">
-                  <div className="relative mb-8">
-                    <div className="w-16 h-16 bg-slate-900 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500">
-                      <span className="text-white text-2xl font-light">20</span>
-                    </div>
-                    <div className="absolute -top-1 -right-1 w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs font-medium">h</span>
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-4 text-slate-900">夜20時まで対応</h3>
-                  <p className="text-slate-600 leading-relaxed mb-6 text-sm">
-                    お仕事帰りでも安心。平日20時、土曜14時まで営業で忙しいあなたをサポートします。
-                  </p>
-                  <div className="mt-auto">
-                    <span className="inline-block bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-xs font-medium">夜間対応</span>
-                  </div>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg"></div>
+              <div className="relative bg-white p-6 rounded-2xl shadow-xl hover-lift border border-gray-100 h-full">
+                <div className="w-14 h-14 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-4 mx-auto">
+                  <span className="text-white text-xl font-bold">20</span>
                 </div>
+                <h3 className="text-lg font-black mb-3 text-gray-900 text-center">夜20時まで営業</h3>
+                <p className="text-gray-600 text-center leading-relaxed text-sm">
+                  お仕事帰りでも通院可能。平日20時、土曜14時まで営業で、あなたの都合に合わせて通院できます。
+                </p>
               </div>
             </div>
             
-            {/* Feature 3 - 専門治療 */}
+            {/* Feature 3 */}
             <div className="group relative">
-              <div className="relative bg-white border border-slate-100 hover:border-slate-200 transition-all duration-700 ease-out hover:shadow-xl hover:shadow-slate-200/50 rounded-2xl p-8 h-full">
-                <div className="flex flex-col items-center text-center">
-                  <div className="relative mb-8">
-                    <div className="w-16 h-16 bg-slate-900 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500">
-                      <span className="text-white text-2xl font-light">専</span>
-                    </div>
-                    <div className="absolute -top-1 -right-1 w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs font-medium">門</span>
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-4 text-slate-900">交通事故専門治療</h3>
-                  <p className="text-slate-600 leading-relaxed mb-6 text-sm">
-                    むちうち・腰痛治療の豊富な経験。症状の根本原因から改善する専門的アプローチ。
-                  </p>
-                  <div className="mt-auto">
-                    <span className="inline-block bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-xs font-medium">専門技術</span>
-                  </div>
+              <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-green-600 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg"></div>
+              <div className="relative bg-white p-6 rounded-2xl shadow-xl hover-lift border border-gray-100 h-full">
+                <div className="w-14 h-14 bg-gradient-to-r from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-4 mx-auto">
+                  <span className="text-white text-xl font-bold">専</span>
                 </div>
+                <h3 className="text-lg font-black mb-3 text-gray-900 text-center">専門治療</h3>
+                <p className="text-gray-600 text-center leading-relaxed text-sm">
+                  交通事故治療の専門知識と豊富な経験で、むちうちや腰痛などの症状を根本から改善します。
+                </p>
               </div>
             </div>
             
-            {/* Feature 4 - 即日対応 */}
+            {/* Feature 4 */}
             <div className="group relative">
-              <div className="relative bg-white border border-slate-100 hover:border-slate-200 transition-all duration-700 ease-out hover:shadow-xl hover:shadow-slate-200/50 rounded-2xl p-8 h-full">
-                <div className="flex flex-col items-center text-center">
-                  <div className="relative mb-8">
-                    <div className="w-16 h-16 bg-slate-900 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500">
-                      <span className="text-white text-2xl font-light">即</span>
-                    </div>
-                    <div className="absolute -top-1 -right-1 w-6 h-6 bg-red-500 rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs font-medium">日</span>
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-4 text-slate-900">事故当日から対応</h3>
-                  <p className="text-slate-600 leading-relaxed mb-6 text-sm">
-                    緊急対応可能。事故直後の早期治療開始で後遺症を防ぎ、スピーディーな回復を実現。
-                  </p>
-                  <div className="mt-auto">
-                    <span className="inline-block bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-xs font-medium">緊急対応</span>
-                  </div>
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-purple-600 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg"></div>
+              <div className="relative bg-white p-6 rounded-2xl shadow-xl hover-lift border border-gray-100 h-full">
+                <div className="w-14 h-14 bg-gradient-to-r from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-4 mx-auto">
+                  <span className="text-white text-xl font-bold">即</span>
                 </div>
+                <h3 className="text-lg font-black mb-3 text-gray-900 text-center">即日対応</h3>
+                <p className="text-gray-600 text-center leading-relaxed text-sm">
+                  事故当日でも対応可能。早期治療開始で後遺症を防ぎ、早期回復を目指します。
+                </p>
               </div>
             </div>
             
-            {/* Feature 5 - 書類サポート */}
+            {/* Feature 5 */}
             <div className="group relative">
-              <div className="relative bg-white border border-slate-100 hover:border-slate-200 transition-all duration-700 ease-out hover:shadow-xl hover:shadow-slate-200/50 rounded-2xl p-8 h-full">
-                <div className="flex flex-col items-center text-center">
-                  <div className="relative mb-8">
-                    <div className="w-16 h-16 bg-slate-900 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500">
-                      <span className="text-white text-2xl font-light">書</span>
-                    </div>
-                    <div className="absolute -top-1 -right-1 w-6 h-6 bg-amber-500 rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs font-medium">類</span>
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-4 text-slate-900">書類手続き代行</h3>
-                  <p className="text-slate-600 leading-relaxed mb-6 text-sm">
-                    保険会社とのやりとりから診断書作成まで。複雑な手続きを専門スタッフが代行。
-                  </p>
-                  <div className="mt-auto">
-                    <span className="inline-block bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-xs font-medium">代行サービス</span>
-                  </div>
+              <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg"></div>
+              <div className="relative bg-white p-6 rounded-2xl shadow-xl hover-lift border border-gray-100 h-full">
+                <div className="w-14 h-14 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-4 mx-auto">
+                  <span className="text-white text-xl font-bold">書</span>
                 </div>
+                <h3 className="text-lg font-black mb-3 text-gray-900 text-center">書類サポート</h3>
+                <p className="text-gray-600 text-center leading-relaxed text-sm">
+                  保険会社との手続きや診断書作成など、複雑な書類手続きを全面的にサポートします。
+                </p>
               </div>
             </div>
             
-            {/* Feature 6 - アクセス */}
+            {/* Feature 6 */}
             <div className="group relative">
-              <div className="relative bg-white border border-slate-100 hover:border-slate-200 transition-all duration-700 ease-out hover:shadow-xl hover:shadow-slate-200/50 rounded-2xl p-8 h-full">
-                <div className="flex flex-col items-center text-center">
-                  <div className="relative mb-8">
-                    <div className="w-16 h-16 bg-slate-900 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500">
-                      <span className="text-white text-2xl font-light">駅</span>
-                    </div>
-                    <div className="absolute -top-1 -right-1 w-6 h-6 bg-cyan-500 rounded-full flex items-center justify-center">
-                      <span className="text-white text-xs font-medium">1</span>
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-4 text-slate-900">駅前徒歩1分</h3>
-                  <p className="text-slate-600 leading-relaxed mb-6 text-sm">
-                    桜並木駅前の抜群立地。電車でもお車でもアクセス良好で通院がとても便利です。
-                  </p>
-                  <div className="mt-auto">
-                    <span className="inline-block bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-xs font-medium">好立地</span>
-                  </div>
+              <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg"></div>
+              <div className="relative bg-white p-6 rounded-2xl shadow-xl hover-lift border border-gray-100 h-full">
+                <div className="w-14 h-14 bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-4 mx-auto">
+                  <span className="text-white text-xl font-bold">駅</span>
                 </div>
-              </div>
-            </div>
-          </div>
-          
-          {/* Premium Trust Badge */}
-          <div className="text-center mt-20">
-            <div className="inline-flex items-center gap-8 bg-slate-50/50 border border-slate-100 p-10 rounded-2xl max-w-3xl mx-auto">
-              <div className="w-20 h-20 bg-slate-900 rounded-xl flex items-center justify-center">
-                <div className="flex items-center gap-1">
-                  <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
-                  <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
-                  <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
-                </div>
-              </div>
-              <div className="text-left">
-                <h3 className="text-2xl font-light text-slate-900 mb-2">地域で選ばれる<span className="font-semibold">信頼の治療院</span></h3>
-                <p className="text-slate-600">多くの交通事故患者様から信頼をいただいています</p>
+                <h3 className="text-lg font-black mb-3 text-gray-900 text-center">駅前立地</h3>
+                <p className="text-gray-600 text-center leading-relaxed text-sm">
+                  桜並木駅前の好立地で通院便利。お車でお越しの方には駐車場もご用意しています。
+                </p>
               </div>
             </div>
           </div>
@@ -686,22 +554,16 @@ export default function Home() {
             <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
           </div>
           
-          {/* Flow Steps - Streamlined Design */}
-          <div className="space-y-6">
+          {/* Flow Steps - Mobile Optimized */}
+          <div className="space-y-8">
             {/* Step 1 */}
             <div className="group relative">
-              <div className="flex items-center gap-6 bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover-lift border border-gray-100">
-                <div className="flex-shrink-0">
-                  <div className="w-16 h-16 bg-gradient-to-r from-red-500 to-red-600 rounded-xl flex items-center justify-center shadow-lg">
+              <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-16 h-16 bg-gradient-to-r from-red-500 to-red-600 rounded-xl flex items-center justify-center shadow-lg mb-4">
                     <span className="text-white text-xl font-black">1</span>
                   </div>
-                </div>
-                <div className="flex-grow">
-                  <h3 className="text-xl font-black text-gray-900 mb-2">お電話でご相談</h3>
-                  <p className="text-gray-600 leading-relaxed">まずはお電話ください。事故の状況をお聞きし、今後の流れをご説明します。</p>
-                </div>
-                <div className="flex-shrink-0">
-                  <div className="w-20 h-20 rounded-xl overflow-hidden shadow-lg">
+                  <div className="w-20 h-20 rounded-xl overflow-hidden shadow-lg mb-4">
                     <Image
                       src="/images/step1-phone.jpg"
                       alt="電話で相談"
@@ -710,6 +572,8 @@ export default function Home() {
                       className="object-cover w-full h-full"
                     />
                   </div>
+                  <h3 className="text-lg font-black text-gray-900 mb-2">お電話でご相談</h3>
+                  <p className="text-gray-600 leading-relaxed text-sm">まずはお電話ください。事故の状況をお聞きし、今後の流れをご説明します。</p>
                 </div>
               </div>
             </div>
@@ -721,18 +585,12 @@ export default function Home() {
             
             {/* Step 2 */}
             <div className="group relative">
-              <div className="flex items-center gap-6 bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover-lift border border-gray-100">
-                <div className="flex-shrink-0">
-                  <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl flex items-center justify-center shadow-lg">
+              <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl flex items-center justify-center shadow-lg mb-4">
                     <span className="text-white text-xl font-black">2</span>
                   </div>
-                </div>
-                <div className="flex-grow">
-                  <h3 className="text-xl font-black text-gray-900 mb-2">来院・検査</h3>
-                  <p className="text-gray-600 leading-relaxed">詳しい症状の確認と検査を行い、最適な治療計画を立てます。</p>
-                </div>
-                <div className="flex-shrink-0">
-                  <div className="w-20 h-20 rounded-xl overflow-hidden shadow-lg">
+                  <div className="w-20 h-20 rounded-xl overflow-hidden shadow-lg mb-4">
                     <Image
                       src="/images/step2-visit.jpg"
                       alt="来院・検査"
@@ -741,6 +599,8 @@ export default function Home() {
                       className="object-cover w-full h-full"
                     />
                   </div>
+                  <h3 className="text-lg font-black text-gray-900 mb-2">来院・検査</h3>
+                  <p className="text-gray-600 leading-relaxed text-sm">詳しい症状の確認と検査を行い、最適な治療計画を立てます。</p>
                 </div>
               </div>
             </div>
@@ -752,18 +612,12 @@ export default function Home() {
             
             {/* Step 3 */}
             <div className="group relative">
-              <div className="flex items-center gap-6 bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover-lift border border-gray-100">
-                <div className="flex-shrink-0">
-                  <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
+              <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg mb-4">
                     <span className="text-white text-xl font-black">3</span>
                   </div>
-                </div>
-                <div className="flex-grow">
-                  <h3 className="text-xl font-black text-gray-900 mb-2">治療開始</h3>
-                  <p className="text-gray-600 leading-relaxed">患者様の症状に合わせたオーダーメイド治療を開始します。</p>
-                </div>
-                <div className="flex-shrink-0">
-                  <div className="w-20 h-20 rounded-xl overflow-hidden shadow-lg">
+                  <div className="w-20 h-20 rounded-xl overflow-hidden shadow-lg mb-4">
                     <Image
                       src="/images/step3-treatment.jpg"
                       alt="治療開始"
@@ -772,6 +626,8 @@ export default function Home() {
                       className="object-cover w-full h-full"
                     />
                   </div>
+                  <h3 className="text-lg font-black text-gray-900 mb-2">治療開始</h3>
+                  <p className="text-gray-600 leading-relaxed text-sm">患者様の症状に合わせたオーダーメイド治療を開始します。</p>
                 </div>
               </div>
             </div>
@@ -783,18 +639,12 @@ export default function Home() {
             
             {/* Step 4 */}
             <div className="group relative">
-              <div className="flex items-center gap-6 bg-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover-lift border border-gray-100">
-                <div className="flex-shrink-0">
-                  <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-xl flex items-center justify-center shadow-lg">
+              <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-xl flex items-center justify-center shadow-lg mb-4">
                     <span className="text-white text-xl font-black">4</span>
                   </div>
-                </div>
-                <div className="flex-grow">
-                  <h3 className="text-xl font-black text-gray-900 mb-2">完全回復</h3>
-                  <p className="text-gray-600 leading-relaxed">症状の改善を確認しながら、完全回復まで責任を持ってサポートします。</p>
-                </div>
-                <div className="flex-shrink-0">
-                  <div className="w-20 h-20 rounded-xl overflow-hidden shadow-lg">
+                  <div className="w-20 h-20 rounded-xl overflow-hidden shadow-lg mb-4">
                     <Image
                       src="/images/step4-recovery.jpg"
                       alt="完全回復"
@@ -803,6 +653,8 @@ export default function Home() {
                       className="object-cover w-full h-full"
                     />
                   </div>
+                  <h3 className="text-lg font-black text-gray-900 mb-2">完全回復</h3>
+                  <p className="text-gray-600 leading-relaxed text-sm">症状の改善を確認しながら、完全回復まで責任を持ってサポートします。</p>
                 </div>
               </div>
             </div>
