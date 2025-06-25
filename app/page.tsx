@@ -207,67 +207,65 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-          {/* Emergency Badge */}
-          <div className="mb-6">
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-4 py-2 rounded-full font-bold text-xs sm:text-sm shadow-lg">
-              <span className="w-2 h-2 bg-red-500 rounded-full"></span>
-              緊急対応可能・24時間受付
-            </div>
-          </div>
-          
-          {/* Clinic Name - LARGE with Rainbow */}
-          <div className="mb-6">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-black mb-2">
-              <span className="bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 bg-clip-text text-transparent">
-                桜並木駅前の整骨院
-              </span>
-            </h1>
-            <div className="inline-block px-4 py-1 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
-              <p className="text-white/90 font-medium text-xs sm:text-sm">福岡市博多区・桜並木駅徒歩1分</p>
-            </div>
-          </div>
-          
-          {/* Main Title - iPhone Optimized */}
+          {/* Rainbow Glowing Clinic Name - HERO */}
           <div className="mb-8">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 leading-tight">
-              <span className="block text-white">交通事故治療</span>
-              <span className="block bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 bg-clip-text text-transparent text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black">
-                自己負担0円
-              </span>
-            </h2>
-          </div>
-          
-          {/* Subtitle */}
-          <div className="mb-10">
-            <p className="text-lg sm:text-xl md:text-2xl font-medium text-gray-100 leading-relaxed">
-              むちうち・打撲・捻挫など<br className="block sm:hidden" />
-              <span className="text-yellow-300 font-bold">すべて治療費無料</span>
-            </p>
-          </div>
-          
-          {/* Phone Card */}
-          <div className="mb-8">
-            <div className="max-w-2xl mx-auto">
-              <div className="p-4 sm:p-6 rounded-2xl bg-black/60 backdrop-blur-sm shadow-2xl">
-                <div className="text-center mb-2">
-                  <p className="text-base sm:text-lg font-medium text-white/90">まずはお電話ください</p>
+            <div className="relative">
+              {/* Glowing Background */}
+              <div className="absolute inset-0 bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 via-indigo-500 to-purple-500 rounded-3xl blur-xl opacity-60 animate-pulse"></div>
+              
+              {/* Main Clinic Name */}
+              <div className="relative bg-black/40 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-center leading-tight">
+                  <span className="bg-gradient-to-r from-red-400 via-yellow-400 via-green-400 via-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent animate-pulse bg-[length:400%_400%]" style={{animation: 'rainbow-shift 3s ease-in-out infinite'}}>
+                    桜並木駅前の
+                  </span>
+                  <br />
+                  <span className="bg-gradient-to-r from-purple-400 via-pink-400 via-red-400 via-yellow-400 via-green-400 to-blue-400 bg-clip-text text-transparent animate-pulse bg-[length:400%_400%]" style={{animation: 'rainbow-shift 3s ease-in-out infinite reverse'}}>
+                    整骨院
+                  </span>
+                </h1>
+                
+                {/* Location Badge */}
+                <div className="text-center mt-4">
+                  <div className="inline-block px-6 py-2 bg-gradient-to-r from-yellow-400 to-orange-400 text-black rounded-full font-bold text-sm shadow-lg">
+                    福岡市博多区・桜並木駅徒歩1分
+                  </div>
                 </div>
-                <a href="tel:070-5530-6656" className="block text-2xl sm:text-3xl md:text-4xl font-black text-yellow-400 hover:text-yellow-300 transition-all duration-500 hover:scale-105">
-                  070-5530-6656
-                </a>
               </div>
             </div>
           </div>
           
-          {/* CTA Buttons - Redesigned */}
+          {/* Main Message */}
           <div className="mb-8">
-            <div className="space-y-4 max-w-xs mx-auto">
-              <a href="tel:070-5530-6656" className="block w-full bg-yellow-400 hover:bg-yellow-300 text-black px-8 py-4 rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 text-center">
-                📞 今すぐ電話で相談
-              </a>
-              <a href="https://lin.ee/Y6Hzw7E" className="block w-full bg-green-500 hover:bg-green-400 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 text-center">
-                💬 LINE で予約
-              </a>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-center text-white mb-4">
+              交通事故治療
+            </h2>
+            <p className="text-3xl sm:text-4xl md:text-5xl font-black text-center">
+              <span className="bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 bg-clip-text text-transparent">
+                自己負担0円
+              </span>
+            </p>
+          </div>
+          
+          {/* Emergency Badge */}
+          <div className="mb-8">
+            <div className="text-center">
+              <div className="inline-flex items-center gap-2 bg-red-500 text-white px-6 py-3 rounded-full font-bold text-sm shadow-lg animate-pulse">
+                <span className="w-2 h-2 bg-yellow-400 rounded-full"></span>
+                緊急対応可能・24時間受付
+              </div>
+            </div>
+          </div>
+          
+          {/* Phone Card */}
+          <div className="mb-8">
+            <div className="max-w-lg mx-auto">
+              <div className="p-6 rounded-2xl bg-black/60 backdrop-blur-sm shadow-2xl border border-white/20 text-center">
+                <p className="text-white/90 font-medium mb-2">まずはお電話ください</p>
+                <a href="tel:070-5530-6656" className="block text-3xl sm:text-4xl font-black text-yellow-400 hover:text-yellow-300 transition-all duration-500">
+                  070-5530-6656
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -1414,6 +1412,36 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Sticky Bottom CTA */}
+      <div className="fixed bottom-0 left-0 right-0 z-50 bg-gradient-to-r from-yellow-400 to-orange-500 shadow-2xl border-t-2 border-yellow-300">
+        <div className="max-w-7xl mx-auto px-4 py-3">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
+            <div className="text-center sm:text-left">
+              <p className="text-black font-bold text-sm">
+                交通事故治療 自己負担0円
+              </p>
+              <p className="text-black/80 text-xs">
+                まずはお気軽にご相談ください
+              </p>
+            </div>
+            <div className="flex gap-3 shrink-0">
+              <a 
+                href="tel:070-5530-6656" 
+                className="bg-black text-yellow-400 px-6 py-3 rounded-full font-bold text-sm hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                📞 今すぐ電話
+              </a>
+              <a 
+                href="https://lin.ee/Y6Hzw7E" 
+                className="bg-green-600 text-white px-6 py-3 rounded-full font-bold text-sm hover:bg-green-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
+                💬 LINE予約
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
