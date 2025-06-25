@@ -261,12 +261,12 @@ export default function Home() {
           
           {/* CTA Buttons */}
           <div className="mb-8">
-            <div className="flex flex-row gap-4 justify-center px-4 max-w-2xl mx-auto">
-              <a href="tel:070-5530-6656" className="relative overflow-hidden bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-500 text-black px-6 py-4 rounded-full font-black text-base shadow-lg transition-all duration-500 hover:scale-105 hover:shadow-2xl text-center group flex-1">
+            <div className="flex flex-row gap-3 justify-center px-4 max-w-md mx-auto">
+              <a href="tel:070-5530-6656" className="relative overflow-hidden bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-500 text-black px-4 py-3 rounded-full font-black text-sm shadow-lg transition-all duration-500 hover:scale-105 hover:shadow-2xl text-center group flex-1">
                 <span className="relative z-10">電話で相談</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
               </a>
-              <a href="https://lin.ee/Y6Hzw7E" className="relative overflow-hidden bg-gradient-to-r from-green-500 via-green-600 to-emerald-600 text-white px-6 py-4 rounded-full font-black text-base shadow-lg transition-all duration-500 hover:scale-105 hover:shadow-2xl text-center group flex-1">
+              <a href="https://lin.ee/Y6Hzw7E" className="relative overflow-hidden bg-gradient-to-r from-green-500 via-green-600 to-emerald-600 text-white px-4 py-3 rounded-full font-black text-sm shadow-lg transition-all duration-500 hover:scale-105 hover:shadow-2xl text-center group flex-1">
                 <span className="relative z-10">LINE予約</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
               </a>
@@ -282,14 +282,11 @@ export default function Home() {
         
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-6">
+            <div className="flex items-center justify-center gap-3 mb-6">
               <div className="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center animate-pulse">
                 <span className="text-white text-lg font-bold">!</span>
               </div>
               <h2 className="text-lg sm:text-xl md:text-2xl font-black text-red-600">交通事故に遭われた方へ</h2>
-              <div className="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center animate-pulse">
-                <span className="text-white text-lg font-bold">!</span>
-              </div>
             </div>
             
             <div className="bg-white/90 backdrop-blur-sm p-4 sm:p-6 rounded-2xl shadow-xl border border-yellow-500/30 max-w-3xl mx-auto">
@@ -689,133 +686,126 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Treatment Flow */}
+      {/* Treatment Flow - Professional Redesign */}
       <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100"></div>
         <div className="relative z-10 max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
             <div className="inline-block mb-4">
-              <span className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-bold">簡単4ステップ</span>
+              <span className="bg-gray-800 text-white px-6 py-2 rounded-full text-sm font-medium tracking-wide">TREATMENT PROCESS</span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 mb-4">
               治療の流れ
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">シンプルで安心の治療プロセス</p>
           </div>
           
-          {/* Flow Steps - Mobile Optimized */}
-          <div className="space-y-8">
+          {/* Professional Flow Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Step 1 */}
             <div className="group relative">
-              <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+              <div className="bg-white p-8 rounded-3xl shadow-sm hover:shadow-lg transition-all duration-500 border border-gray-200 h-full">
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-16 h-16 bg-gradient-to-r from-red-500 to-red-600 rounded-xl flex items-center justify-center shadow-lg mb-4">
-                    <span className="text-white text-xl font-black">1</span>
+                  <div className="relative mb-6">
+                    <div className="w-24 h-24 rounded-2xl overflow-hidden shadow-md mb-4">
+                      <Image
+                        src="/images/step1-phone.jpg"
+                        alt="電話で相談"
+                        width={96}
+                        height={96}
+                        className="object-cover w-full h-full"
+                      />
+                    </div>
+                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">1</span>
+                    </div>
                   </div>
-                  <div className="w-20 h-20 rounded-xl overflow-hidden shadow-lg mb-4">
-                    <Image
-                      src="/images/step1-phone.jpg"
-                      alt="電話で相談"
-                      width={80}
-                      height={80}
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
-                  <h3 className="text-lg font-black text-gray-900 mb-2">お電話でご相談</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">お電話でご相談</h3>
                   <p className="text-gray-600 leading-relaxed text-sm">まずはお電話ください。事故の状況をお聞きし、今後の流れをご説明します。</p>
                 </div>
               </div>
             </div>
             
-            {/* Arrow */}
-            <div className="flex justify-center">
-              <div className="text-gray-400 text-2xl">↓</div>
-            </div>
-            
             {/* Step 2 */}
             <div className="group relative">
-              <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+              <div className="bg-white p-8 rounded-3xl shadow-sm hover:shadow-lg transition-all duration-500 border border-gray-200 h-full">
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl flex items-center justify-center shadow-lg mb-4">
-                    <span className="text-white text-xl font-black">2</span>
+                  <div className="relative mb-6">
+                    <div className="w-24 h-24 rounded-2xl overflow-hidden shadow-md mb-4">
+                      <Image
+                        src="/images/step2-visit.jpg"
+                        alt="来院・検査"
+                        width={96}
+                        height={96}
+                        className="object-cover w-full h-full"
+                      />
+                    </div>
+                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">2</span>
+                    </div>
                   </div>
-                  <div className="w-20 h-20 rounded-xl overflow-hidden shadow-lg mb-4">
-                    <Image
-                      src="/images/step2-visit.jpg"
-                      alt="来院・検査"
-                      width={80}
-                      height={80}
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
-                  <h3 className="text-lg font-black text-gray-900 mb-2">来院・検査</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">来院・検査</h3>
                   <p className="text-gray-600 leading-relaxed text-sm">詳しい症状の確認と検査を行い、最適な治療計画を立てます。</p>
                 </div>
               </div>
             </div>
             
-            {/* Arrow */}
-            <div className="flex justify-center">
-              <div className="text-gray-400 text-2xl">↓</div>
-            </div>
-            
             {/* Step 3 */}
             <div className="group relative">
-              <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+              <div className="bg-white p-8 rounded-3xl shadow-sm hover:shadow-lg transition-all duration-500 border border-gray-200 h-full">
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg mb-4">
-                    <span className="text-white text-xl font-black">3</span>
+                  <div className="relative mb-6">
+                    <div className="w-24 h-24 rounded-2xl overflow-hidden shadow-md mb-4">
+                      <Image
+                        src="/images/step3-treatment.jpg"
+                        alt="治療開始"
+                        width={96}
+                        height={96}
+                        className="object-cover w-full h-full"
+                      />
+                    </div>
+                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">3</span>
+                    </div>
                   </div>
-                  <div className="w-20 h-20 rounded-xl overflow-hidden shadow-lg mb-4">
-                    <Image
-                      src="/images/step3-treatment.jpg"
-                      alt="治療開始"
-                      width={80}
-                      height={80}
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
-                  <h3 className="text-lg font-black text-gray-900 mb-2">治療開始</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">治療開始</h3>
                   <p className="text-gray-600 leading-relaxed text-sm">患者様の症状に合わせたオーダーメイド治療を開始します。</p>
                 </div>
               </div>
             </div>
             
-            {/* Arrow */}
-            <div className="flex justify-center">
-              <div className="text-gray-400 text-2xl">↓</div>
-            </div>
-            
             {/* Step 4 */}
             <div className="group relative">
-              <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+              <div className="bg-white p-8 rounded-3xl shadow-sm hover:shadow-lg transition-all duration-500 border border-gray-200 h-full">
                 <div className="flex flex-col items-center text-center">
-                  <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-xl flex items-center justify-center shadow-lg mb-4">
-                    <span className="text-white text-xl font-black">4</span>
+                  <div className="relative mb-6">
+                    <div className="w-24 h-24 rounded-2xl overflow-hidden shadow-md mb-4">
+                      <Image
+                        src="/images/step4-recovery.jpg"
+                        alt="完全回復"
+                        width={96}
+                        height={96}
+                        className="object-cover w-full h-full"
+                      />
+                    </div>
+                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">4</span>
+                    </div>
                   </div>
-                  <div className="w-20 h-20 rounded-xl overflow-hidden shadow-lg mb-4">
-                    <Image
-                      src="/images/step4-recovery.jpg"
-                      alt="完全回復"
-                      width={80}
-                      height={80}
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
-                  <h3 className="text-lg font-black text-gray-900 mb-2">完全回復</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">完全回復</h3>
                   <p className="text-gray-600 leading-relaxed text-sm">症状の改善を確認しながら、完全回復まで責任を持ってサポートします。</p>
                 </div>
               </div>
             </div>
           </div>
           
-          {/* CTA at the end of flow */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
-            <a href="tel:070-5530-6656" className="bg-gradient-to-r from-red-500 to-red-600 text-white px-5 py-3 rounded-full font-bold shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 text-center">
-              電話で相談
+          {/* Elegant CTA */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-16">
+            <a href="tel:070-5530-6656" className="bg-gray-900 hover:bg-gray-800 text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 text-center">
+              まずは電話で相談
             </a>
-            <a href="https://lin.ee/Y6Hzw7E" className="bg-gradient-to-r from-green-500 to-green-600 text-white px-5 py-3 rounded-full font-bold shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 text-center">
+            <a href="https://lin.ee/Y6Hzw7E" className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 text-center">
               LINE予約
             </a>
           </div>
