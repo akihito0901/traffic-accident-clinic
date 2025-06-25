@@ -347,20 +347,20 @@ export default function Home() {
             {/* Feature 1 - お金 (完全自己負担0円) */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-700 blur-xl transform scale-110"></div>
-              <div className="relative bg-black/80 backdrop-blur-xl border border-white/10 rounded-3xl p-6 h-full hover:border-green-500/50 transition-all duration-700 group-hover:transform group-hover:scale-105">
+              <div className="relative bg-black/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 h-full hover:border-green-500/50 transition-all duration-700 group-hover:transform group-hover:scale-105">
                 <div className="flex flex-col items-center text-center">
-                  <div className="relative mb-6">
-                    <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-emerald-500 rounded-2xl flex items-center justify-center mb-4 shadow-lg group-hover:shadow-green-500/50 transition-all duration-700">
+                  <div className="relative mb-8">
+                    <div className="w-32 h-32 bg-gradient-to-br from-green-400 to-emerald-500 rounded-3xl flex items-center justify-center mb-4 shadow-2xl group-hover:shadow-green-500/50 transition-all duration-700">
                       <Image
                         src="/images/お金.png"
                         alt="完全自己負担0円"
-                        width={40}
-                        height={40}
+                        width={80}
+                        height={80}
                         className="object-contain"
                       />
                     </div>
-                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center shadow-lg">
-                      <span className="text-white text-xs font-bold">0¥</span>
+                    <div className="absolute -top-3 -right-3 w-12 h-12 bg-green-500 rounded-full flex items-center justify-center shadow-xl">
+                      <span className="text-white text-sm font-bold">0¥</span>
                     </div>
                   </div>
                   <h3 className="text-xl font-black mb-4 text-white">完全自己負担0円</h3>
@@ -377,20 +377,20 @@ export default function Home() {
             {/* Feature 2 - 夜20時まで */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-700 blur-xl transform scale-110"></div>
-              <div className="relative bg-black/80 backdrop-blur-xl border border-white/10 rounded-3xl p-6 h-full hover:border-blue-500/50 transition-all duration-700 group-hover:transform group-hover:scale-105">
+              <div className="relative bg-black/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 h-full hover:border-blue-500/50 transition-all duration-700 group-hover:transform group-hover:scale-105">
                 <div className="flex flex-col items-center text-center">
-                  <div className="relative mb-6">
-                    <div className="w-20 h-20 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-2xl flex items-center justify-center mb-4 shadow-lg group-hover:shadow-blue-500/50 transition-all duration-700">
+                  <div className="relative mb-8">
+                    <div className="w-32 h-32 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-3xl flex items-center justify-center mb-4 shadow-2xl group-hover:shadow-blue-500/50 transition-all duration-700">
                       <Image
                         src="/images/夜20時まで.png"
                         alt="夜20時まで対応"
-                        width={40}
-                        height={40}
+                        width={80}
+                        height={80}
                         className="object-contain"
                       />
                     </div>
-                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center shadow-lg">
-                      <span className="text-white text-xs font-bold">20h</span>
+                    <div className="absolute -top-3 -right-3 w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center shadow-xl">
+                      <span className="text-white text-sm font-bold">20h</span>
                     </div>
                   </div>
                   <h3 className="text-xl font-black mb-4 text-white">夜20時まで対応</h3>
@@ -407,20 +407,20 @@ export default function Home() {
             {/* Feature 3 - 事故専門 */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-700 blur-xl transform scale-110"></div>
-              <div className="relative bg-black/80 backdrop-blur-xl border border-white/10 rounded-3xl p-6 h-full hover:border-purple-500/50 transition-all duration-700 group-hover:transform group-hover:scale-105">
+              <div className="relative bg-black/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 h-full hover:border-purple-500/50 transition-all duration-700 group-hover:transform group-hover:scale-105">
                 <div className="flex flex-col items-center text-center">
-                  <div className="relative mb-6">
-                    <div className="w-20 h-20 bg-gradient-to-br from-purple-400 to-pink-500 rounded-2xl flex items-center justify-center mb-4 shadow-lg group-hover:shadow-purple-500/50 transition-all duration-700">
+                  <div className="relative mb-8">
+                    <div className="w-32 h-32 bg-gradient-to-br from-purple-400 to-pink-500 rounded-3xl flex items-center justify-center mb-4 shadow-2xl group-hover:shadow-purple-500/50 transition-all duration-700">
                       <Image
                         src="/images/事故専門.png"
                         alt="交通事故専門治療"
-                        width={40}
-                        height={40}
+                        width={80}
+                        height={80}
                         className="object-contain"
                       />
                     </div>
-                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center shadow-lg">
-                      <span className="text-white text-xs font-bold">専</span>
+                    <div className="absolute -top-3 -right-3 w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center shadow-xl">
+                      <span className="text-white text-sm font-bold">専</span>
                     </div>
                   </div>
                   <h3 className="text-xl font-black mb-4 text-white">交通事故専門治療</h3>
@@ -437,20 +437,20 @@ export default function Home() {
             {/* Feature 4 - 事故当日 */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-red-500/20 to-orange-500/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-700 blur-xl transform scale-110"></div>
-              <div className="relative bg-black/80 backdrop-blur-xl border border-white/10 rounded-3xl p-6 h-full hover:border-red-500/50 transition-all duration-700 group-hover:transform group-hover:scale-105">
+              <div className="relative bg-black/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 h-full hover:border-red-500/50 transition-all duration-700 group-hover:transform group-hover:scale-105">
                 <div className="flex flex-col items-center text-center">
-                  <div className="relative mb-6">
-                    <div className="w-20 h-20 bg-gradient-to-br from-red-400 to-orange-500 rounded-2xl flex items-center justify-center mb-4 shadow-lg group-hover:shadow-red-500/50 transition-all duration-700">
+                  <div className="relative mb-8">
+                    <div className="w-32 h-32 bg-gradient-to-br from-red-400 to-orange-500 rounded-3xl flex items-center justify-center mb-4 shadow-2xl group-hover:shadow-red-500/50 transition-all duration-700">
                       <Image
                         src="/images/事故当日.png"
                         alt="事故当日から対応"
-                        width={40}
-                        height={40}
+                        width={80}
+                        height={80}
                         className="object-contain"
                       />
                     </div>
-                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-red-500 rounded-full flex items-center justify-center shadow-lg">
-                      <span className="text-white text-xs font-bold">即</span>
+                    <div className="absolute -top-3 -right-3 w-12 h-12 bg-red-500 rounded-full flex items-center justify-center shadow-xl">
+                      <span className="text-white text-sm font-bold">即</span>
                     </div>
                   </div>
                   <h3 className="text-xl font-black mb-4 text-white">事故当日から対応</h3>
@@ -467,20 +467,20 @@ export default function Home() {
             {/* Feature 5 - 書類 */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-amber-500/20 to-yellow-500/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-700 blur-xl transform scale-110"></div>
-              <div className="relative bg-black/80 backdrop-blur-xl border border-white/10 rounded-3xl p-6 h-full hover:border-amber-500/50 transition-all duration-700 group-hover:transform group-hover:scale-105">
+              <div className="relative bg-black/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 h-full hover:border-amber-500/50 transition-all duration-700 group-hover:transform group-hover:scale-105">
                 <div className="flex flex-col items-center text-center">
-                  <div className="relative mb-6">
-                    <div className="w-20 h-20 bg-gradient-to-br from-amber-400 to-yellow-500 rounded-2xl flex items-center justify-center mb-4 shadow-lg group-hover:shadow-amber-500/50 transition-all duration-700">
+                  <div className="relative mb-8">
+                    <div className="w-32 h-32 bg-gradient-to-br from-amber-400 to-yellow-500 rounded-3xl flex items-center justify-center mb-4 shadow-2xl group-hover:shadow-amber-500/50 transition-all duration-700">
                       <Image
                         src="/images/書類.png"
                         alt="書類手続き代行"
-                        width={40}
-                        height={40}
+                        width={80}
+                        height={80}
                         className="object-contain"
                       />
                     </div>
-                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-amber-500 rounded-full flex items-center justify-center shadow-lg">
-                      <span className="text-white text-xs font-bold">書</span>
+                    <div className="absolute -top-3 -right-3 w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center shadow-xl">
+                      <span className="text-white text-sm font-bold">書</span>
                     </div>
                   </div>
                   <h3 className="text-xl font-black mb-4 text-white">書類手続き代行</h3>
@@ -497,20 +497,20 @@ export default function Home() {
             {/* Feature 6 - 駅チカ */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-teal-500/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-700 blur-xl transform scale-110"></div>
-              <div className="relative bg-black/80 backdrop-blur-xl border border-white/10 rounded-3xl p-6 h-full hover:border-cyan-500/50 transition-all duration-700 group-hover:transform group-hover:scale-105">
+              <div className="relative bg-black/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 h-full hover:border-cyan-500/50 transition-all duration-700 group-hover:transform group-hover:scale-105">
                 <div className="flex flex-col items-center text-center">
-                  <div className="relative mb-6">
-                    <div className="w-20 h-20 bg-gradient-to-br from-cyan-400 to-teal-500 rounded-2xl flex items-center justify-center mb-4 shadow-lg group-hover:shadow-cyan-500/50 transition-all duration-700">
+                  <div className="relative mb-8">
+                    <div className="w-32 h-32 bg-gradient-to-br from-cyan-400 to-teal-500 rounded-3xl flex items-center justify-center mb-4 shadow-2xl group-hover:shadow-cyan-500/50 transition-all duration-700">
                       <Image
                         src="/images/駅チカ.png"
                         alt="駅前徒歩1分"
-                        width={40}
-                        height={40}
+                        width={80}
+                        height={80}
                         className="object-contain"
                       />
                     </div>
-                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-cyan-500 rounded-full flex items-center justify-center shadow-lg">
-                      <span className="text-white text-xs font-bold">1m</span>
+                    <div className="absolute -top-3 -right-3 w-12 h-12 bg-cyan-500 rounded-full flex items-center justify-center shadow-xl">
+                      <span className="text-white text-sm font-bold">1m</span>
                     </div>
                   </div>
                   <h3 className="text-xl font-black mb-4 text-white">駅前徒歩1分</h3>
