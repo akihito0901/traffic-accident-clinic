@@ -237,10 +237,10 @@ export default function Home() {
           
           {/* Main Message */}
           <div className="mb-8">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-center text-white mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-center text-white mb-4">
               交通事故治療
             </h2>
-            <p className="text-3xl sm:text-4xl md:text-5xl font-black text-center">
+            <p className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-center">
               <span className="bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 bg-clip-text text-transparent">
                 自己負担0円
               </span>
@@ -261,7 +261,7 @@ export default function Home() {
           <div className="mb-8">
             <div className="max-w-lg mx-auto">
               <div className="p-6 rounded-2xl bg-black/60 backdrop-blur-sm shadow-2xl border border-white/20 text-center">
-                <p className="text-white/90 font-medium mb-2">まずはお電話ください</p>
+                <p className="text-white/90 font-medium mb-2">お急ぎの方はお電話ください</p>
                 <a href="tel:070-5530-6656" className="block text-3xl sm:text-4xl font-black text-yellow-400 hover:text-yellow-300 transition-all duration-500">
                   070-5530-6656
                 </a>
