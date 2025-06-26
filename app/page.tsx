@@ -279,7 +279,7 @@ export default function Home() {
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="flex items-center justify-center gap-3 mb-6">
-              <div className="w-10 h-10 bg-red-500 rounded-full flex items-center justify-center animate-pulse">
+              <div className="w-10 h-10 bg-blue-400 rounded-full flex items-center justify-center animate-pulse">
                 <span className="text-white text-lg font-bold">!</span>
               </div>
               <h2 className="text-lg sm:text-xl md:text-2xl font-black text-red-600">交通事故に遭われた方へ</h2>
@@ -296,7 +296,7 @@ export default function Home() {
       </section>
 
       {/* Features - Ultimate Cool Design */}
-      <section className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-900 via-gray-900 to-black overflow-hidden">
+      <section className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 overflow-hidden">
         {/* Dynamic Background Effects */}
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-red-500/10 via-transparent to-yellow-500/10"></div>
@@ -321,9 +321,9 @@ export default function Home() {
               <span className="text-red-400 text-sm font-bold tracking-wider uppercase">Why Choose Us</span>
               <div className="w-16 h-px bg-gradient-to-l from-transparent via-red-400 to-transparent"></div>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent">選ばれる</span>
-              <span className="bg-gradient-to-r from-red-400 via-yellow-400 to-orange-400 bg-clip-text text-transparent">理由</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight">
+              <span className="bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-transparent">選ばれる</span>
+              <span className="bg-gradient-to-r from-red-500 via-yellow-500 to-orange-500 bg-clip-text text-transparent">理由</span>
             </h2>
             <div className="flex items-center justify-center gap-3 mb-8">
               <div className="flex items-center gap-1">
@@ -331,7 +331,7 @@ export default function Home() {
                   <div key={i} className="w-3 h-3 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full animate-pulse" style={{animationDelay: `${i * 0.2}s`}}></div>
                 ))}
               </div>
-              <span className="text-gray-300 font-bold">リピート率 90%以上</span>
+              <span className="text-gray-700 font-bold">リピート率 90%以上</span>
             </div>
           </div>
           
@@ -340,7 +340,7 @@ export default function Home() {
             {/* Feature 1 - お金 (完全自己負担0円) */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-700 blur-xl transform scale-110"></div>
-              <div className="relative bg-black/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 h-full hover:border-green-500/50 transition-all duration-700 group-hover:transform group-hover:scale-105">
+              <div className="relative bg-white/80 backdrop-blur-xl border border-blue-200/50 rounded-3xl p-8 h-full hover:border-green-500/50 transition-all duration-700 group-hover:transform group-hover:scale-105 shadow-lg">
                 <div className="flex flex-col items-center text-center">
                   <div className="mb-8">
                     <div className="w-40 h-40 mx-auto rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-green-500/50 transition-all duration-700">
@@ -353,12 +353,12 @@ export default function Home() {
                       />
                     </div>
                   </div>
-                  <h3 className="text-xl font-black mb-4 text-white">完全自己負担0円</h3>
-                  <p className="text-gray-300 leading-relaxed text-sm mb-6">
+                  <h3 className="text-xl font-black mb-4 text-gray-900">完全自己負担0円</h3>
+                  <p className="text-gray-700 leading-relaxed text-sm mb-6">
                     自賠責保険適用により治療費は完全無料。窓口負担なしで安心して治療に専念できます。
                   </p>
                   <div className="mt-auto">
-                    <span className="inline-block bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-xs font-bold border border-green-500/30">保険適用</span>
+                    <span className="inline-block bg-green-500/20 text-green-700 px-3 py-1 rounded-full text-xs font-bold border border-green-500/30">保険適用</span>
                   </div>
                 </div>
               </div>
@@ -367,7 +367,7 @@ export default function Home() {
             {/* Feature 2 - 夜20時まで */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-700 blur-xl transform scale-110"></div>
-              <div className="relative bg-black/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 h-full hover:border-blue-500/50 transition-all duration-700 group-hover:transform group-hover:scale-105">
+              <div className="relative bg-white/80 backdrop-blur-xl border border-blue-200/50 rounded-3xl p-8 h-full hover:border-blue-500/50 transition-all duration-700 group-hover:transform group-hover:scale-105 shadow-lg">
                 <div className="flex flex-col items-center text-center">
                   <div className="mb-8">
                     <div className="w-40 h-40 mx-auto rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-blue-500/50 transition-all duration-700">
@@ -380,12 +380,12 @@ export default function Home() {
                       />
                     </div>
                   </div>
-                  <h3 className="text-xl font-black mb-4 text-white">夜20時まで対応</h3>
-                  <p className="text-gray-300 leading-relaxed text-sm mb-6">
+                  <h3 className="text-xl font-black mb-4 text-gray-900">夜20時まで対応</h3>
+                  <p className="text-gray-700 leading-relaxed text-sm mb-6">
                     お仕事帰りでも安心。平日20時、土曜14時まで営業で忙しいあなたをサポートします。
                   </p>
                   <div className="mt-auto">
-                    <span className="inline-block bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-xs font-bold border border-blue-500/30">夜間対応</span>
+                    <span className="inline-block bg-blue-500/20 text-blue-700 px-3 py-1 rounded-full text-xs font-bold border border-blue-500/30">夜間対応</span>
                   </div>
                 </div>
               </div>
@@ -394,7 +394,7 @@ export default function Home() {
             {/* Feature 3 - 事故専門 */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-700 blur-xl transform scale-110"></div>
-              <div className="relative bg-black/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 h-full hover:border-purple-500/50 transition-all duration-700 group-hover:transform group-hover:scale-105">
+              <div className="relative bg-white/80 backdrop-blur-xl border border-blue-200/50 rounded-3xl p-8 h-full hover:border-purple-500/50 transition-all duration-700 group-hover:transform group-hover:scale-105 shadow-lg">
                 <div className="flex flex-col items-center text-center">
                   <div className="mb-8">
                     <div className="w-40 h-40 mx-auto rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-purple-500/50 transition-all duration-700">
@@ -407,12 +407,12 @@ export default function Home() {
                       />
                     </div>
                   </div>
-                  <h3 className="text-xl font-black mb-4 text-white">交通事故専門治療</h3>
-                  <p className="text-gray-300 leading-relaxed text-sm mb-6">
+                  <h3 className="text-xl font-black mb-4 text-gray-900">交通事故専門治療</h3>
+                  <p className="text-gray-700 leading-relaxed text-sm mb-6">
                     むちうち・腰痛治療の豊富な経験。症状の根本原因から改善する専門的アプローチ。
                   </p>
                   <div className="mt-auto">
-                    <span className="inline-block bg-purple-500/20 text-purple-400 px-3 py-1 rounded-full text-xs font-bold border border-purple-500/30">専門技術</span>
+                    <span className="inline-block bg-purple-500/20 text-purple-700 px-3 py-1 rounded-full text-xs font-bold border border-purple-500/30">専門技術</span>
                   </div>
                 </div>
               </div>
@@ -421,7 +421,7 @@ export default function Home() {
             {/* Feature 4 - 事故当日 */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-red-500/20 to-orange-500/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-700 blur-xl transform scale-110"></div>
-              <div className="relative bg-black/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 h-full hover:border-red-500/50 transition-all duration-700 group-hover:transform group-hover:scale-105">
+              <div className="relative bg-white/80 backdrop-blur-xl border border-blue-200/50 rounded-3xl p-8 h-full hover:border-red-500/50 transition-all duration-700 group-hover:transform group-hover:scale-105 shadow-lg">
                 <div className="flex flex-col items-center text-center">
                   <div className="mb-8">
                     <div className="w-40 h-40 mx-auto rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-red-500/50 transition-all duration-700">
@@ -434,12 +434,12 @@ export default function Home() {
                       />
                     </div>
                   </div>
-                  <h3 className="text-xl font-black mb-4 text-white">事故当日から対応</h3>
-                  <p className="text-gray-300 leading-relaxed text-sm mb-6">
+                  <h3 className="text-xl font-black mb-4 text-gray-900">事故当日から対応</h3>
+                  <p className="text-gray-700 leading-relaxed text-sm mb-6">
                     緊急対応可能。事故直後の早期治療開始で後遺症を防ぎ、スピーディーな回復を実現。
                   </p>
                   <div className="mt-auto">
-                    <span className="inline-block bg-red-500/20 text-red-400 px-3 py-1 rounded-full text-xs font-bold border border-red-500/30">緊急対応</span>
+                    <span className="inline-block bg-red-500/20 text-red-700 px-3 py-1 rounded-full text-xs font-bold border border-red-500/30">緊急対応</span>
                   </div>
                 </div>
               </div>
@@ -448,7 +448,7 @@ export default function Home() {
             {/* Feature 5 - 書類 */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-amber-500/20 to-yellow-500/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-700 blur-xl transform scale-110"></div>
-              <div className="relative bg-black/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 h-full hover:border-amber-500/50 transition-all duration-700 group-hover:transform group-hover:scale-105">
+              <div className="relative bg-white/80 backdrop-blur-xl border border-blue-200/50 rounded-3xl p-8 h-full hover:border-amber-500/50 transition-all duration-700 group-hover:transform group-hover:scale-105 shadow-lg">
                 <div className="flex flex-col items-center text-center">
                   <div className="mb-8">
                     <div className="w-40 h-40 mx-auto rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-amber-500/50 transition-all duration-700">
@@ -461,12 +461,12 @@ export default function Home() {
                       />
                     </div>
                   </div>
-                  <h3 className="text-xl font-black mb-4 text-white">書類手続き代行</h3>
-                  <p className="text-gray-300 leading-relaxed text-sm mb-6">
+                  <h3 className="text-xl font-black mb-4 text-gray-900">書類手続き代行</h3>
+                  <p className="text-gray-700 leading-relaxed text-sm mb-6">
                     保険会社とのやりとりから診断書作成まで。複雑な手続きを専門スタッフが代行。
                   </p>
                   <div className="mt-auto">
-                    <span className="inline-block bg-amber-500/20 text-amber-400 px-3 py-1 rounded-full text-xs font-bold border border-amber-500/30">代行サービス</span>
+                    <span className="inline-block bg-amber-500/20 text-amber-700 px-3 py-1 rounded-full text-xs font-bold border border-amber-500/30">代行サービス</span>
                   </div>
                 </div>
               </div>
@@ -475,7 +475,7 @@ export default function Home() {
             {/* Feature 6 - 駅チカ */}
             <div className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-teal-500/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-700 blur-xl transform scale-110"></div>
-              <div className="relative bg-black/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 h-full hover:border-cyan-500/50 transition-all duration-700 group-hover:transform group-hover:scale-105">
+              <div className="relative bg-white/80 backdrop-blur-xl border border-blue-200/50 rounded-3xl p-8 h-full hover:border-cyan-500/50 transition-all duration-700 group-hover:transform group-hover:scale-105 shadow-lg">
                 <div className="flex flex-col items-center text-center">
                   <div className="mb-8">
                     <div className="w-40 h-40 mx-auto rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-cyan-500/50 transition-all duration-700">
@@ -488,12 +488,12 @@ export default function Home() {
                       />
                     </div>
                   </div>
-                  <h3 className="text-xl font-black mb-4 text-white">駅前徒歩1分</h3>
-                  <p className="text-gray-300 leading-relaxed text-sm mb-6">
+                  <h3 className="text-xl font-black mb-4 text-gray-900">駅前徒歩1分</h3>
+                  <p className="text-gray-700 leading-relaxed text-sm mb-6">
                     桜並木駅前の抜群立地。電車でもお車でもアクセス良好で通院がとても便利です。
                   </p>
                   <div className="mt-auto">
-                    <span className="inline-block bg-cyan-500/20 text-cyan-400 px-3 py-1 rounded-full text-xs font-bold border border-cyan-500/30">好立地</span>
+                    <span className="inline-block bg-cyan-500/20 text-cyan-700 px-3 py-1 rounded-full text-xs font-bold border border-cyan-500/30">好立地</span>
                   </div>
                 </div>
               </div>
@@ -504,7 +504,7 @@ export default function Home() {
           <div className="text-center mt-20">
             <div className="relative inline-block">
               <div className="absolute inset-0 bg-gradient-to-r from-red-500/20 to-yellow-500/20 rounded-3xl blur-xl"></div>
-              <div className="relative bg-black/80 backdrop-blur-xl border border-white/10 rounded-3xl p-8 max-w-4xl mx-auto">
+              <div className="relative bg-white/80 backdrop-blur-xl border border-blue-200/50 rounded-3xl p-8 max-w-4xl mx-auto shadow-lg">
                 <div className="flex flex-col md:flex-row items-center justify-center gap-6">
                   <div className="w-24 h-24 rounded-2xl overflow-hidden shadow-lg">
                     <Image
@@ -516,10 +516,10 @@ export default function Home() {
                     />
                   </div>
                   <div className="text-center md:text-left">
-                    <h3 className="text-xl md:text-2xl font-black text-white mb-2">
+                    <h3 className="text-xl md:text-2xl font-black text-gray-900 mb-2">
                       <span className="bg-gradient-to-r from-red-400 via-yellow-400 to-orange-400 bg-clip-text text-transparent">地域で選ばれる治療院</span>
                     </h3>
-                    <p className="text-gray-300">患者様から信頼をいただいています</p>
+                    <p className="text-gray-700">患者様から信頼をいただいています</p>
                   </div>
                 </div>
               </div>
@@ -577,7 +577,7 @@ export default function Home() {
                 <div className="mt-4 pt-4 border-t border-gray-100">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2 text-xs text-gray-500">
-                      <span className="w-4 h-4 bg-red-500 rounded-full flex items-center justify-center">
+                      <span className="w-4 h-4 bg-blue-400 rounded-full flex items-center justify-center">
                         <span className="text-white text-xs">G</span>
                       </span>
                       Googleレビュー
@@ -612,7 +612,7 @@ export default function Home() {
                 <div className="mt-4 pt-4 border-t border-gray-100">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2 text-xs text-gray-500">
-                      <span className="w-4 h-4 bg-red-500 rounded-full flex items-center justify-center">
+                      <span className="w-4 h-4 bg-blue-400 rounded-full flex items-center justify-center">
                         <span className="text-white text-xs">G</span>
                       </span>
                       Googleレビュー
@@ -647,7 +647,7 @@ export default function Home() {
                 <div className="mt-4 pt-4 border-t border-gray-100">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2 text-xs text-gray-500">
-                      <span className="w-4 h-4 bg-red-500 rounded-full flex items-center justify-center">
+                      <span className="w-4 h-4 bg-blue-400 rounded-full flex items-center justify-center">
                         <span className="text-white text-xs">G</span>
                       </span>
                       Googleレビュー
@@ -682,7 +682,7 @@ export default function Home() {
                 <div className="mt-4 pt-4 border-t border-gray-100">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2 text-xs text-gray-500">
-                      <span className="w-4 h-4 bg-red-500 rounded-full flex items-center justify-center">
+                      <span className="w-4 h-4 bg-blue-400 rounded-full flex items-center justify-center">
                         <span className="text-white text-xs">G</span>
                       </span>
                       Googleレビュー
@@ -717,7 +717,7 @@ export default function Home() {
                 <div className="mt-4 pt-4 border-t border-gray-100">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2 text-xs text-gray-500">
-                      <span className="w-4 h-4 bg-red-500 rounded-full flex items-center justify-center">
+                      <span className="w-4 h-4 bg-blue-400 rounded-full flex items-center justify-center">
                         <span className="text-white text-xs">G</span>
                       </span>
                       Googleレビュー
@@ -752,7 +752,7 @@ export default function Home() {
                 <div className="mt-4 pt-4 border-t border-gray-100">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2 text-xs text-gray-500">
-                      <span className="w-4 h-4 bg-red-500 rounded-full flex items-center justify-center">
+                      <span className="w-4 h-4 bg-blue-400 rounded-full flex items-center justify-center">
                         <span className="text-white text-xs">G</span>
                       </span>
                       Googleレビュー
@@ -767,31 +767,30 @@ export default function Home() {
       </section>
 
       {/* Worries */}
-      <section className="relative py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+      <section className="relative py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-blue-50 to-indigo-50 overflow-hidden">
         {/* Background Decoration */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-r from-red-500 to-orange-500 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-20 w-40 h-40 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-3xl"></div>
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-r from-blue-300 to-indigo-300 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-20 w-40 h-40 bg-gradient-to-r from-indigo-300 to-purple-300 rounded-full blur-3xl"></div>
         </div>
         
         <div className="relative z-10 max-w-5xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-12">
-            <div className="inline-block mb-4 premium-border">
-              <span className="bg-gradient-to-r from-red-500 to-orange-500 text-white px-6 py-3 rounded-full text-sm font-bold luxury-shadow">よくあるお悩み</span>
+            <div className="inline-block mb-4">
+              <span className="bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-6 py-3 rounded-full text-sm font-bold shadow-lg">よくあるお悩み</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-gray-900 mb-4 luxury-text">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-gray-800 mb-4">
               こんなお悩みありませんか？
             </h2>
-            <div className="w-32 h-2 bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 mx-auto rounded-full luxury-shadow"></div>
+            <div className="w-32 h-1 bg-gradient-to-r from-blue-400 to-indigo-400 mx-auto rounded-full"></div>
           </div>
           
           {/* Worries Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             {/* Insurance Worries with Real Image */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-red-600 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg transform scale-110"></div>
-              <div className="relative bg-white p-8 rounded-2xl luxury-shadow hover-lift border border-gray-100 h-full card-3d cursor-glow">
+            <div className="relative">
+              <div className="bg-white p-8 rounded-2xl shadow-lg border border-blue-100 h-full">
                 {/* Image Section */}
                 <div className="relative h-48 mb-6 rounded-xl overflow-hidden">
                   <Image
@@ -812,23 +811,23 @@ export default function Home() {
                 
                 {/* Content Section */}
                 <div className="space-y-3">
-                  <div className="flex items-center gap-3 p-3 bg-red-50 rounded-lg border-l-4 border-red-500">
-                    <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
-                      <span className="text-white text-xs font-bold">!</span>
-                    </div>
-                    <p className="text-red-700 font-medium">保険会社とのやりとりが不安</p>
-                  </div>
-                  <div className="flex items-center gap-3 p-3 bg-red-50 rounded-lg border-l-4 border-red-500">
-                    <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="flex items-center gap-3 p-3 bg-blue-50 rounded-lg border-l-4 border-blue-400">
+                    <div className="w-6 h-6 bg-blue-400 rounded-full flex items-center justify-center flex-shrink-0">
                       <span className="text-white text-xs font-bold">?</span>
                     </div>
-                    <p className="text-red-700 font-medium">治療費は本当に0円？</p>
+                    <p className="text-blue-700 font-medium">保険会社とのやりとりが不安</p>
                   </div>
-                  <div className="flex items-center gap-3 p-3 bg-red-50 rounded-lg border-l-4 border-red-500">
-                    <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="flex items-center gap-3 p-3 bg-blue-50 rounded-lg border-l-4 border-blue-400">
+                    <div className="w-6 h-6 bg-blue-400 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-white text-xs font-bold">?</span>
+                    </div>
+                    <p className="text-blue-700 font-medium">治療費は本当に0円？</p>
+                  </div>
+                  <div className="flex items-center gap-3 p-3 bg-blue-50 rounded-lg border-l-4 border-blue-400">
+                    <div className="w-6 h-6 bg-blue-400 rounded-full flex items-center justify-center flex-shrink-0">
                       <span className="text-white text-xs font-bold">📋</span>
                     </div>
-                    <p className="text-red-700 font-medium">診断書や書類作成が面倒</p>
+                    <p className="text-blue-700 font-medium">診断書や書類作成が面倒</p>
                   </div>
                 </div>
               </div>
@@ -935,7 +934,7 @@ export default function Home() {
                       />
                     </div>
                     <div className="mt-4 text-center">
-                      <span className="inline-block bg-red-100 text-red-700 px-4 py-1 rounded-full text-sm font-semibold">STEP 1</span>
+                      <span className="inline-block bg-red-100 text-blue-700 px-4 py-1 rounded-full text-sm font-semibold">STEP 1</span>
                     </div>
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">お電話でご相談</h3>
@@ -1193,46 +1192,44 @@ export default function Home() {
       </section>
 
       {/* Contact */}
-      <section id="contact" className="relative py-16 sm:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        {/* Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-amber-100 via-orange-50 to-yellow-100"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-white/50 to-transparent"></div>
-        
-        {/* Decorative Elements */}
-        <div className="absolute top-10 left-10 w-20 h-20 bg-yellow-300 rounded-full opacity-20 blur-2xl"></div>
-        <div className="absolute bottom-10 right-10 w-32 h-32 bg-orange-300 rounded-full opacity-20 blur-2xl"></div>
+      <section id="contact" className="relative py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-gray-900 overflow-hidden">
+        {/* Background Effects */}
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-green-500/20 to-teal-500/20 rounded-full blur-3xl"></div>
+        </div>
         
         <div className="relative z-10 max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
             <div className="inline-block mb-4">
-              <span className="bg-gradient-to-r from-amber-600 to-orange-600 text-white px-4 py-2 rounded-full text-sm font-bold">お気軽にご連絡ください</span>
+              <span className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-3 rounded-full text-sm font-bold shadow-lg">お気軽にご連絡ください</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4">
               桜並木駅前の整骨院
             </h2>
-            <p className="text-xl sm:text-2xl text-amber-700 font-medium">交通事故治療も対応</p>
-            <div className="w-24 h-1 bg-gradient-to-r from-amber-600 to-orange-600 mx-auto rounded-full mt-4"></div>
+            <p className="text-xl sm:text-2xl text-blue-300 font-medium">交通事故治療も対応</p>
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full mt-4"></div>
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Access Information */}
             <div className="space-y-6">
-              <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-amber-200">
-                <h3 className="text-2xl font-black mb-6 text-gray-900 flex items-center gap-3">
-                  <span className="w-8 h-8 bg-gradient-to-r from-amber-500 to-orange-500 rounded-lg flex items-center justify-center text-white text-sm">📍</span>
+              <div className="bg-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-2xl border border-white/20">
+                <h3 className="text-2xl font-black mb-6 text-white flex items-center gap-3">
+                  <span className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center text-white text-sm">📍</span>
                   アクセス情報
                 </h3>
                 
                 <div className="space-y-6">
                   {/* Address */}
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <span className="text-blue-600 text-xl">📍</span>
+                    <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center flex-shrink-0 border border-blue-400/30">
+                      <span className="text-blue-400 text-xl">📍</span>
                     </div>
                     <div>
-                      <p className="font-bold text-gray-900 mb-1">住所</p>
-                      <p className="text-gray-700 leading-relaxed">
+                      <p className="font-bold text-white mb-1">住所</p>
+                      <p className="text-gray-300 leading-relaxed">
                         〒812-0895<br />
                         福岡県福岡市博多区竹丘町2-4-18
                       </p>
@@ -1241,12 +1238,12 @@ export default function Home() {
                   
                   {/* Phone */}
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <span className="text-green-600 text-xl">📞</span>
+                    <div className="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center flex-shrink-0 border border-green-400/30">
+                      <span className="text-green-400 text-xl">📞</span>
                     </div>
                     <div>
-                      <p className="font-bold text-gray-900 mb-1">電話番号</p>
-                      <a href="tel:070-5530-6656" className="text-2xl font-black text-red-600 hover:text-red-700 transition-colors">
+                      <p className="font-bold text-white mb-1">電話番号</p>
+                      <a href="tel:070-5530-6656" className="text-2xl font-black text-yellow-400 hover:text-yellow-300 transition-colors">
                         070-5530-6656
                       </a>
                     </div>
@@ -1254,27 +1251,27 @@ export default function Home() {
                   
                   {/* Hours */}
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <span className="text-purple-600 text-xl">🕒</span>
+                    <div className="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center flex-shrink-0 border border-purple-400/30">
+                      <span className="text-purple-400 text-xl">🕒</span>
                     </div>
                     <div>
-                      <p className="font-bold text-gray-900 mb-1">営業時間</p>
-                      <div className="text-gray-700 leading-relaxed">
+                      <p className="font-bold text-white mb-1">営業時間</p>
+                      <div className="text-gray-300 leading-relaxed">
                         <p>平日：9:00〜20:00</p>
                         <p>土曜：9:00〜14:00</p>
-                        <p className="text-red-600 font-bold">日祝：休診</p>
+                        <p className="text-red-400 font-bold">日祝：休診</p>
                       </div>
                     </div>
                   </div>
                   
                   {/* Access */}
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <span className="text-orange-600 text-xl">🚗</span>
+                    <div className="w-12 h-12 bg-orange-500/20 rounded-xl flex items-center justify-center flex-shrink-0 border border-orange-400/30">
+                      <span className="text-orange-400 text-xl">🚗</span>
                     </div>
                     <div>
-                      <p className="font-bold text-gray-900 mb-1">アクセス</p>
-                      <div className="text-gray-700 leading-relaxed">
+                      <p className="font-bold text-white mb-1">アクセス</p>
+                      <div className="text-gray-300 leading-relaxed">
                         <p>桜並木駅徒歩1分</p>
                         <p>駐車場完備</p>
                       </div>
@@ -1315,15 +1312,15 @@ export default function Home() {
                     <span className="relative z-10">LINE予約</span>
                   </a>
                 </div>
-                <p className="text-amber-700 text-center font-medium">
+                <p className="text-blue-300 text-center font-medium">
                   お電話・LINEでのご相談は無料です
                 </p>
               </div>
               
               {/* Additional Info */}
-              <div className="bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-amber-200">
+              <div className="bg-white/10 backdrop-blur-lg p-6 rounded-xl shadow-2xl border border-white/20">
                 <div className="text-center">
-                  <h4 className="font-black text-gray-900 mb-3">こんなご相談お受けします</h4>
+                  <h4 className="font-black text-white mb-3">こんなご相談お受けします</h4>
                   <div className="flex flex-wrap gap-2 justify-center">
                     <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">保険手続き</span>
                     <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">治療相談</span>
