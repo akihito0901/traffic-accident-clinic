@@ -834,9 +834,8 @@ export default function Home() {
             </div>
             
             {/* Treatment Worries with Real Image */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-lg transform scale-110"></div>
-              <div className="relative bg-white p-8 rounded-2xl luxury-shadow hover-lift border border-gray-100 h-full card-3d cursor-glow">
+            <div className="relative">
+              <div className="bg-white p-8 rounded-2xl shadow-lg border border-blue-100 h-full">
                 {/* Image Section */}
                 <div className="relative h-48 mb-6 rounded-xl overflow-hidden">
                   <Image
@@ -1321,11 +1320,11 @@ export default function Home() {
               <div className="bg-white/10 backdrop-blur-lg p-6 rounded-xl shadow-2xl border border-white/20">
                 <div className="text-center">
                   <h4 className="font-black text-white mb-3">こんなご相談お受けします</h4>
-                  <div className="flex flex-wrap gap-2 justify-center">
-                    <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">保険手続き</span>
-                    <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">治療相談</span>
-                    <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">症状確認</span>
-                    <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">書類作成</span>
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                    <span className="bg-blue-100 text-blue-800 px-3 py-2 rounded-full text-sm font-medium text-center">保険手続き</span>
+                    <span className="bg-green-100 text-green-800 px-3 py-2 rounded-full text-sm font-medium text-center">治療相談</span>
+                    <span className="bg-purple-100 text-purple-800 px-3 py-2 rounded-full text-sm font-medium text-center">症状確認</span>
+                    <span className="bg-orange-100 text-orange-800 px-3 py-2 rounded-full text-sm font-medium text-center">書類作成</span>
                   </div>
                 </div>
               </div>
