@@ -16,7 +16,7 @@ export interface NotificationResult {
 // 全通知システムを統合実行
 export async function sendAllNotifications(
   reservation: Reservation,
-  lineUserId?: string
+  providedLineUserId?: string
 ): Promise<NotificationResult> {
   const result: NotificationResult = {
     success: false,
@@ -59,14 +59,20 @@ export async function sendAllNotifications(
       console.error('Googleカレンダーエラー:', error);
     }
 
-    // 3. LINE通知送信（電話番号で自動検索）
+    // 3. LINE通知送信（LIFF User IDまたは電話番号で検索）
     console.log('📱 LINE通知を確認中...');
     try {
-      const foundUserId = await findUserByPhone(reservation.phone);
+      let targetUserId = providedLineUserId;
       
-      if (foundUserId) {
-        console.log(`✅ 電話番号 ${reservation.phone} に対応するUser ID発見: ${foundUserId}`);
-        result.line = await sendLineNotification(foundUserId, reservation, menuName);
+      // LIFF User IDが提供されていない場合は電話番号で検索
+      if (!targetUserId) {
+        targetUserId = await findUserByPhone(reservation.phone);
+      }
+      
+      if (targetUserId) {
+        const source = providedLineUserId ? 'LIFF' : '電話番号照合';
+        console.log(`✅ ${source}でUser ID発見: ${targetUserId}`);
+        result.line = await sendLineNotification(targetUserId, reservation, menuName);
         
         if (result.line) {
           console.log('✅ LINE通知送信成功');
@@ -74,8 +80,8 @@ export async function sendAllNotifications(
           result.errors.push('LINE通知の送信に失敗しました');
         }
       } else {
-        console.log(`ℹ️ 電話番号 ${reservation.phone} に対応するLINE User IDが見つかりません`);
-        result.errors.push('該当する電話番号のLINE User IDが見つかりませんでした');
+        console.log(`ℹ️ LINE User IDが見つかりません（LIFF: ${!!providedLineUserId}, 電話: ${reservation.phone}）`);
+        result.errors.push('LINE User IDが見つかりませんでした');
       }
     } catch (error) {
       result.errors.push(`LINE通知エラー: ${error}`);

@@ -2,11 +2,17 @@
 
 import { useState } from 'react';
 
+interface TestResult {
+  success: boolean;
+  error?: string;
+  [key: string]: unknown;
+}
+
 export default function AdminPage() {
-  const [testResult, setTestResult] = useState<any>(null);
+  const [testResult, setTestResult] = useState<TestResult | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [lineUserId, setLineUserId] = useState('');
-  const [lineTestResult, setLineTestResult] = useState<any>(null);
+  const [lineTestResult, setLineTestResult] = useState<TestResult | null>(null);
   const [isLineLoading, setIsLineLoading] = useState(false);
 
   const runNotificationTest = async () => {
@@ -64,21 +70,6 @@ export default function AdminPage() {
     }
   };
 
-  const checkEnvironmentVariables = () => {
-    const requiredEnvs = [
-      'LINE_CHANNEL_ACCESS_TOKEN',
-      'LINE_CHANNEL_SECRET', 
-      'GOOGLE_CLIENT_ID',
-      'GOOGLE_CLIENT_SECRET',
-      'GOOGLE_REFRESH_TOKEN',
-      'ADMIN_EMAIL'
-    ];
-
-    return requiredEnvs.map(env => ({
-      name: env,
-      set: !!process.env[env]
-    }));
-  };
 
   return (
     <div className="min-h-screen bg-gray-50 py-8 px-4">

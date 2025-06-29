@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
       symptoms: 'テスト用の症状です。肩こりと腰痛があります。',
       isFirstTime: true,
       createdAt: new Date().toISOString(),
-      status: 'confirmed'
+      status: 'confirmed' as const
     };
 
     const menuName = '初回無料体験';

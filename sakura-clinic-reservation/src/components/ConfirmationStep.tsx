@@ -9,12 +9,14 @@ interface ConfirmationStepProps {
   formData: ReservationForm;
   selectedMenu: MenuItem;
   onPrev: () => void;
+  lineUserId?: string | null;
 }
 
 export default function ConfirmationStep({ 
   formData, 
   selectedMenu, 
-  onPrev 
+  onPrev,
+  lineUserId 
 }: ConfirmationStepProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
@@ -43,7 +45,8 @@ export default function ConfirmationStep({
         },
         body: JSON.stringify({
           ...formData,
-          isFirstTime: formData.isFirstTime || false
+          isFirstTime: formData.isFirstTime || false,
+          lineUserId: lineUserId || undefined
         })
       });
 

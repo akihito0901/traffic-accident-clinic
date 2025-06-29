@@ -68,7 +68,7 @@ export async function POST(request: NextRequest) {
 
     // 通知システム実行
     console.log('🔔 通知システムを実行中...');
-    const notificationResult = await sendAllNotifications(reservation);
+    const notificationResult = await sendAllNotifications(reservation, body.lineUserId);
     
     if (!notificationResult.success) {
       console.warn('⚠️ 一部の通知が失敗しましたが、予約は正常に作成されました');
