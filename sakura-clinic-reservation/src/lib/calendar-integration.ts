@@ -151,6 +151,75 @@ function getMenuPriceText(menuName: string): string {
   return '要確認';
 }
 
+// 指定日のカレンダーイベントを全て取得
+export async function getCalendarEvents(date: string): Promise<Array<{
+  id: string;
+  summary: string;
+  start: string;
+  end: string;
+  startDateTime: Date;
+  endDateTime: Date;
+}>> {
+  const accessToken = await getGoogleAccessToken();
+  const calendarId = process.env.GOOGLE_CALENDAR_ID || 'primary';
+  
+  if (!accessToken) {
+    console.error('Google Calendar アクセストークンの取得に失敗しました');
+    return [];
+  }
+
+  try {
+    // 指定日の開始・終了時刻を設定
+    const startOfDay = `${date}T00:00:00+09:00`;
+    const endOfDay = `${date}T23:59:59+09:00`;
+
+    const response = await fetch(
+      `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(calendarId)}/events?` +
+      `timeMin=${encodeURIComponent(startOfDay)}&` +
+      `timeMax=${encodeURIComponent(endOfDay)}&` +
+      `singleEvents=true&` +
+      `orderBy=startTime`,
+      {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${accessToken}`,
+        }
+      }
+    );
+
+    if (!response.ok) {
+      const error = await response.text();
+      console.error('Googleカレンダーイベント取得エラー:', error);
+      return [];
+    }
+
+    const data = await response.json();
+    const events = data.items || [];
+
+    // イベントデータを整形
+    const formattedEvents = events.map((event: any) => {
+      const startDateTime = new Date(event.start.dateTime || event.start.date);
+      const endDateTime = new Date(event.end.dateTime || event.end.date);
+      
+      return {
+        id: event.id,
+        summary: event.summary || '予定',
+        start: event.start.dateTime || event.start.date,
+        end: event.end.dateTime || event.end.date,
+        startDateTime,
+        endDateTime
+      };
+    });
+
+    console.log(`${date}のカレンダーイベント取得成功: ${formattedEvents.length}件`);
+    return formattedEvents;
+
+  } catch (error) {
+    console.error('Googleカレンダーイベント取得エラー:', error);
+    return [];
+  }
+}
+
 // 指定された予約をカレンダーから削除
 export async function deleteCalendarEvent(eventId: string): Promise<boolean> {
   const accessToken = await getGoogleAccessToken();

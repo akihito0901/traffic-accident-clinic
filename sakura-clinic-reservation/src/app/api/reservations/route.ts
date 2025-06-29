@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getAllReservations, createReservation, getReservationsByDate } from '@/lib/memory-storage';
 import { sendAllNotifications } from '@/lib/notification-system-safe';
 import { MENU_ITEMS } from '@/lib/config';
+import { isTimeSlotAvailable } from '@/lib/availability-checker';
 
 // 全予約取得
 export async function GET(request: NextRequest) {
@@ -60,6 +61,23 @@ export async function POST(request: NextRequest) {
     const endHours = Math.floor(totalMinutes / 60);
     const endMins = totalMinutes % 60;
     const endTime = `${endHours.toString().padStart(2, '0')}:${endMins.toString().padStart(2, '0')}`;
+
+    // バッティング防止：最終チェック
+    console.log('🛡️ バッティングチェック実行中...');
+    const availabilityCheck = await isTimeSlotAvailable(body.date, body.time, menu.duration);
+    
+    if (!availabilityCheck.available) {
+      console.error('❌ バッティング検知:', availabilityCheck.reason);
+      return NextResponse.json(
+        { 
+          error: 'この時間は既に予約が入っています',
+          reason: availabilityCheck.reason 
+        },
+        { status: 409 } // Conflict
+      );
+    }
+    
+    console.log('✅ バッティングチェック通過');
 
     // 予約作成（メールアドレスはダミー値）
     console.log('💾 予約データ作成中...');

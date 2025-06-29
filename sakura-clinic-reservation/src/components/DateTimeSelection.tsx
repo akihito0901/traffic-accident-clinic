@@ -51,23 +51,30 @@ export default function DateTimeSelection({
 
   const availableDates = generateAvailableDates();
 
-  // 日付選択時に空き時間を取得
+  // 日付選択時に空き時間を取得（Googleカレンダー統合版）
   useEffect(() => {
     if (selectedDate) {
       setLoading(true);
       
-      // APIルートから既存予約を取得
+      // 新しいavailabilityAPIを使用
       const loadTimeSlots = async () => {
         try {
-          const response = await fetch(`/api/reservations?date=${selectedDate}`);
+          console.log(`🔍 空き時間チェック: ${selectedDate}, ${selectedMenu.duration}分`);
+          const response = await fetch(`/api/availability?date=${selectedDate}&duration=${selectedMenu.duration}`);
           const data = await response.json();
           
           if (response.ok) {
-            const existingReservations = data.reservations || [];
-            const slots = getAvailableTimeSlots(selectedDate, selectedMenu.duration, existingReservations);
+            // APIレスポンスをTimeSlot形式に変換
+            const slots: TimeSlot[] = data.slots.map((slot: any) => ({
+              time: slot.time,
+              available: slot.available,
+              reason: slot.reason
+            }));
+            
             setAvailableTimeSlots(slots);
+            console.log(`✅ 空き時間取得成功: ${data.summary.available}/${data.summary.total} スロット`);
           } else {
-            console.error('予約データ取得エラー:', data.error);
+            console.error('空き時間取得エラー:', data.error);
             setAvailableTimeSlots([]);
           }
         } catch (error) {
@@ -159,25 +166,58 @@ export default function DateTimeSelection({
           )}
           
           {!loading && availableTimeSlots.length > 0 && (
-            <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
-              {availableTimeSlots.map((slot) => (
-                <button
-                  key={slot.time}
-                  onClick={() => handleTimeSelect(slot.time)}
-                  disabled={!slot.available}
-                  className={`
-                    p-3 rounded-lg border-2 transition-all duration-300 font-medium
-                    ${selectedTime === slot.time
-                      ? 'border-blue-500 bg-blue-500 text-white'
-                      : slot.available
-                        ? 'border-gray-200 hover:border-blue-300 hover:bg-blue-50 text-gray-900'
-                        : 'border-gray-100 bg-gray-100 text-gray-400 cursor-not-allowed'
-                    }
-                  `}
-                >
-                  {slot.time}
-                </button>
-              ))}
+            <div>
+              <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+                {availableTimeSlots.map((slot) => (
+                  <div key={slot.time} className="relative">
+                    <button
+                      onClick={() => handleTimeSelect(slot.time)}
+                      disabled={!slot.available}
+                      title={slot.available ? '' : slot.reason || '予約不可'}
+                      className={`
+                        w-full p-3 rounded-lg border-2 transition-all duration-300 font-medium relative
+                        ${selectedTime === slot.time
+                          ? 'border-blue-500 bg-blue-500 text-white'
+                          : slot.available
+                            ? 'border-gray-200 hover:border-blue-300 hover:bg-blue-50 text-gray-900'
+                            : 'border-red-100 bg-red-50 text-red-400 cursor-not-allowed'
+                        }
+                      `}
+                    >
+                      {slot.time}
+                      {!slot.available && (
+                        <span className="absolute -top-1 -right-1 text-red-500 text-lg">
+                          🚫
+                        </span>
+                      )}
+                    </button>
+                    {!slot.available && slot.reason && (
+                      <div className="absolute top-full left-0 right-0 mt-1 p-1 bg-red-600 text-white text-xs rounded shadow-lg opacity-0 hover:opacity-100 transition-opacity z-10 pointer-events-none">
+                        {slot.reason}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+              
+              {/* 空き状況サマリー */}
+              <div className="mt-4 p-3 bg-gray-50 border border-gray-200 rounded-lg">
+                <div className="flex items-center justify-between text-sm">
+                  <div className="flex items-center space-x-4">
+                    <span className="flex items-center">
+                      <span className="w-3 h-3 bg-blue-100 border-2 border-gray-200 rounded mr-2"></span>
+                      空き: {availableTimeSlots.filter(s => s.available).length}件
+                    </span>
+                    <span className="flex items-center">
+                      <span className="w-3 h-3 bg-red-50 border-2 border-red-100 rounded mr-2"></span>
+                      予約済み: {availableTimeSlots.filter(s => !s.available).length}件
+                    </span>
+                  </div>
+                  <span className="text-gray-600">
+                    施術時間: {selectedMenu.duration}分
+                  </span>
+                </div>
+              </div>
             </div>
           )}
         </div>
