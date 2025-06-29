@@ -4,16 +4,48 @@ import { sendAllNotifications } from '@/lib/notification-system-safe';
 import { MENU_ITEMS } from '@/lib/config';
 import { isTimeSlotAvailable } from '@/lib/availability-checker';
 
-// 全予約取得
+// 全予約取得（緊急デバッグ版）
 export async function GET(request: NextRequest) {
   try {
     const url = new URL(request.url);
     const date = url.searchParams.get('date');
 
     if (date) {
-      // 特定日の予約取得
+      // 特定日の予約取得 + カレンダーデバッグ
       const reservations = await getReservationsByDate(date);
-      return NextResponse.json({ reservations });
+      
+      // 緊急デバッグ：Googleカレンダー確認
+      let calendarDebug = {
+        attempted: false,
+        error: null,
+        eventCount: 0,
+        events: []
+      };
+      
+      try {
+        const { getCalendarEvents } = await import('@/lib/calendar-integration');
+        calendarDebug.attempted = true;
+        const events = await getCalendarEvents(date);
+        calendarDebug.eventCount = events.length;
+        calendarDebug.events = events.map(e => ({
+          title: e.summary,
+          start: e.start,
+          end: e.end
+        }));
+      } catch (calError) {
+        calendarDebug.error = calError instanceof Error ? calError.message : String(calError);
+      }
+      
+      return NextResponse.json({ 
+        reservations,
+        calendarDebug,
+        environmentCheck: {
+          hasClientId: !!process.env.GOOGLE_CLIENT_ID,
+          hasClientSecret: !!process.env.GOOGLE_CLIENT_SECRET,
+          hasRefreshToken: !!process.env.GOOGLE_REFRESH_TOKEN,
+          calendarId: process.env.GOOGLE_CALENDAR_ID || 'primary'
+        }
+      });
     } else {
       // 全予約取得
       const reservations = await getAllReservations();
