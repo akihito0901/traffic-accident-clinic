@@ -52,8 +52,13 @@ async function getTimeConflicts(date: string): Promise<TimeConflict[]> {
   const conflicts: TimeConflict[] = [];
   
   try {
+    console.log(`🔍 ${date}の競合チェック開始`);
+    
     // Googleカレンダーから既存予定を取得
+    console.log('📅 Googleカレンダー予定取得中...');
     const calendarEvents = await getCalendarEvents(date);
+    console.log(`📅 カレンダー予定数: ${calendarEvents.length}件`);
+    
     for (const event of calendarEvents) {
       conflicts.push({
         start: event.startDateTime,
@@ -61,11 +66,14 @@ async function getTimeConflicts(date: string): Promise<TimeConflict[]> {
         type: 'calendar',
         summary: event.summary
       });
+      console.log(`📅 カレンダー予定追加: ${event.summary} (${event.startDateTime.toTimeString().substring(0,5)}〜${event.endDateTime.toTimeString().substring(0,5)})`);
     }
     
     // メモリから既存予約を取得
+    console.log('💾 メモリ予約取得中...');
     const allReservations = await getAllReservations();
     const dayReservations = allReservations.filter(r => r.date === date);
+    console.log(`💾 メモリ予約数: ${dayReservations.length}件`);
     
     for (const reservation of dayReservations) {
       const startTime = parseTimeToDate(date, reservation.time);
@@ -77,9 +85,14 @@ async function getTimeConflicts(date: string): Promise<TimeConflict[]> {
         type: 'reservation',
         summary: `【予約】${reservation.name}様`
       });
+      console.log(`💾 メモリ予約追加: ${reservation.name}様 (${reservation.time}〜${reservation.endTime})`);
     }
+    
+    console.log(`🚫 総競合数: ${conflicts.length}件`);
+    
   } catch (error) {
-    console.error('競合取得エラー:', error);
+    console.error('❌ 競合取得エラー:', error);
+    console.error('❌ エラー詳細:', error instanceof Error ? error.stack : 'スタック情報なし');
   }
   
   return conflicts;
