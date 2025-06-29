@@ -67,12 +67,7 @@ export async function createCalendarEvent(reservation: Reservation, menuName: st
         timeZone: 'Asia/Tokyo'
       },
       location: '桜並木駅前の整骨院\n〒812-0895 福岡県福岡市博多区竹丘町2-4-18',
-      attendees: [
-        {
-          email: reservation.email,
-          displayName: reservation.name
-        }
-      ],
+      // attendees設定を削除（ダミーメールエラー回避）
       reminders: {
         useDefault: false,
         overrides: [

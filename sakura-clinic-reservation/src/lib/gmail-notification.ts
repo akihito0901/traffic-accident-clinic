@@ -37,13 +37,16 @@ async function getGmailAccessToken(): Promise<string | null> {
 
 // 管理者向けメール作成
 export function createAdminEmailContent(reservation: Reservation, menuName: string) {
-  const subject = `【新規予約】桜並木駅前の整骨院 - ${reservation.name}様`;
+  const subject = `🎉【おめでとう！新規予約が入りました！】${reservation.name}様 - ${menuName}`;
   
   const body = `
-新しい予約が入りました。
+🎉🎊 おめでとうございます！新しい予約が入りました！ 🎊🎉
+
+患者様が桜並木駅前の整骨院を選んでくださいました！
+素晴らしいサービスの提供を心がけて、患者様をお迎えしましょう！
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-【予約詳細】
+🌸【予約詳細】
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 患者名: ${reservation.name}様
@@ -150,8 +153,14 @@ export async function sendGmailNotification(
   }
 
   try {
+    // 楽しい差出人名を設定
+    const fromName = isAdminEmail 
+      ? '🎉 さくら整骨院予約システム【新規予約通知】' 
+      : '🌸 さくら整骨院 予約確認';
+    
     // メッセージを作成
     const message = [
+      `From: =?UTF-8?B?${Buffer.from(fromName).toString('base64')}?= <sakuranamiki.seikotsuin@gmail.com>`,
       `To: ${to}`,
       `Subject: =?UTF-8?B?${Buffer.from(subject).toString('base64')}?=`,
       'Content-Type: text/plain; charset=UTF-8',
@@ -211,14 +220,9 @@ export async function sendEmailNotifications(reservation: Reservation, menuName:
       true
     );
 
-    // 患者向けメール
-    const patientContent = createPatientEmailContent(reservation, menuName);
-    const patientResult = await sendGmailNotification(
-      reservation.email, 
-      patientContent.subject, 
-      patientContent.body, 
-      false
-    );
+    // 患者向けメール（一時的に無効化）
+    console.log('患者向けメール送信をスキップ（管理者のみ）');
+    const patientResult = true; // 一時的にスキップ
 
     return adminResult && patientResult;
 

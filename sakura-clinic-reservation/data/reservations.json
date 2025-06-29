@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "menuId": "first-free",
+    "date": "2025-06-29",
+    "time": "14:00",
+    "name": "テスト太郎",
+    "email": "test@example.com",
+    "phone": "090-1234-5678",
+    "symptoms": "テスト症状",
+    "isFirstTime": true,
+    "endTime": "15:00",
+    "id": "RES-1751200639681-5165zao2e",
+    "createdAt": "2025-06-29T12:37:19.682Z",
+    "status": "confirmed"
+  }
+]

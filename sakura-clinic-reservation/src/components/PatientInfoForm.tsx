@@ -1,7 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ReservationForm } from '@/types/reservation';
+import { getLineProfile, isInLiff } from '@/lib/liff';
 
 interface PatientInfoFormProps {
   formData: Partial<ReservationForm>;
@@ -17,14 +18,35 @@ export default function PatientInfoForm({
   onPrev 
 }: PatientInfoFormProps) {
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [lineProfileLoaded, setLineProfileLoaded] = useState(false);
+
+  // LINEプロフィールから自動入力
+  useEffect(() => {
+    const loadLineProfile = async () => {
+      if (isInLiff() && !lineProfileLoaded && !formData.name) {
+        try {
+          const profile = await getLineProfile();
+          if (profile) {
+            updateFormData({
+              name: profile.displayName
+            });
+            console.log('📱 LINEプロフィールから名前を自動入力:', profile.displayName);
+          }
+        } catch (error) {
+          console.error('LINEプロフィール取得エラー:', error);
+        } finally {
+          setLineProfileLoaded(true);
+        }
+      }
+    };
+
+    loadLineProfile();
+  }, [formData.name, lineProfileLoaded, updateFormData]);
 
   const validateField = (name: string, value: string) => {
     switch (name) {
       case 'name':
         return value.trim() ? '' : '患者名を入力してください';
-      case 'email':
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(value) ? '' : '正しいメールアドレスを入力してください';
       case 'phone':
         const phoneRegex = /^[0-9-]+$/;
         return phoneRegex.test(value) && value.length >= 10 ? '' : '正しい電話番号を入力してください';
@@ -48,7 +70,7 @@ export default function PatientInfoForm({
     const newErrors: Record<string, string> = {};
     
     // 全フィールドのバリデーション
-    const requiredFields = ['name', 'email', 'phone'];
+    const requiredFields = ['name', 'phone'];
     requiredFields.forEach(field => {
       const value = formData[field as keyof ReservationForm] as string || '';
       const error = validateField(field, value);
@@ -65,7 +87,6 @@ export default function PatientInfoForm({
 
   const isFormValid = () => {
     return formData.name && 
-           formData.email && 
            formData.phone &&
            Object.keys(errors).every(key => !errors[key]);
   };
@@ -77,8 +98,16 @@ export default function PatientInfoForm({
           患者情報を入力してください
         </h2>
         <p className="text-gray-600">
-          予約確認のためご連絡先をお教えください
+          予約確認のためお名前と電話番号をお教えください
         </p>
+        {isInLiff() && (
+          <div className="mt-4 p-3 bg-green-50 border border-green-200 rounded-lg">
+            <p className="text-green-800 text-sm flex items-center">
+              <span className="mr-2">📱</span>
+              LINE内で動作中 - プロフィール情報を自動入力中...
+            </p>
+          </div>
+        )}
       </div>
 
       <div className="space-y-6">
@@ -106,32 +135,6 @@ export default function PatientInfoForm({
           )}
         </div>
 
-        {/* メールアドレス */}
-        <div>
-          <label className="block text-sm font-bold text-gray-700 mb-2">
-            メールアドレス <span className="text-red-500">*</span>
-          </label>
-          <input
-            type="email"
-            value={formData.email || ''}
-            onChange={(e) => handleInputChange('email', e.target.value)}
-            placeholder="yamada@example.com"
-            className={`
-              w-full px-4 py-3 border-2 rounded-lg transition-all duration-300
-              ${errors.email 
-                ? 'border-red-300 focus:border-red-500' 
-                : 'border-gray-200 focus:border-blue-500'
-              }
-              focus:outline-none focus:ring-2 focus:ring-blue-200
-            `}
-          />
-          {errors.email && (
-            <p className="text-red-500 text-sm mt-1">{errors.email}</p>
-          )}
-          <p className="text-gray-500 text-sm mt-1">
-            予約確認メールをお送りします
-          </p>
-        </div>
 
         {/* 電話番号 */}
         <div>

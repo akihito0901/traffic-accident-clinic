@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getAllReservations, createReservation, getReservationsByDate } from '@/lib/storage';
-import { sendAllNotifications } from '@/lib/notification-system';
+import { getAllReservations, createReservation, getReservationsByDate } from '@/lib/memory-storage';
+import { sendAllNotifications } from '@/lib/notification-system-safe';
 import { MENU_ITEMS } from '@/lib/config';
 
 // 全予約取得
@@ -30,10 +30,12 @@ export async function GET(request: NextRequest) {
 // 新規予約作成
 export async function POST(request: NextRequest) {
   try {
+    console.log('🔍 予約API開始');
     const body = await request.json();
+    console.log('📝 受信データ:', body);
     
     // バリデーション
-    const requiredFields = ['menuId', 'date', 'time', 'name', 'email', 'phone'];
+    const requiredFields = ['menuId', 'date', 'time', 'name', 'phone'];
     for (const field of requiredFields) {
       if (!body[field]) {
         return NextResponse.json(
@@ -59,12 +61,15 @@ export async function POST(request: NextRequest) {
     const endMins = totalMinutes % 60;
     const endTime = `${endHours.toString().padStart(2, '0')}:${endMins.toString().padStart(2, '0')}`;
 
-    // 予約作成
+    // 予約作成（メールアドレスはダミー値）
+    console.log('💾 予約データ作成中...');
     const reservation = await createReservation({
       ...body,
+      email: 'noreply@sakura-clinic.jp', // ダミー値
       endTime,
       isFirstTime: body.isFirstTime || false
     });
+    console.log('✅ 予約作成成功:', reservation.id);
 
     // 通知システム実行
     console.log('🔔 通知システムを実行中...');
@@ -83,9 +88,10 @@ export async function POST(request: NextRequest) {
     });
 
   } catch (error) {
-    console.error('予約作成エラー:', error);
+    console.error('❌ 予約作成エラー詳細:', error);
+    console.error('❌ エラースタック:', error instanceof Error ? error.stack : 'スタック情報なし');
     return NextResponse.json(
-      { error: '予約の作成に失敗しました' },
+      { error: '予約の作成に失敗しました', details: error instanceof Error ? error.message : String(error) },
       { status: 500 }
     );
   }

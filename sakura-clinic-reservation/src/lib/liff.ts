@@ -1,6 +1,6 @@
 import liff from '@line/liff';
 
-const LIFF_ID = '2007660798-prebW7D7';
+const LIFF_ID = process.env.NEXT_PUBLIC_LIFF_ID || '2007660798-prebW7D7';
 
 // LIFF初期化
 export async function initializeLiff(): Promise<boolean> {

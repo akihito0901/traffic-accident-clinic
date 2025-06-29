@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { createReservation, getAllReservations } from '@/lib/storage';
+import { createReservation, getAllReservations } from '@/lib/memory-storage';
 
 // テスト用予約作成
 export async function POST() {

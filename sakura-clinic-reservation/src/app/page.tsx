@@ -55,6 +55,24 @@ export default function ReservationPage() {
             桜並木駅前の整骨院 - 予約フォーム
           </h1>
           
+          {/* LIFF Status */}
+          {isLiffReady && (
+            <div className="mt-4 text-center">
+              <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${
+                isInLiff() 
+                  ? 'bg-green-100 text-green-800' 
+                  : 'bg-blue-100 text-blue-800'
+              }`}>
+                {isInLiff() ? '📱 LINE内で動作中' : '🌐 ブラウザで動作中'}
+              </span>
+              {lineUserId && (
+                <span className="ml-2 text-sm text-gray-600">
+                  ユーザー認証済み
+                </span>
+              )}
+            </div>
+          )}
+          
           {/* Progress Bar */}
           <div className="mt-6">
             <div className="flex items-center justify-between mb-2">
