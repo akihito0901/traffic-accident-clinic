@@ -44,7 +44,7 @@ function createDateTime(date: string, time: string): string {
 // Googleカレンダーイベントを作成
 export async function createCalendarEvent(reservation: Reservation, menuName: string): Promise<boolean> {
   const accessToken = await getGoogleAccessToken();
-  const calendarId = process.env.GOOGLE_CALENDAR_ID || 'primary';
+  const calendarId = 'sakuranamiki.seikotsuin@gmail.com';
   
   if (!accessToken) {
     console.error('Google Calendar アクセストークンの取得に失敗しました');
@@ -156,10 +156,66 @@ function getMenuPriceText(menuName: string): string {
   return '要確認';
 }
 
+// 指定日のカレンダーイベントを取得
+export async function getCalendarEvents(date: string): Promise<Array<{
+  id: string;
+  summary: string;
+  start: string;
+  end: string;
+  startDateTime: Date;
+  endDateTime: Date;
+}>> {
+  const accessToken = await getGoogleAccessToken();
+  const calendarId = 'sakuranamiki.seikotsuin@gmail.com';
+  
+  if (!accessToken) {
+    console.error('Google Calendar アクセストークンの取得に失敗しました');
+    return [];
+  }
+
+  try {
+    const startOfDay = `${date}T00:00:00+09:00`;
+    const endOfDay = `${date}T23:59:59+09:00`;
+    
+    const response = await fetch(
+      `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(calendarId)}/events?` +
+      `timeMin=${encodeURIComponent(startOfDay)}&` +
+      `timeMax=${encodeURIComponent(endOfDay)}&` +
+      `singleEvents=true&orderBy=startTime`,
+      {
+        headers: {
+          'Authorization': `Bearer ${accessToken}`
+        }
+      }
+    );
+
+    if (!response.ok) {
+      console.error('カレンダーイベント取得エラー:', response.status);
+      return [];
+    }
+
+    const data = await response.json();
+    const events = data.items || [];
+    
+    return events.map((event: any) => ({
+      id: event.id,
+      summary: event.summary || '予定',
+      start: event.start.dateTime || event.start.date,
+      end: event.end.dateTime || event.end.date,
+      startDateTime: new Date(event.start.dateTime || event.start.date),
+      endDateTime: new Date(event.end.dateTime || event.end.date)
+    }));
+
+  } catch (error) {
+    console.error('カレンダーイベント取得エラー:', error);
+    return [];
+  }
+}
+
 // 指定された予約をカレンダーから削除
 export async function deleteCalendarEvent(eventId: string): Promise<boolean> {
   const accessToken = await getGoogleAccessToken();
-  const calendarId = process.env.GOOGLE_CALENDAR_ID || 'primary';
+  const calendarId = 'sakuranamiki.seikotsuin@gmail.com';
   
   if (!accessToken) {
     console.error('Google Calendar アクセストークンの取得に失敗しました');
