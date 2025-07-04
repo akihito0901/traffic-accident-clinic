@@ -66,3 +66,28 @@ export async function getReservationById(id: string): Promise<Reservation | null
   const allReservations = await getAllReservations();
   return allReservations.find(reservation => reservation.id === id) || null;
 }
+
+// ユーザー別予約取得
+export async function getReservationsByUser(email: string): Promise<Reservation[]> {
+  const allReservations = await getAllReservations();
+  return allReservations.filter(reservation => 
+    reservation.email === email && reservation.status === 'confirmed'
+  );
+}
+
+// 予約キャンセル
+export async function cancelReservation(id: string): Promise<boolean> {
+  await ensureDataFiles();
+  
+  const reservations = await getAllReservations();
+  const index = reservations.findIndex(r => r.id === id);
+  
+  if (index === -1) {
+    return false;
+  }
+  
+  reservations[index].status = 'cancelled';
+  await fs.writeFile(RESERVATIONS_FILE, JSON.stringify(reservations, null, 2));
+  
+  return true;
+}

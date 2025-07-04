@@ -7,29 +7,13 @@ import MenuSelection from '@/components/MenuSelection';
 import DateTimeSelection from '@/components/DateTimeSelection';
 import PatientInfoForm from '@/components/PatientInfoForm';
 import ConfirmationStep from '@/components/ConfirmationStep';
-import { initializeLiff, getLineUserId, isInLiff } from '@/lib/liff';
+import { User } from '@/lib/auth';
 
 export default function ReservationPage() {
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState<Partial<ReservationForm>>({});
-  const [lineUserId, setLineUserId] = useState<string | null>(null);
-  const [isLiffReady, setIsLiffReady] = useState(false);
-
-  // LIFF初期化
-  useEffect(() => {
-    const initLiff = async () => {
-      const success = await initializeLiff();
-      setIsLiffReady(success);
-      
-      if (success) {
-        const userId = await getLineUserId();
-        setLineUserId(userId);
-        console.log('🎯 LINE User ID:', userId);
-      }
-    };
-
-    initLiff();
-  }, []);
+  const [currentUser, setCurrentUser] = useState<User | null>(null);
+  const [showLogin, setShowLogin] = useState(false);
 
   const updateFormData = (data: Partial<ReservationForm>) => {
     setFormData(prev => ({ ...prev, ...data }));
