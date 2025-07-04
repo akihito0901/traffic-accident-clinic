@@ -5,6 +5,7 @@ export interface User {
   name: string;
   email: string;
   phone: string;
+  role: 'user' | 'admin';
   createdAt: string;
 }
 
@@ -16,9 +17,18 @@ export interface LoginCredentials {
 // メモリ内ユーザーストレージ（実際のプロダクションではDBを使用）
 let users: User[] = [];
 
+// 管理者アカウント
+const ADMIN_ACCOUNTS = [
+  'sakuranamiki.seikotsuin@gmail.com',
+  'admin@sakura-clinic.com'
+];
+
 // ユーザー登録/ログイン
 export async function loginOrRegister(credentials: LoginCredentials, name?: string): Promise<User> {
   const { email, phone } = credentials;
+  
+  // 管理者チェック
+  const isAdmin = ADMIN_ACCOUNTS.includes(email);
   
   // 既存ユーザーを検索
   let user = users.find(u => u.email === email || u.phone === phone);
@@ -27,15 +37,16 @@ export async function loginOrRegister(credentials: LoginCredentials, name?: stri
     // 新規ユーザー作成
     user = {
       id: generateUserId(),
-      name: name || 'ゲスト',
+      name: name || (isAdmin ? '管理者' : 'ゲスト'),
       email,
       phone,
+      role: isAdmin ? 'admin' : 'user',
       createdAt: new Date().toISOString()
     };
     users.push(user);
-    console.log('✅ 新規ユーザー登録:', user.email);
+    console.log('✅ 新規ユーザー登録:', user.email, user.role);
   } else {
-    console.log('✅ 既存ユーザーログイン:', user.email);
+    console.log('✅ 既存ユーザーログイン:', user.email, user.role);
   }
   
   return user;

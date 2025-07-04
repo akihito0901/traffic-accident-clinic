@@ -1,4 +1,4 @@
-import { getCalendarEvents } from './calendar-integration';
+import { getReservationsByDate } from './storage';
 import { BUSINESS_HOURS, SATURDAY_HOURS, TIME_SLOT_INTERVAL } from './config';
 
 export interface AvailableSlot {
@@ -37,10 +37,10 @@ function getBusinessHours(date: string) {
   return BUSINESS_HOURS;
 }
 
-// 指定日・メニューの空き時間スロットを計算
+// 指定日の空き時間スロットを計算
 export async function calculateAvailableSlots(
   date: string, 
-  durationMinutes: number
+  durationMinutes: number = 60
 ): Promise<AvailableSlot[]> {
   const slots: AvailableSlot[] = [];
   const businessHours = getBusinessHours(date);
@@ -58,10 +58,8 @@ export async function calculateAvailableSlots(
     lunchEnd = parseTimeToDate(date, businessHours.lunchEnd);
   }
   
-  // 既存のカレンダー予定を取得
-  console.log(`📅 ${date}のカレンダー予定を取得中...`);
-  const calendarEvents = await getCalendarEvents(date);
-  console.log(`📅 取得した予定数: ${calendarEvents.length}件`);
+  // 既存の予約を取得
+  const existingReservations = await getReservationsByDate(date);
   
   // 15分間隔でスロットをチェック
   const currentSlot = new Date(startTime);
@@ -88,15 +86,17 @@ export async function calculateAvailableSlots(
       }
     }
     
-    // 既存予定との競合チェック
+    // 既存予約との競合チェック
     let hasConflict = false;
     let conflictReason = '';
     
-    for (const event of calendarEvents) {
-      if (hasTimeConflict(currentSlot, slotEndTime, event.startDateTime, event.endDateTime)) {
+    for (const reservation of existingReservations) {
+      const reservationStart = parseTimeToDate(date, reservation.time);
+      const reservationEnd = parseTimeToDate(date, reservation.endTime);
+      
+      if (hasTimeConflict(currentSlot, slotEndTime, reservationStart, reservationEnd)) {
         hasConflict = true;
-        conflictReason = `既存予定「${event.summary}」と重複`;
-        console.log(`🚫 競合検知: ${timeStr} - ${event.summary}`);
+        conflictReason = `予約済み（${reservation.name}様）`;
         break;
       }
     }
@@ -125,9 +125,6 @@ export async function calculateAvailableSlots(
     currentSlot.setMinutes(currentSlot.getMinutes() + TIME_SLOT_INTERVAL);
   }
   
-  const availableCount = slots.filter(s => s.available).length;
-  console.log(`✅ 利用可能スロット: ${availableCount}/${slots.length}`);
-  
   return slots;
 }
 
@@ -135,7 +132,7 @@ export async function calculateAvailableSlots(
 export async function isTimeSlotAvailable(
   date: string,
   time: string,
-  durationMinutes: number
+  durationMinutes: number = 60
 ): Promise<{ available: boolean; reason?: string }> {
   const slots = await calculateAvailableSlots(date, durationMinutes);
   const targetSlot = slots.find(s => s.time === time);

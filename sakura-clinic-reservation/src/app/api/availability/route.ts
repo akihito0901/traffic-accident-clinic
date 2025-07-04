@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { calculateAvailableSlots } from '@/lib/availability-checker';
+import { calculateAvailableSlots } from '@/lib/availability';
 
 export async function GET(request: NextRequest) {
   try {
@@ -14,8 +14,6 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    console.log(`🔍 空き時間チェック: ${date} (${duration}分)`);
-    
     const availableSlots = await calculateAvailableSlots(date, duration);
     
     return NextResponse.json({
