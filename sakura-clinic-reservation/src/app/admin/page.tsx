@@ -1,13 +1,5 @@
 'use client';
 
-import { useState } from 'react';
-
-interface TestResult {
-  success: boolean;
-  error?: string;
-  [key: string]: unknown;
-}
-
 export default function AdminPage() {
 
 
