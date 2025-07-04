@@ -9,14 +9,12 @@ interface ConfirmationStepProps {
   formData: ReservationForm;
   selectedMenu: MenuItem;
   onPrev: () => void;
-  lineUserId?: string | null;
 }
 
 export default function ConfirmationStep({ 
   formData, 
   selectedMenu, 
-  onPrev,
-  lineUserId 
+  onPrev
 }: ConfirmationStepProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
@@ -45,8 +43,7 @@ export default function ConfirmationStep({
         },
         body: JSON.stringify({
           ...formData,
-          isFirstTime: formData.isFirstTime || false,
-          lineUserId: lineUserId || undefined
+          isFirstTime: formData.isFirstTime || false
         })
       });
 
@@ -56,19 +53,12 @@ export default function ConfirmationStep({
         throw new Error(data.error || '予約の作成に失敗しました');
       }
 
-      const { reservation, notifications } = data;
+      const { reservation } = data;
       
       setReservationId(reservation.id);
       setIsCompleted(true);
       
-      // 通知結果をログ出力
-      console.log('🔔 通知システム結果:', notifications);
-      if (!notifications.success) {
-        console.warn('⚠️ 一部の通知が失敗しましたが、予約は正常に作成されました');
-        console.warn('通知エラー:', notifications.errors);
-      } else {
-        console.log('✅ 全ての通知が正常に送信されました');
-      }
+      console.log('✅ 予約が正常に作成されました:', reservation.id);
       
     } catch (error) {
       console.error('予約作成エラー:', error);

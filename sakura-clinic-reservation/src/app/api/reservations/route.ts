@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getAllReservations, createReservation, getReservationsByDate } from '@/lib/storage';
-import { sendAllNotifications } from '@/lib/notification-system';
 import { MENU_ITEMS } from '@/lib/config';
 
 // 全予約取得
@@ -66,20 +65,10 @@ export async function POST(request: NextRequest) {
       isFirstTime: body.isFirstTime || false
     });
 
-    // 通知システム実行
-    console.log('🔔 通知システムを実行中...');
-    const notificationResult = await sendAllNotifications(reservation, body.lineUserId);
-    
-    if (!notificationResult.success) {
-      console.warn('⚠️ 一部の通知が失敗しましたが、予約は正常に作成されました');
-      console.warn('通知エラー:', notificationResult.errors);
-    } else {
-      console.log('✅ 全ての通知が正常に送信されました');
-    }
+    console.log('✅ 予約が正常に作成されました:', reservation.id);
 
     return NextResponse.json({
-      reservation,
-      notifications: notificationResult
+      reservation
     });
 
   } catch (error) {

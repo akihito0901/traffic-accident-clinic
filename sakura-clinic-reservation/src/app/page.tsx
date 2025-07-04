@@ -105,7 +105,6 @@ export default function ReservationPage() {
               formData={formData as ReservationForm}
               selectedMenu={selectedMenu}
               onPrev={prevStep}
-              lineUserId={lineUserId}
             />
           )}
         </div>

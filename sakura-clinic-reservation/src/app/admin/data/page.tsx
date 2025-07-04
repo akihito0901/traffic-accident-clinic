@@ -28,10 +28,10 @@ export default function AdminDataPage() {
     setError(null);
 
     try {
-      const response = await fetch('/api/reservations/test');
+      const response = await fetch('/api/reservations');
       const data = await response.json();
 
-      if (data.success) {
+      if (data.reservations) {
         setReservations(data.reservations || []);
       } else {
         setError(data.error || '予約データの取得に失敗しました');
@@ -45,14 +45,34 @@ export default function AdminDataPage() {
 
   const createTestReservation = async () => {
     try {
-      const response = await fetch('/api/reservations/test', {
-        method: 'POST'
+      // 明日の10:00にテスト予約を作成
+      const tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      const testDate = tomorrow.toISOString().split('T')[0];
+      
+      const testReservation = {
+        menuId: 'first-free',
+        date: testDate,
+        time: '10:00',
+        name: 'テスト 太郎',
+        email: 'test@example.com',
+        phone: '080-1234-5678',
+        symptoms: 'システムテスト用の予約です',
+        isFirstTime: true
+      };
+
+      const response = await fetch('/api/reservations', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(testReservation)
       });
       
       const data = await response.json();
       
-      if (data.success) {
-        alert('✅ テスト予約が作成されました！');
+      if (data.reservation) {
+        alert('✅ テスト予約が作成されました！\n予約ID: ' + data.reservation.id);
         loadReservations(); // リロード
       } else {
         alert('❌ テスト予約の作成に失敗しました: ' + data.error);
