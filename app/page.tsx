@@ -237,7 +237,7 @@ export default function Home() {
           {/* Fallback Image for very old browsers */}
           <Image
             src="/images/hero-background.jpg"
-            alt="福岡市博多区の桜並木駅前の整骨院での交通事故対応イメージ"
+            alt="福岡市博多区の桜並木駅前の整骨院での交通事故ケアイメージ"
             fill
             className="object-cover"
             priority
@@ -282,7 +282,7 @@ export default function Home() {
           {/* Main Message */}
           <div className="mb-8">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-center text-white mb-4 drop-shadow-lg">
-              交通事故の対応
+              交通事故のケア
             </h1>
             <p className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-center">
               <span className="bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 bg-clip-text text-transparent drop-shadow-lg">
@@ -332,7 +332,7 @@ export default function Home() {
             <div className="bg-white/90 backdrop-blur-sm p-4 sm:p-6 rounded-2xl shadow-xl border border-yellow-500/30 max-w-3xl mx-auto">
               <p className="text-sm sm:text-base md:text-lg text-gray-800 font-medium">
                 <span className="text-base sm:text-lg md:text-xl font-black text-red-600">痛みがなくても必ず検査を！</span><br />
-                <span className="text-yellow-700 font-bold">早期対応で後遺症を防ぎましょう。</span>
+                <span className="text-yellow-700 font-bold">早期ケアで後遺症を防ぎましょう。</span>
               </p>
             </div>
           </div>
