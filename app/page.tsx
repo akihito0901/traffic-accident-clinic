@@ -1327,7 +1327,7 @@ export default function Home() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4">
               桜並木駅前の整骨院
             </h2>
-            <p className="text-xl sm:text-2xl text-blue-300 font-medium">交通事故対応も承ります</p>
+            <p className="text-xl sm:text-2xl text-blue-300 font-medium">その他の施術も承ります</p>
             <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full mt-4"></div>
           </div>
           
