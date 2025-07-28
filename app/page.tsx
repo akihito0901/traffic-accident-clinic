@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: '【自己負担0円】交通事故治療・むちうち治療｜桜並木駅前の整骨院｜福岡市博多区',
+  title: '交通事故治療 自己負担0円｜桜並木駅前整骨院 福岡市博多区',
   description: '交通事故によるむちうち・打撲・捻挫の治療費は自己負担0円！福岡市博多区の桜並木駅前の整骨院。10年の臨床経験、夜20時まで営業、土曜も対応。保険手続きもお任せください。070-5530-6656',
-  keywords: '交通事故治療,むちうち治療,自己負担0円,整骨院,福岡市博多区,桜並木駅前,後遺症,保険手続き,夜間営業,土曜診療,今坂院長',
+  keywords: '交通事故治療,むちうち治療,自己負担0円,整骨院,福岡市博多区,桜並木駅前,後遺症,保険手続き,夜間営業,土曜診療,今坂院長,福岡交通事故,博多区整骨院,桜並木駅,むちうち専門,自賠責保険,竹丘町',
   authors: [{ name: '桜並木駅前の整骨院' }],
   creator: '桜並木駅前の整骨院',
   publisher: '桜並木駅前の整骨院',
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'your-google-site-verification-code',
+    google: 'Google_Search_Console_から取得した認証コードをここに入力',
   },
 }
 
@@ -70,11 +70,12 @@ export default function Home() {
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "竹丘町2-4-18",
-          "addressLocality": "博多区",
-          "addressRegion": "福岡市",
-          "postalCode": "812-0895",
-          "addressCountry": "JP"
+          "addressLocality": "博多区", 
+          "addressRegion": "福岡県",
+          "addressCountry": "JP",
+          "postalCode": "812-0895"
         },
+        "description": "福岡市博多区の交通事故治療専門整骨院。自己負担0円、むちうち・後遺症治療に特化。桜並木駅徒歩1分の好立地で夜20時まで営業。",
         "geo": {
           "@type": "GeoCoordinates",
           "latitude": 33.6046,
@@ -228,7 +229,7 @@ export default function Home() {
               
               {/* Main Clinic Name */}
               <div className="relative bg-black/60 backdrop-blur-sm rounded-3xl p-8 border border-white/30">
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-center leading-tight">
+                <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-center leading-tight">
                   <span className="bg-gradient-to-r from-cyan-300 via-blue-300 via-indigo-300 via-purple-300 via-pink-300 to-rose-300 bg-clip-text text-transparent animate-pulse bg-[length:400%_400%] drop-shadow-lg" style={{animation: 'rainbow-shift 3s ease-in-out infinite'}}>
                     桜並木駅前の
                   </span>
@@ -236,7 +237,7 @@ export default function Home() {
                   <span className="bg-gradient-to-r from-rose-300 via-pink-300 via-purple-300 via-indigo-300 via-blue-300 to-cyan-300 bg-clip-text text-transparent animate-pulse bg-[length:400%_400%] drop-shadow-lg" style={{animation: 'rainbow-shift 3s ease-in-out infinite reverse'}}>
                     整骨院
                   </span>
-                </h1>
+                </h2>
                 
                 {/* Location Badge */}
                 <div className="text-center mt-4">
@@ -250,9 +251,9 @@ export default function Home() {
           
           {/* Main Message */}
           <div className="mb-8">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-center text-white mb-4 drop-shadow-lg">
-              交通事故治療
-            </h2>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-center text-white mb-4 drop-shadow-lg">
+              福岡市博多区の交通事故治療専門整骨院
+            </h1>
             <p className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-center">
               <span className="bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 bg-clip-text text-transparent drop-shadow-lg">
                 自己負担0円
@@ -309,7 +310,7 @@ export default function Home() {
       </section>
 
       {/* Features - Ultimate Cool Design */}
-      <section className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 overflow-hidden">
+      <section id="features" className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 overflow-hidden" aria-label="選ばれる理由・特徴">
         {/* Background Video */}
         <div className="absolute inset-0">
           <video
@@ -347,8 +348,8 @@ export default function Home() {
               <div className="w-16 h-px bg-gradient-to-l from-transparent via-red-400 to-transparent"></div>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-transparent">選ばれる</span>
-              <span className="bg-gradient-to-r from-red-500 via-yellow-500 to-orange-500 bg-clip-text text-transparent">理由</span>
+              <span className="bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-transparent">交通事故治療で選ばれる</span>
+              <span className="bg-gradient-to-r from-red-500 via-yellow-500 to-orange-500 bg-clip-text text-transparent">6つの理由</span>
             </h2>
             <div className="flex items-center justify-center gap-3 mb-8">
               <div className="flex items-center gap-1">
