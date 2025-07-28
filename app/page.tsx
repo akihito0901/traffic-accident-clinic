@@ -190,8 +190,20 @@ export default function Home() {
       />
       {/* Hero Section - Mobile Optimized */}
       <section id="hero" className="relative min-h-screen flex items-center justify-center pt-8" aria-label="メインヒーローセクション">
-        {/* Background Image */}
+        {/* Background Video */}
         <div className="absolute inset-0">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover"
+            poster="/images/hero-background.jpg"
+          >
+            <source src="/videos/hero-background.mov" type="video/mp4" />
+            {/* Fallback for unsupported browsers */}
+          </video>
+          {/* Fallback Image for very old browsers */}
           <Image
             src="/images/hero-background.jpg"
             alt="福岡市博多区の桜並木駅前の整骨院での交通事故治療イメージ"
@@ -200,6 +212,7 @@ export default function Home() {
             priority
             sizes="100vw"
             quality={85}
+            style={{ display: 'none' }}
           />
         </div>
         {/* Red Background Overlay */}
@@ -297,9 +310,21 @@ export default function Home() {
 
       {/* Features - Ultimate Cool Design */}
       <section className="relative py-20 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 overflow-hidden">
+        {/* Background Video */}
+        <div className="absolute inset-0">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover opacity-30"
+          >
+            <source src="/videos/features-background.mov" type="video/mp4" />
+          </video>
+        </div>
         {/* Dynamic Background Effects */}
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-red-500/10 via-transparent to-yellow-500/10"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-red-500/20 via-transparent to-yellow-500/20"></div>
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-red-500/20 to-yellow-500/20 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
         </div>
