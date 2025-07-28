@@ -215,9 +215,9 @@ export default function Home() {
             style={{ display: 'none' }}
           />
         </div>
-        {/* Red Background Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-red-600/30 via-red-700/30 to-red-800/30"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+        {/* Background Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/40 via-slate-800/40 to-gray-900/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
           {/* Rainbow Glowing Clinic Name - HERO */}
@@ -227,13 +227,13 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 via-indigo-500 to-purple-500 rounded-3xl blur-xl opacity-60 animate-pulse"></div>
               
               {/* Main Clinic Name */}
-              <div className="relative bg-black/40 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
+              <div className="relative bg-black/60 backdrop-blur-sm rounded-3xl p-8 border border-white/30">
                 <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-center leading-tight">
-                  <span className="bg-gradient-to-r from-red-400 via-yellow-400 via-green-400 via-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent animate-pulse bg-[length:400%_400%]" style={{animation: 'rainbow-shift 3s ease-in-out infinite'}}>
+                  <span className="bg-gradient-to-r from-cyan-300 via-blue-300 via-indigo-300 via-purple-300 via-pink-300 to-rose-300 bg-clip-text text-transparent animate-pulse bg-[length:400%_400%] drop-shadow-lg" style={{animation: 'rainbow-shift 3s ease-in-out infinite'}}>
                     桜並木駅前の
                   </span>
                   <br />
-                  <span className="bg-gradient-to-r from-purple-400 via-pink-400 via-red-400 via-yellow-400 via-green-400 to-blue-400 bg-clip-text text-transparent animate-pulse bg-[length:400%_400%]" style={{animation: 'rainbow-shift 3s ease-in-out infinite reverse'}}>
+                  <span className="bg-gradient-to-r from-rose-300 via-pink-300 via-purple-300 via-indigo-300 via-blue-300 to-cyan-300 bg-clip-text text-transparent animate-pulse bg-[length:400%_400%] drop-shadow-lg" style={{animation: 'rainbow-shift 3s ease-in-out infinite reverse'}}>
                     整骨院
                   </span>
                 </h1>
@@ -250,11 +250,11 @@ export default function Home() {
           
           {/* Main Message */}
           <div className="mb-8">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-center text-white mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-center text-white mb-4 drop-shadow-lg">
               交通事故治療
             </h2>
             <p className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-center">
-              <span className="bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 bg-clip-text text-transparent drop-shadow-lg">
                 自己負担0円
               </span>
             </p>
@@ -263,7 +263,7 @@ export default function Home() {
           {/* Emergency Badge */}
           <div className="mb-8">
             <div className="text-center">
-              <div className="inline-flex items-center gap-2 bg-red-500 text-white px-6 py-3 rounded-full font-bold text-sm shadow-lg animate-pulse">
+              <div className="inline-flex items-center gap-2 bg-orange-500 text-white px-6 py-3 rounded-full font-bold text-sm shadow-lg animate-pulse">
                 <span className="w-2 h-2 bg-yellow-400 rounded-full"></span>
                 緊急対応可能・24時間受付
               </div>
@@ -273,9 +273,9 @@ export default function Home() {
           {/* Phone Card */}
           <div className="mb-8">
             <div className="max-w-lg mx-auto">
-              <div className="p-6 rounded-2xl bg-black/60 backdrop-blur-sm shadow-2xl border border-white/20 text-center">
-                <p className="text-white/90 font-medium mb-2">お急ぎの方はお電話ください</p>
-                <a href="tel:070-5530-6656" className="block text-3xl sm:text-4xl font-black text-yellow-400 hover:text-yellow-300 transition-all duration-500">
+              <div className="p-6 rounded-2xl bg-black/70 backdrop-blur-sm shadow-2xl border border-white/30 text-center">
+                <p className="text-white font-medium mb-2">お急ぎの方はお電話ください</p>
+                <a href="tel:070-5530-6656" className="block text-3xl sm:text-4xl font-black text-yellow-400 hover:text-yellow-300 transition-all duration-500 drop-shadow-lg">
                   070-5530-6656
                 </a>
               </div>
