@@ -178,6 +178,36 @@ export default function Home() {
           "bestRating": "5",
           "worstRating": "1"
         }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://sakuranamiki1.com/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "交通事故の治療費は本当に0円ですか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "はい、自賠責保険適用により患者様の窓口負担は0円です。保険会社への手続きも当院が代行いたします。"
+            }
+          },
+          {
+            "@type": "Question", 
+            "name": "事故直後、痛みがなくても治療を受けるべきですか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "はい、痛みがなくても必ず検査・治療をお受けください。むちうちなどの症状は数日後に現れることが多く、早期治療が後遺症予防に重要です。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "福岡市博多区で交通事故治療が得意な整骨院はありますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "桜並木駅前の整骨院は福岡市博多区で10年の交通事故治療実績があります。むちうち・後遺症治療に特化し、保険手続きも全てサポートします。"
+            }
+          }
+        ]
       }
     ]
   };
@@ -372,7 +402,7 @@ export default function Home() {
                     <div className="w-40 h-40 mx-auto rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-green-500/50 transition-all duration-700">
                       <Image
                         src="/images/お金.png"
-                        alt="完全自己負担0円"
+                        alt="福岡市博多区の交通事故治療 完全自己負担0円 桜並木駅前の整骨院"
                         width={160}
                         height={160}
                         className="object-cover w-full h-full"
@@ -1211,6 +1241,70 @@ export default function Home() {
               <a href="https://lin.ee/Y6Hzw7E" className="bg-gradient-to-r from-green-500 to-green-600 text-white px-5 py-3 rounded-full font-bold shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 text-center">
                 LINE予約
               </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section id="faq" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white" aria-label="よくある質問">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-black text-gray-900 mb-4">
+              交通事故治療でよくある質問
+            </h2>
+            <p className="text-gray-600">患者様からよくいただくご質問にお答えします</p>
+          </div>
+          
+          <div className="space-y-6">
+            {/* FAQ 1 */}
+            <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
+              <h3 className="text-lg font-bold text-gray-900 mb-3">
+                Q. 交通事故の治療費は本当に0円ですか？
+              </h3>
+              <p className="text-gray-700 leading-relaxed">
+                A. はい、自賠責保険適用により患者様の窓口負担は0円です。保険会社への手続きも当院が代行いたします。
+              </p>
+            </div>
+            
+            {/* FAQ 2 */}
+            <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
+              <h3 className="text-lg font-bold text-gray-900 mb-3">
+                Q. 事故直後、痛みがなくても治療を受けるべきですか？
+              </h3>
+              <p className="text-gray-700 leading-relaxed">
+                A. はい、痛みがなくても必ず検査・治療をお受けください。むちうちなどの症状は数日後に現れることが多く、早期治療が後遺症予防に重要です。
+              </p>
+            </div>
+            
+            {/* FAQ 3 */}
+            <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
+              <h3 className="text-lg font-bold text-gray-900 mb-3">
+                Q. 福岡市博多区で交通事故治療が得意な整骨院はありますか？
+              </h3>
+              <p className="text-gray-700 leading-relaxed">
+                A. 桜並木駅前の整骨院は福岡市博多区で10年の交通事故治療実績があります。むちうち・後遺症治療に特化し、保険手続きも全てサポートします。
+              </p>
+            </div>
+            
+            {/* FAQ 4 */}
+            <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
+              <h3 className="text-lg font-bold text-gray-900 mb-3">
+                Q. 桜並木駅から近い整骨院を探しています
+              </h3>
+              <p className="text-gray-700 leading-relaxed">
+                A. 当院は桜並木駅から徒歩1分の好立地です。駐車場も完備しており、お車でもお越しいただけます。夜20時まで営業で仕事帰りにも便利です。
+              </p>
+            </div>
+            
+            {/* FAQ 5 */}
+            <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
+              <h3 className="text-lg font-bold text-gray-900 mb-3">
+                Q. むちうち治療にはどのくらいの期間がかかりますか？
+              </h3>
+              <p className="text-gray-700 leading-relaxed">
+                A. 症状や程度により異なりますが、一般的に3-6ヶ月程度です。当院では患者様の症状に合わせたオーダーメイド治療で、最短での回復を目指します。
+              </p>
             </div>
           </div>
         </div>
