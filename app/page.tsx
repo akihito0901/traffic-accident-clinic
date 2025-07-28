@@ -282,7 +282,7 @@ export default function Home() {
           {/* Main Message */}
           <div className="mb-8">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-center text-white mb-4 drop-shadow-lg">
-              交通事故のケア
+              交通事故の対応
             </h1>
             <p className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-center">
               <span className="bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 bg-clip-text text-transparent drop-shadow-lg">
