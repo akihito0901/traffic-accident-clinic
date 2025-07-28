@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: '交通事故治療 自己負担0円｜桜並木駅前整骨院 福岡市博多区',
-  description: '交通事故によるむちうち・打撲・捻挫の治療費は自己負担0円！福岡市博多区の桜並木駅前の整骨院。10年の臨床経験、夜20時まで営業、土曜も対応。保険手続きもお任せください。070-5530-6656',
-  keywords: '交通事故治療,むちうち治療,自己負担0円,整骨院,福岡市博多区,桜並木駅前,後遺症,保険手続き,夜間営業,土曜診療,今坂院長,福岡交通事故,博多区整骨院,桜並木駅,むちうち専門,自賠責保険,竹丘町',
+  title: '交通事故対応 自己負担0円｜桜並木駅前整骨院 福岡市博多区',
+  description: '交通事故によるむちうち・打撲・捻挫のケア費用は自己負担0円！福岡市博多区の桜並木駅前の整骨院。10年の臨床経験、夜20時まで営業、土曜も対応。保険手続きもお任せください。070-5530-6656',
+  keywords: '交通事故対応,むちうちケア,自己負担0円,整骨院,福岡市博多区,桜並木駅前,後遺症,保険手続き,夜間営業,土曜診療,今坂院長,福岡交通事故,博多区整骨院,桜並木駅,むちうち,自賠責保険,竹丘町',
   authors: [{ name: '桜並木駅前の整骨院' }],
   creator: '桜並木駅前の整骨院',
   publisher: '桜並木駅前の整骨院',
@@ -18,8 +18,8 @@ export const metadata: Metadata = {
     canonical: 'https://sakuranamiki1.com',
   },
   openGraph: {
-    title: '【自己負担0円】交通事故治療・むちうち治療｜桜並木駅前の整骨院',
-    description: '交通事故によるむちうち・打撲・捻挫の治療費は自己負担0円！福岡市博多区の桜並木駅前の整骨院。10年の臨床経験で安心の治療をご提供します。',
+    title: '【自己負担0円】交通事故対応・むちうち対応｜桜並木駅前の整骨院',
+    description: '交通事故によるむちうち・打撲・捻挫のケア費用は自己負担0円！福岡市博多区の桜並木駅前の整骨院。10年の臨床経験で安心のケアをご提供します。',
     type: 'website',
     url: 'https://sakuranamiki1.com',
     siteName: '桜並木駅前の整骨院',
@@ -29,14 +29,14 @@ export const metadata: Metadata = {
         url: '/images/hero-background.jpg',
         width: 1200,
         height: 630,
-        alt: '桜並木駅前の整骨院 - 交通事故治療専門',
+        alt: '桜並木駅前の整骨院 - 交通事故対応専門',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: '【自己負担0円】交通事故治療・むちうち治療｜桜並木駅前の整骨院',
-    description: '交通事故によるむちうち・打撲・捻挫の治療費は自己負担0円！福岡市博多区の桜並木駅前の整骨院。',
+    title: '【自己負担0円】交通事故対応・むちうち対応｜桜並木駅前の整骨院',
+    description: '交通事故によるむちうち・打撲・捻挫のケア費用は自己負担0円！福岡市博多区の桜並木駅前の整骨院。',
     images: ['/images/hero-background.jpg'],
   },
   robots: {
@@ -75,7 +75,7 @@ export default function Home() {
           "addressCountry": "JP",
           "postalCode": "812-0895"
         },
-        "description": "福岡市博多区の交通事故治療専門整骨院。自己負担0円、むちうち・後遺症治療に特化。桜並木駅徒歩1分の好立地で夜20時まで営業。",
+        "description": "福岡市博多区の交通事故対応整骨院。自己負担0円、むちうち・後遺症ケアに特化。桜並木駅徒歩1分の好立地で夜20時まで営業。",
         "geo": {
           "@type": "GeoCoordinates",
           "latitude": 33.6046,
@@ -89,8 +89,8 @@ export default function Home() {
           "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
         ],
         "medicalSpecialty": [
-          "交通事故治療",
-          "むちうち治療",
+          "交通事故ケア",
+          "むちうちケア",
           "整骨院",
           "柔道整復"
         ],
@@ -100,22 +100,22 @@ export default function Home() {
         },
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
-          "name": "治療サービス",
+          "name": "ケアサービス",
           "itemListElement": [
             {
               "@type": "Offer",
               "itemOffered": {
                 "@type": "MedicalProcedure",
-                "name": "交通事故治療",
-                "description": "自己負担0円での交通事故による怪我の治療"
+                "name": "交通事故ケア",
+                "description": "自己負担0円での交通事故による怪我のケア"
               }
             },
             {
               "@type": "Offer", 
               "itemOffered": {
                 "@type": "MedicalProcedure",
-                "name": "むちうち治療",
-                "description": "交通事故によるむちうち症状の専門治療"
+                "name": "むちうちケア",
+                "description": "交通事故によるむちうち症状の専門ケア"
               }
             }
           ]
@@ -134,7 +134,7 @@ export default function Home() {
         "@id": "https://sakuranamiki1.com/#website",
         "url": "https://sakuranamiki1.com",
         "name": "桜並木駅前の整骨院",
-        "description": "福岡市博多区の交通事故治療専門整骨院",
+        "description": "福岡市博多区の交通事故対応専門整骨院",
         "inLanguage": "ja",
         "potentialAction": {
           "@type": "SearchAction",
@@ -185,7 +185,7 @@ export default function Home() {
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "交通事故の治療費は本当に0円ですか？",
+            "name": "交通事故のケア費用は本当に0円ですか？",
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "はい、自賠責保険適用により患者様の窓口負担は0円です。保険会社への手続きも当院が代行いたします。"
@@ -193,18 +193,18 @@ export default function Home() {
           },
           {
             "@type": "Question", 
-            "name": "事故直後、痛みがなくても治療を受けるべきですか？",
+            "name": "事故直後、痛みがなくてもケアを受けるべきですか？",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "はい、痛みがなくても必ず検査・治療をお受けください。むちうちなどの症状は数日後に現れることが多く、早期治療が後遺症予防に重要です。"
+              "text": "はい、痛みがなくても必ず検査・ケアをお受けください。むちうちなどの症状は数日後に現れることが多く、早期ケアが後遺症予防に重要です。"
             }
           },
           {
             "@type": "Question",
-            "name": "福岡市博多区で交通事故治療が得意な整骨院はありますか？",
+            "name": "福岡市博多区で交通事故のケアが得意な整骨院はありますか？",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "桜並木駅前の整骨院は福岡市博多区で10年の交通事故治療実績があります。むちうち・後遺症治療に特化し、保険手続きも全てサポートします。"
+              "text": "桜並木駅前の整骨院は福岡市博多区で10年の交通事故ケア実績があります。むちうち・後遺症ケアに特化し、保険手続きも全てサポートします。"
             }
           }
         ]
@@ -237,7 +237,7 @@ export default function Home() {
           {/* Fallback Image for very old browsers */}
           <Image
             src="/images/hero-background.jpg"
-            alt="福岡市博多区の桜並木駅前の整骨院での交通事故治療イメージ"
+            alt="福岡市博多区の桜並木駅前の整骨院での交通事故対応イメージ"
             fill
             className="object-cover"
             priority
@@ -282,7 +282,7 @@ export default function Home() {
           {/* Main Message */}
           <div className="mb-8">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-center text-white mb-4 drop-shadow-lg">
-              交通事故治療専門整骨院
+              交通事故の対応
             </h1>
             <p className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-center">
               <span className="bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 bg-clip-text text-transparent drop-shadow-lg">
@@ -332,7 +332,7 @@ export default function Home() {
             <div className="bg-white/90 backdrop-blur-sm p-4 sm:p-6 rounded-2xl shadow-xl border border-yellow-500/30 max-w-3xl mx-auto">
               <p className="text-sm sm:text-base md:text-lg text-gray-800 font-medium">
                 <span className="text-base sm:text-lg md:text-xl font-black text-red-600">痛みがなくても必ず検査を！</span><br />
-                <span className="text-yellow-700 font-bold">早期治療で後遺症を防ぎましょう。</span>
+                <span className="text-yellow-700 font-bold">早期対応で後遺症を防ぎましょう。</span>
               </p>
             </div>
           </div>
@@ -378,7 +378,7 @@ export default function Home() {
               <div className="w-16 h-px bg-gradient-to-l from-transparent via-red-400 to-transparent"></div>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-transparent">交通事故治療で選ばれる</span>
+              <span className="bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-transparent">交通事故のケアで選ばれる</span>
               <span className="bg-gradient-to-r from-red-500 via-yellow-500 to-orange-500 bg-clip-text text-transparent">6つの理由</span>
             </h2>
             <div className="flex items-center justify-center gap-3 mb-8">
@@ -402,7 +402,7 @@ export default function Home() {
                     <div className="w-40 h-40 mx-auto rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-green-500/50 transition-all duration-700">
                       <Image
                         src="/images/お金.png"
-                        alt="福岡市博多区の交通事故治療 完全自己負担0円 桜並木駅前の整骨院"
+                        alt="福岡市博多区の交通事故対応 完全自己負担0円 桜並木駅前の整骨院"
                         width={160}
                         height={160}
                         className="object-cover w-full h-full"
@@ -411,7 +411,7 @@ export default function Home() {
                   </div>
                   <h3 className="text-xl font-black mb-4 text-gray-900">完全自己負担0円</h3>
                   <p className="text-gray-700 leading-relaxed text-sm mb-6">
-                    自賠責保険適用により治療費は完全無料。窓口負担なしで安心して治療に専念できます。
+                    自賠責保険適用によりケア費用は完全無料。窓口負担なしで安心してケアに専念できます。
                   </p>
                   <div className="mt-auto">
                     <span className="inline-block bg-green-500/20 text-green-700 px-3 py-1 rounded-full text-xs font-bold border border-green-500/30">保険適用</span>
@@ -456,16 +456,16 @@ export default function Home() {
                     <div className="w-40 h-40 mx-auto rounded-3xl overflow-hidden shadow-2xl group-hover:shadow-purple-500/50 transition-all duration-700">
                       <Image
                         src="/images/事故専門.png"
-                        alt="交通事故専門治療"
+                        alt="交通事故専門対応"
                         width={160}
                         height={160}
                         className="object-cover w-full h-full"
                       />
                     </div>
                   </div>
-                  <h3 className="text-xl font-black mb-4 text-gray-900">交通事故専門治療</h3>
+                  <h3 className="text-xl font-black mb-4 text-gray-900">交通事故専門ケア</h3>
                   <p className="text-gray-700 leading-relaxed text-sm mb-6">
-                    むちうち・腰痛治療の豊富な経験。症状の根本原因から改善する専門的アプローチ。
+                    むちうち・腰痛ケアの豊富な経験。症状の根本原因から改善する専門的アプローチ。
                   </p>
                   <div className="mt-auto">
                     <span className="inline-block bg-purple-500/20 text-purple-700 px-3 py-1 rounded-full text-xs font-bold border border-purple-500/30">専門技術</span>
@@ -490,9 +490,9 @@ export default function Home() {
                       />
                     </div>
                   </div>
-                  <h3 className="text-xl font-black mb-4 text-gray-900">事故当日から対応</h3>
+                  <h3 className="text-xl font-black mb-4 text-gray-900">事故当日からケア</h3>
                   <p className="text-gray-700 leading-relaxed text-sm mb-6">
-                    緊急対応可能。事故直後の早期治療開始で後遺症を防ぎ、スピーディーな回復を実現。
+                    緊急対応可能。事故直後の早期ケア開始で後遺症を防ぎ、スピーディーな回復を実現。
                   </p>
                   <div className="mt-auto">
                     <span className="inline-block bg-red-500/20 text-red-700 px-3 py-1 rounded-full text-xs font-bold border border-red-500/30">緊急対応</span>
@@ -565,7 +565,7 @@ export default function Home() {
                   <div className="w-24 h-24 rounded-2xl overflow-hidden shadow-lg">
                     <Image
                       src="/images/地域で選ばれる.png"
-                      alt="地域で選ばれる信頼の治療院"
+                      alt="地域で選ばれる信頼の対応院"
                       width={96}
                       height={96}
                       className="object-cover w-full h-full"
@@ -573,7 +573,7 @@ export default function Home() {
                   </div>
                   <div className="text-center md:text-left">
                     <h3 className="text-xl md:text-2xl font-black text-gray-900 mb-2">
-                      <span className="bg-gradient-to-r from-red-400 via-yellow-400 to-orange-400 bg-clip-text text-transparent">地域で選ばれる治療院</span>
+                      <span className="bg-gradient-to-r from-red-400 via-yellow-400 to-orange-400 bg-clip-text text-transparent">地域で選ばれる対応院</span>
                     </h3>
                     <p className="text-gray-700">患者様から信頼をいただいています</p>
                   </div>
@@ -877,7 +877,7 @@ export default function Home() {
                     <div className="w-6 h-6 bg-blue-400 rounded-full flex items-center justify-center flex-shrink-0">
                       <span className="text-white text-xs font-bold">?</span>
                     </div>
-                    <p className="text-blue-700 font-medium">治療費は本当に0円？</p>
+                    <p className="text-blue-700 font-medium">対応費は本当に0円？</p>
                   </div>
                   <div className="flex items-center gap-3 p-3 bg-blue-50 rounded-lg border-l-4 border-blue-400">
                     <div className="w-6 h-6 bg-blue-400 rounded-full flex items-center justify-center flex-shrink-0">
@@ -896,7 +896,7 @@ export default function Home() {
                 <div className="relative h-48 mb-6 rounded-xl overflow-hidden">
                   <Image
                     src="/images/後遺症.jpg"
-                    alt="交通事故による首の痛みと後遺症の不安 - 桃並木駅前の整骨院で専門治療"
+                    alt="交通事故による首の痛みと後遺症の不安 - 桃並木駅前の整骨院で専門対応"
                     fill
                     className="object-cover"
                     loading="lazy"
@@ -905,8 +905,8 @@ export default function Home() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                   <div className="absolute bottom-4 left-4">
-                    <h3 className="text-2xl font-black text-white mb-1">治療・後遺症の不安</h3>
-                    <p className="text-white/90 text-sm">専門的な治療で完全回復へ</p>
+                    <h3 className="text-2xl font-black text-white mb-1">対応・後遺症の不安</h3>
+                    <p className="text-white/90 text-sm">専門的な対応で完全回復へ</p>
                   </div>
                 </div>
                 
@@ -916,7 +916,7 @@ export default function Home() {
                     <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
                       <span className="text-white text-xs font-bold">⚠</span>
                     </div>
-                    <p className="text-blue-700 font-medium">痛みがなくても治療すべき？</p>
+                    <p className="text-blue-700 font-medium">痛みがなくても対応すべき？</p>
                   </div>
                   <div className="flex items-center gap-3 p-3 bg-blue-50 rounded-lg border-l-4 border-blue-500">
                     <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
@@ -940,7 +940,7 @@ export default function Home() {
             <div className="bg-gradient-to-r from-green-500 to-green-600 p-8 rounded-2xl shadow-xl text-white mb-6">
               <h3 className="text-2xl font-black mb-3">こんな悩み、全部解決します！</h3>
               <p className="text-green-100 leading-relaxed">
-                保険手続きから治療まで、すべてをサポート。
+                保険手続きから対応まで、すべてをサポート。
               </p>
             </div>
             
@@ -967,9 +967,9 @@ export default function Home() {
               <span className="bg-gray-800 text-white px-6 py-2 rounded-full text-sm font-medium tracking-wide">TREATMENT PROCESS</span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 mb-4">
-              治療の流れ
+              対応の流れ
             </h2>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">シンプルで安心の治療プロセス</p>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">シンプルで安心の対応プロセス</p>
           </div>
           
           {/* Professional Flow Grid */}
@@ -1017,7 +1017,7 @@ export default function Home() {
                     </div>
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-3">来院・検査</h3>
-                  <p className="text-gray-600 leading-relaxed text-sm">詳しい症状の確認と検査を行い、最適な治療計画を立てます。</p>
+                  <p className="text-gray-600 leading-relaxed text-sm">詳しい症状の確認と検査を行い、最適な対応計画を立てます。</p>
                 </div>
               </div>
             </div>
@@ -1030,7 +1030,7 @@ export default function Home() {
                     <div className="w-32 h-32 mx-auto rounded-2xl overflow-hidden shadow-lg">
                       <Image
                         src="/images/step3-treatment.jpg"
-                        alt="治療開始"
+                        alt="対応開始"
                         width={128}
                         height={128}
                         className="object-cover w-full h-full"
@@ -1040,8 +1040,8 @@ export default function Home() {
                       <span className="inline-block bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-sm font-semibold">STEP 3</span>
                     </div>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">治療開始</h3>
-                  <p className="text-gray-600 leading-relaxed text-sm">患者様の症状に合わせたオーダーメイド治療を開始します。</p>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">対応開始</h3>
+                  <p className="text-gray-600 leading-relaxed text-sm">患者様の症状に合わせたオーダーメイド対応を開始します。</p>
                 </div>
               </div>
             </div>
@@ -1133,7 +1133,7 @@ export default function Home() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                   <div className="absolute bottom-4 left-4 right-4">
                     <h3 className="text-xl font-black text-white mb-2">清潔な施術室</h3>
-                    <p className="text-white/90 text-sm">清潔で落ち着いた環境でリラックスして治療</p>
+                    <p className="text-white/90 text-sm">清潔で落ち着いた環境でリラックスして対応</p>
                   </div>
                 </div>
               </div>
@@ -1153,7 +1153,7 @@ export default function Home() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                   <div className="absolute bottom-4 left-4 right-4">
                     <h3 className="text-xl font-black text-white mb-2">プロの施術</h3>
-                    <p className="text-white/90 text-sm">今坂院長による熟練した手技での治療</p>
+                    <p className="text-white/90 text-sm">今坂院長による熟練した手技での対応</p>
                   </div>
                 </div>
               </div>
@@ -1172,7 +1172,7 @@ export default function Home() {
               <span className="bg-gradient-to-r from-gray-600 to-gray-800 text-white px-4 py-2 rounded-full text-sm font-bold">実績と信頼</span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 mb-4">
-              治療実績・安心サポート
+              対応実績・安心サポート
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-gray-600 to-gray-800 mx-auto rounded-full"></div>
           </div>
@@ -1184,7 +1184,7 @@ export default function Home() {
               <div className="bg-white p-8 rounded-2xl shadow-lg hover-lift border border-gray-100">
                 <div className="text-4xl font-black text-red-600 mb-2">10年</div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">臨床経験</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">豊富な経験と専門知識で安心の治療を提供</p>
+                <p className="text-gray-600 text-sm leading-relaxed">豊富な経験と専門知識で安心の対応を提供</p>
               </div>
             </div>
             
@@ -1213,9 +1213,9 @@ export default function Home() {
             <div className="bg-gradient-to-br from-red-500 to-red-600 p-8 rounded-2xl shadow-xl text-white relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16"></div>
               <div className="relative z-10">
-                <h3 className="text-2xl font-black mb-4">専門的な治療</h3>
+                <h3 className="text-2xl font-black mb-4">専門的な対応</h3>
                 <p className="text-red-100 leading-relaxed mb-4">
-                  交通事故治療の豊富な経験を持つ今坂院長が、一人一人の症状に合わせた最適な治療を提供します。
+                  交通事故対応の豊富な経験を持つ今坂院長が、一人一人の症状に合わせた最適な対応を提供します。
                 </p>
               </div>
             </div>
@@ -1226,7 +1226,7 @@ export default function Home() {
               <div className="relative z-10">
                 <h3 className="text-2xl font-black mb-4">安心のサポート</h3>
                 <p className="text-blue-100 leading-relaxed mb-4">
-                  事故当日から完全回復まで、保険手続きや治療計画など、すべての面で患者様をサポートします。
+                  事故当日から完全回復まで、保険手続きや対応計画など、すべての面で患者様をサポートします。
                 </p>
               </div>
             </div>
@@ -1251,7 +1251,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-black text-gray-900 mb-4">
-              交通事故治療でよくある質問
+              交通事故のケアでよくある質問
             </h2>
             <p className="text-gray-600">患者様からよくいただくご質問にお答えします</p>
           </div>
@@ -1260,7 +1260,7 @@ export default function Home() {
             {/* FAQ 1 */}
             <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
               <h3 className="text-lg font-bold text-gray-900 mb-3">
-                Q. 交通事故の治療費は本当に0円ですか？
+                Q. 交通事故のケア費用は本当に0円ですか？
               </h3>
               <p className="text-gray-700 leading-relaxed">
                 A. はい、自賠責保険適用により患者様の窓口負担は0円です。保険会社への手続きも当院が代行いたします。
@@ -1270,20 +1270,20 @@ export default function Home() {
             {/* FAQ 2 */}
             <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
               <h3 className="text-lg font-bold text-gray-900 mb-3">
-                Q. 事故直後、痛みがなくても治療を受けるべきですか？
+                Q. 事故直後、痛みがなくてもケアを受けるべきですか？
               </h3>
               <p className="text-gray-700 leading-relaxed">
-                A. はい、痛みがなくても必ず検査・治療をお受けください。むちうちなどの症状は数日後に現れることが多く、早期治療が後遺症予防に重要です。
+                A. はい、痛みがなくても必ず検査・ケアをお受けください。むちうちなどの症状は数日後に現れることが多く、早期ケアが後遺症予防に重要です。
               </p>
             </div>
             
             {/* FAQ 3 */}
             <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
               <h3 className="text-lg font-bold text-gray-900 mb-3">
-                Q. 福岡市博多区で交通事故治療が得意な整骨院はありますか？
+                Q. 福岡市博多区で交通事故のケアが得意な整骨院はありますか？
               </h3>
               <p className="text-gray-700 leading-relaxed">
-                A. 桜並木駅前の整骨院は福岡市博多区で10年の交通事故治療実績があります。むちうち・後遺症治療に特化し、保険手続きも全てサポートします。
+                A. 桜並木駅前の整骨院は福岡市博多区で10年の交通事故ケア実績があります。むちうち・後遺症ケアに特化し、保険手続きも全てサポートします。
               </p>
             </div>
             
@@ -1300,10 +1300,10 @@ export default function Home() {
             {/* FAQ 5 */}
             <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
               <h3 className="text-lg font-bold text-gray-900 mb-3">
-                Q. むちうち治療にはどのくらいの期間がかかりますか？
+                Q. むちうちのケアにはどのくらいの期間がかかりますか？
               </h3>
               <p className="text-gray-700 leading-relaxed">
-                A. 症状や程度により異なりますが、一般的に3-6ヶ月程度です。当院では患者様の症状に合わせたオーダーメイド治療で、最短での回復を目指します。
+                A. 症状や程度により異なりますが、一般的に3-6ヶ月程度です。当院では患者様の症状に合わせたオーダーメイドケアで、最短での回復を目指します。
               </p>
             </div>
           </div>
@@ -1327,7 +1327,7 @@ export default function Home() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4">
               桜並木駅前の整骨院
             </h2>
-            <p className="text-xl sm:text-2xl text-blue-300 font-medium">交通事故治療も対応</p>
+            <p className="text-xl sm:text-2xl text-blue-300 font-medium">交通事故対応も承ります</p>
             <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full mt-4"></div>
           </div>
           
@@ -1414,7 +1414,7 @@ export default function Home() {
                     24時間以内にご連絡を！
                   </p>
                   <p className="text-red-100 leading-relaxed">
-                    早期治療開始で後遺症を防ぎ、完全回復を目指しましょう
+                    早期対応開始で後遺症を防ぎ、完全回復を目指しましょう
                   </p>
                 </div>
               </div>
@@ -1442,7 +1442,7 @@ export default function Home() {
                   <h4 className="font-black text-white mb-3">こんなご相談お受けします</h4>
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                     <span className="bg-blue-100 text-blue-800 px-3 py-2 rounded-full text-sm font-medium text-center">保険手続き</span>
-                    <span className="bg-green-100 text-green-800 px-3 py-2 rounded-full text-sm font-medium text-center">治療相談</span>
+                    <span className="bg-green-100 text-green-800 px-3 py-2 rounded-full text-sm font-medium text-center">対応相談</span>
                     <span className="bg-purple-100 text-purple-800 px-3 py-2 rounded-full text-sm font-medium text-center">症状確認</span>
                     <span className="bg-orange-100 text-orange-800 px-3 py-2 rounded-full text-sm font-medium text-center">書類作成</span>
                   </div>
@@ -1507,8 +1507,8 @@ export default function Home() {
             
             {/* Services */}
             <div className="flex flex-wrap gap-3 justify-center mb-8">
-              <span className="bg-gradient-to-r from-red-600 to-red-700 text-white px-4 py-2 rounded-full text-sm font-bold luxury-shadow hover:scale-105 transition-transform duration-300">交通事故治療</span>
-              <span className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-4 py-2 rounded-full text-sm font-bold luxury-shadow hover:scale-105 transition-transform duration-300">むちうち治療</span>
+              <span className="bg-gradient-to-r from-red-600 to-red-700 text-white px-4 py-2 rounded-full text-sm font-bold luxury-shadow hover:scale-105 transition-transform duration-300">交通事故対応</span>
+              <span className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-4 py-2 rounded-full text-sm font-bold luxury-shadow hover:scale-105 transition-transform duration-300">むちうち対応</span>
               <span className="bg-gradient-to-r from-green-600 to-green-700 text-white px-4 py-2 rounded-full text-sm font-bold luxury-shadow hover:scale-105 transition-transform duration-300">自己負担0円</span>
               <span className="bg-gradient-to-r from-purple-600 to-purple-700 text-white px-4 py-2 rounded-full text-sm font-bold luxury-shadow hover:scale-105 transition-transform duration-300">夜20時まで</span>
             </div>
@@ -1522,7 +1522,7 @@ export default function Home() {
                 © 2025 桜並木駅前の整骨院. All rights reserved.
               </p>
               <p className="text-xs">
-                交通事故治療・むちうち治療・整骨院 | 福岡市博多区
+                交通事故対応・むちうち対応・整骨院 | 福岡市博多区
               </p>
             </div>
           </div>
@@ -1535,7 +1535,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
             <div className="text-center sm:text-left">
               <p className="text-black font-bold text-sm">
-                交通事故治療 自己負担0円
+                交通事故対応 自己負担0円
               </p>
               <p className="text-black/80 text-xs">
                 まずはお気軽にご相談ください
